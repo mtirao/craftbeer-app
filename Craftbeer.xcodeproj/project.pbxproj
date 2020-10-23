@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED313254317A700EB8BB0 /* Tests_iOS.swift */; };
+		DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED31E254317A700EB8BB0 /* Tests_macOS.swift */; };
+		DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
+		DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
+		DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
+		DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
+		DADED325254317A700EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F8254317A600EB8BB0 /* ContentView.swift */; };
+		DADED326254317A700EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F8254317A600EB8BB0 /* ContentView.swift */; };
+		DADED327254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
+		DADED328254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
+		DADED329254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
+		DADED32A254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DADED310254317A700EB8BB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADED2F0254317A600EB8BB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADED2FE254317A700EB8BB0;
+			remoteInfo = "Craftbeer (iOS)";
+		};
+		DADED31B254317A700EB8BB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADED2F0254317A600EB8BB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADED306254317A700EB8BB0;
+			remoteInfo = "Craftbeer (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
+		DADED2F8254317A600EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DADED2F9254317A600EB8BB0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DADED2FA254317A700EB8BB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DADED2FF254317A700EB8BB0 /* Craftbeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Craftbeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADED302254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADED307254317A700EB8BB0 /* Craftbeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Craftbeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADED309254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADED30A254317A700EB8BB0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DADED30F254317A700EB8BB0 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADED313254317A700EB8BB0 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		DADED315254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADED31A254317A700EB8BB0 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADED31E254317A700EB8BB0 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		DADED320254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DADED2FC254317A700EB8BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED304254317A700EB8BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED30C254317A700EB8BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED317254317A700EB8BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DADED2EF254317A600EB8BB0 = {
+			isa = PBXGroup;
+			children = (
+				DADED2F4254317A600EB8BB0 /* Shared */,
+				DADED301254317A700EB8BB0 /* iOS */,
+				DADED308254317A700EB8BB0 /* macOS */,
+				DADED312254317A700EB8BB0 /* Tests iOS */,
+				DADED31D254317A700EB8BB0 /* Tests macOS */,
+				DADED300254317A700EB8BB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DADED2F4254317A600EB8BB0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */,
+				DADED2F8254317A600EB8BB0 /* ContentView.swift */,
+				DADED2F9254317A600EB8BB0 /* Persistence.swift */,
+				DADED2FA254317A700EB8BB0 /* Assets.xcassets */,
+				DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DADED300254317A700EB8BB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DADED2FF254317A700EB8BB0 /* Craftbeer.app */,
+				DADED307254317A700EB8BB0 /* Craftbeer.app */,
+				DADED30F254317A700EB8BB0 /* Tests iOS.xctest */,
+				DADED31A254317A700EB8BB0 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DADED301254317A700EB8BB0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DADED302254317A700EB8BB0 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		DADED308254317A700EB8BB0 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DADED309254317A700EB8BB0 /* Info.plist */,
+				DADED30A254317A700EB8BB0 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		DADED312254317A700EB8BB0 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DADED313254317A700EB8BB0 /* Tests_iOS.swift */,
+				DADED315254317A700EB8BB0 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		DADED31D254317A700EB8BB0 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DADED31E254317A700EB8BB0 /* Tests_macOS.swift */,
+				DADED320254317A700EB8BB0 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DADED2FE254317A700EB8BB0 /* Craftbeer (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADED32D254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Craftbeer (iOS)" */;
+			buildPhases = (
+				DADED2FB254317A700EB8BB0 /* Sources */,
+				DADED2FC254317A700EB8BB0 /* Frameworks */,
+				DADED2FD254317A700EB8BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Craftbeer (iOS)";
+			productName = "Craftbeer (iOS)";
+			productReference = DADED2FF254317A700EB8BB0 /* Craftbeer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DADED306254317A700EB8BB0 /* Craftbeer (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADED330254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Craftbeer (macOS)" */;
+			buildPhases = (
+				DADED303254317A700EB8BB0 /* Sources */,
+				DADED304254317A700EB8BB0 /* Frameworks */,
+				DADED305254317A700EB8BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Craftbeer (macOS)";
+			productName = "Craftbeer (macOS)";
+			productReference = DADED307254317A700EB8BB0 /* Craftbeer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DADED30E254317A700EB8BB0 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADED333254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				DADED30B254317A700EB8BB0 /* Sources */,
+				DADED30C254317A700EB8BB0 /* Frameworks */,
+				DADED30D254317A700EB8BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADED311254317A700EB8BB0 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = DADED30F254317A700EB8BB0 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DADED319254317A700EB8BB0 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADED336254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				DADED316254317A700EB8BB0 /* Sources */,
+				DADED317254317A700EB8BB0 /* Frameworks */,
+				DADED318254317A700EB8BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADED31C254317A700EB8BB0 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = DADED31A254317A700EB8BB0 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DADED2F0254317A600EB8BB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					DADED2FE254317A700EB8BB0 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DADED306254317A700EB8BB0 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DADED30E254317A700EB8BB0 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = DADED2FE254317A700EB8BB0;
+					};
+					DADED319254317A700EB8BB0 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = DADED306254317A700EB8BB0;
+					};
+				};
+			};
+			buildConfigurationList = DADED2F3254317A600EB8BB0 /* Build configuration list for PBXProject "Craftbeer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DADED2EF254317A600EB8BB0;
+			productRefGroup = DADED300254317A700EB8BB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DADED2FE254317A700EB8BB0 /* Craftbeer (iOS) */,
+				DADED306254317A700EB8BB0 /* Craftbeer (macOS) */,
+				DADED30E254317A700EB8BB0 /* Tests iOS */,
+				DADED319254317A700EB8BB0 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DADED2FD254317A700EB8BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED329254317A700EB8BB0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED305254317A700EB8BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED32A254317A700EB8BB0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED30D254317A700EB8BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED318254317A700EB8BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DADED2FB254317A700EB8BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
+				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
+				DADED325254317A700EB8BB0 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED303254317A700EB8BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
+				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
+				DADED326254317A700EB8BB0 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED30B254317A700EB8BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADED316254317A700EB8BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DADED311254317A700EB8BB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADED2FE254317A700EB8BB0 /* Craftbeer (iOS) */;
+			targetProxy = DADED310254317A700EB8BB0 /* PBXContainerItemProxy */;
+		};
+		DADED31C254317A700EB8BB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADED306254317A700EB8BB0 /* Craftbeer (macOS) */;
+			targetProxy = DADED31B254317A700EB8BB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DADED32B254317A700EB8BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DADED32C254317A700EB8BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DADED32E254317A700EB8BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.guanaca.Craftbeer;
+				PRODUCT_NAME = Craftbeer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DADED32F254317A700EB8BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.guanaca.Craftbeer;
+				PRODUCT_NAME = Craftbeer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DADED331254317A700EB8BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.guanaca.Craftbeer;
+				PRODUCT_NAME = Craftbeer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DADED332254317A700EB8BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.guanaca.Craftbeer;
+				PRODUCT_NAME = Craftbeer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DADED334254317A700EB8BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.guanaca.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Craftbeer (iOS)";
+			};
+			name = Debug;
+		};
+		DADED335254317A700EB8BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.guanaca.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Craftbeer (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DADED337254317A700EB8BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.guanaca.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Craftbeer (macOS)";
+			};
+			name = Debug;
+		};
+		DADED338254317A700EB8BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TGG8A6SJD4;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.guanaca.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Craftbeer (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DADED2F3254317A600EB8BB0 /* Build configuration list for PBXProject "Craftbeer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADED32B254317A700EB8BB0 /* Debug */,
+				DADED32C254317A700EB8BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADED32D254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Craftbeer (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADED32E254317A700EB8BB0 /* Debug */,
+				DADED32F254317A700EB8BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADED330254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Craftbeer (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADED331254317A700EB8BB0 /* Debug */,
+				DADED332254317A700EB8BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADED333254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADED334254317A700EB8BB0 /* Debug */,
+				DADED335254317A700EB8BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADED336254317A700EB8BB0 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADED337254317A700EB8BB0 /* Debug */,
+				DADED338254317A700EB8BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */,
+			);
+			currentVersion = DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */;
+			path = Craftbeer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DADED2F0254317A600EB8BB0 /* Project object */;
+}
