@@ -25,20 +25,11 @@ struct ContentView: View {
                     }
                 }.onDelete(perform: deleteItems)
                
-            }
-           /* .navigationBarItems(leading:
+            }.navigationBarItems(trailing:
                                     Button(action: addItem) {
                                         Label("", systemImage: "plus")
-            })*/
+            })
             .navigationTitle("Craftbeer")
-        }.toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
         }
         
     }

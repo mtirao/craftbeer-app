@@ -13,12 +13,12 @@
 		DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
 		DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
 		DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
-		DADED325254317A700EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F8254317A600EB8BB0 /* ContentView.swift */; };
 		DADED326254317A700EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F8254317A600EB8BB0 /* ContentView.swift */; };
 		DADED327254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
 		DADED328254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
 		DADED329254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
 		DADED32A254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
+		DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED33E2543524000EB8BB0 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,7 @@
 		DADED31A254317A700EB8BB0 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADED31E254317A700EB8BB0 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		DADED320254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADED33E2543524000EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +128,7 @@
 		DADED301254317A700EB8BB0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DADED33E2543524000EB8BB0 /* ContentView.swift */,
 				DADED302254317A700EB8BB0 /* Info.plist */,
 			);
 			path = iOS;
@@ -317,9 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */,
 				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
-				DADED325254317A700EB8BB0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
