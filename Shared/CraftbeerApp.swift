@@ -14,6 +14,7 @@ struct CraftbeerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(Color.white)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

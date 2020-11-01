@@ -16,29 +16,40 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    @ObservedObject var recipes = RecipeDataProvider()
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    NavigationLink(destination: Text("Item at \(item.timestamp!, formatter: itemFormatter)")) {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                ForEach(recipes.recipeList) { item in
+                    NavigationLink(destination: RecipeViewDetail(recipe: item)) {
+                        RecipeView(recipe: item)
                     }
                 }.onDelete(perform: deleteItems)
+                .onTapGesture {
+                    
+                }
                
-            }
+            }.id(UUID())
            /* .navigationBarItems(leading:
                                     Button(action: addItem) {
                                         Label("", systemImage: "plus")
             })*/
             .navigationTitle("Craftbeer")
+            
         }.toolbar {
             #if os(iOS)
             EditButton()
             #endif
-
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
             }
+            
+            Button(action: addItem) {
+                Label("Save Image", systemImage: "square.and.arrow.down")
+            }
+        }.onAppear() {
+            self.recipes.fetchAll()
         }
         
     }

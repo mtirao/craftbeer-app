@@ -15,13 +15,17 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
+    
+    @ObservedObject var recipes = RecipeDataProvider()
+    
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    NavigationLink(destination: Text("Item at \(item.timestamp!, formatter: itemFormatter)")) {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                ForEach(recipes.recipeList) { item in
+                    NavigationLink(destination: RecipeViewDetail(recipe: item)) {
+                        RecipeView(recipe: item)
                     }
                 }.onDelete(perform: deleteItems)
                
@@ -30,6 +34,9 @@ struct ContentView: View {
                                         Label("", systemImage: "plus")
             })
             .navigationTitle("Craftbeer")
+            .id(UUID())
+        }.onAppear() {
+            self.recipes.fetchAll()
         }
         
     }

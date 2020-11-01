@@ -3,10 +3,48 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277EF254F4D9F004F333C /* FieldView.swift */; };
+		DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277EF254F4D9F004F333C /* FieldView.swift */; };
+		DAB277F7254F54C6004F333C /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277F6254F54C6004F333C /* IngredientView.swift */; };
+		DAB277F8254F54C6004F333C /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277F6254F54C6004F333C /* IngredientView.swift */; };
+		DAB277FE254F552C004F333C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277FD254F552C004F333C /* Ingredient.swift */; };
+		DAB277FF254F552C004F333C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277FD254F552C004F333C /* Ingredient.swift */; };
+		DAB27805254F59BB004F333C /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB27804254F59BB004F333C /* IngredientViewModel.swift */; };
+		DAB27806254F59BB004F333C /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB27804254F59BB004F333C /* IngredientViewModel.swift */; };
+		DAB8DC4D2546256E00AD4F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAB8DC4C2546256E00AD4F03 /* Alamofire */; };
+		DAB8DC542546263C00AD4F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAB8DC532546263C00AD4F03 /* Alamofire */; };
+		DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
+		DAB8DC5825462B7A00AD4F03 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
+		DAB8DC5925462B7A00AD4F03 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
+		DAB8DC5A25462B7A00AD4F03 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
+		DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
+		DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
+		DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
+		DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
+		DAB8DC72254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
+		DAB8DC73254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
+		DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
+		DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
+		DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
+		DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
+		DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
+		DAB8DC7E2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
+		DAB8DC842546349B00AD4F03 /* RecipeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */; };
+		DAB8DC852546349B00AD4F03 /* RecipeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */; };
+		DAB8DC862546349B00AD4F03 /* RecipeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */; };
+		DAB8DC872546349B00AD4F03 /* RecipeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */; };
+		DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
+		DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
+		DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
+		DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
+		DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
+		DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
+		DAD437D2254A196E00CEA901 /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */; };
+		DAD437D3254A196E00CEA901 /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */; };
 		DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED313254317A700EB8BB0 /* Tests_iOS.swift */; };
 		DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED31E254317A700EB8BB0 /* Tests_macOS.swift */; };
 		DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
@@ -39,6 +77,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DAB277EF254F4D9F004F333C /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		DAB277F6254F54C6004F333C /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		DAB277FD254F552C004F333C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		DAB27804254F59BB004F333C /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
+		DAB8DC5625462B7A00AD4F03 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		DAB8DC71254630BA00AD4F03 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
+		DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataProvider.swift; sourceTree = "<group>"; };
+		DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		DAD437CA254A074D00CEA901 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
 		DADED2F8254317A600EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC542546263C00AD4F03 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC4D2546256E00AD4F03 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +142,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAB8DC522546263C00AD4F03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAB8DC552546275200AD4F03 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DAB277FD254F552C004F333C /* Ingredient.swift */,
+				DAB8DC5625462B7A00AD4F03 /* Recipe.swift */,
+				DAB8DC71254630BA00AD4F03 /* DataProvider.swift */,
+				DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */,
+				DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */,
+				DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DAB8DC6325462F3D00AD4F03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */,
+				DAB27804254F59BB004F333C /* IngredientViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAB8DC8C2546386500AD4F03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAD437CA254A074D00CEA901 /* RecipeView.swift */,
+				DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */,
+				DAB277EF254F4D9F004F333C /* FieldView.swift */,
+				DAB277F6254F54C6004F333C /* IngredientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DADED2EF254317A600EB8BB0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,14 +191,17 @@
 				DADED312254317A700EB8BB0 /* Tests iOS */,
 				DADED31D254317A700EB8BB0 /* Tests macOS */,
 				DADED300254317A700EB8BB0 /* Products */,
+				DAB8DC522546263C00AD4F03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DADED2F4254317A600EB8BB0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DAB8DC8C2546386500AD4F03 /* Views */,
+				DAB8DC6325462F3D00AD4F03 /* ViewModel */,
+				DAB8DC552546275200AD4F03 /* Network */,
 				DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */,
-				DADED2F8254317A600EB8BB0 /* ContentView.swift */,
 				DADED2F9254317A600EB8BB0 /* Persistence.swift */,
 				DADED2FA254317A700EB8BB0 /* Assets.xcassets */,
 				DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */,
@@ -137,6 +232,7 @@
 		DADED308254317A700EB8BB0 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				DADED2F8254317A600EB8BB0 /* ContentView.swift */,
 				DADED309254317A700EB8BB0 /* Info.plist */,
 				DADED30A254317A700EB8BB0 /* macOS.entitlements */,
 			);
@@ -177,6 +273,9 @@
 			dependencies = (
 			);
 			name = "Craftbeer (iOS)";
+			packageProductDependencies = (
+				DAB8DC532546263C00AD4F03 /* Alamofire */,
+			);
 			productName = "Craftbeer (iOS)";
 			productReference = DADED2FF254317A700EB8BB0 /* Craftbeer.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +293,9 @@
 			dependencies = (
 			);
 			name = "Craftbeer (macOS)";
+			packageProductDependencies = (
+				DAB8DC4C2546256E00AD4F03 /* Alamofire */,
+			);
 			productName = "Craftbeer (macOS)";
 			productReference = DADED307254317A700EB8BB0 /* Craftbeer.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +370,9 @@
 				Base,
 			);
 			mainGroup = DADED2EF254317A600EB8BB0;
+			packageReferences = (
+				DAB8DC4B2546256E00AD4F03 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DADED300254317A700EB8BB0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,10 +423,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC842546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DAB277FE254F552C004F333C /* Ingredient.swift in Sources */,
 				DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */,
+				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
+				DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */,
 				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
+				DAB8DC72254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAB27805254F59BB004F333C /* IngredientViewModel.swift in Sources */,
+				DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
+				DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAB277F7254F54C6004F333C /* IngredientView.swift in Sources */,
+				DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */,
+				DAD437D2254A196E00CEA901 /* RecipeViewDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +446,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC852546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DAB277FF254F552C004F333C /* Ingredient.swift in Sources */,
 				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
+				DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */,
+				DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */,
 				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
+				DAB8DC73254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAB27806254F59BB004F333C /* IngredientViewModel.swift in Sources */,
+				DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DADED326254317A700EB8BB0 /* ContentView.swift in Sources */,
+				DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAB277F8254F54C6004F333C /* IngredientView.swift in Sources */,
+				DAB8DC5825462B7A00AD4F03 /* Recipe.swift in Sources */,
+				DAD437D3254A196E00CEA901 /* RecipeViewDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +469,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC862546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
+				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */,
+				DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAB8DC5925462B7A00AD4F03 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +483,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8DC872546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
+				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAB8DC7E2546310400AD4F03 /* RecipeAPI.swift in Sources */,
+				DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAB8DC5A25462B7A00AD4F03 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +851,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAB8DC4B2546256E00AD4F03 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAB8DC4C2546256E00AD4F03 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAB8DC4B2546256E00AD4F03 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DAB8DC532546263C00AD4F03 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAB8DC4B2546256E00AD4F03 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */ = {
