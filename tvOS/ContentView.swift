@@ -36,25 +36,8 @@ struct ContentView: View {
                        
                     }.id(UUID())
                     .navigationTitle("Craftbeer")
-                    .listStyle(SidebarListStyle())
-                    HStack {
-                        
-                        Button(action: {
-                            self.showingSheet = true
-                        }){
-                            Text("+")
-                                .font(.title)
-                        }.padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        .buttonStyle(BorderlessButtonStyle())
-                        .sheet(isPresented: $showingSheet) {
-                            RecipeSheet(isVisible: self.$showingSheet)
-                        }
-                        
-                        TextField("Search...", text: self.$searchText).padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     
-                        //SearchBar(text: self.$searchText)
-                    }
-                }
+                }.background(Color.white)
                 
                 
                 

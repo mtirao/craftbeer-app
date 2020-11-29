@@ -17,6 +17,9 @@ struct RecipeViewDetail: View {
     @State private var recipeColor = ""
     @State private var recipeIbu = ""
     
+    
+    @ObservedObject var recipes = RecipeDataProvider()
+    
     var body: some View {
         VStack {
             HStack {
@@ -27,6 +30,10 @@ struct RecipeViewDetail: View {
                     .foregroundColor(Color.black)
                     .textFieldStyle(PlainTextFieldStyle())
                 Spacer()
+                
+                Button(action: saveRecipe) {
+                    Label("Save Recipe", systemImage: "square.and.arrow.down")
+                }
                 
             }
             HStack {
@@ -49,8 +56,48 @@ struct RecipeViewDetail: View {
                 Spacer()
             }
             Divider()
+            VStack {
+                HStack {
+                    Text("Ingredients")
+                    Spacer()
+                    Button(action: addIngredient) {
+                        Label("Add Ingredient", systemImage: "plus")
+                    }
+                }
+                List(recipes.ingredientList) {item in
+                    IngredientView(ingredient: item)
+                   
+                }
+            }
+            Divider()
+            VStack {
+                HStack {
+                    Text("Stages")
+                    Spacer()
+                    Button(action: addStage) {
+                        Label("Add Stage", systemImage: "plus")
+                    }
+                }
+                List(recipes.stageList) {item in
+                    StageView(stage: item)
+                   
+                }
+            }
+            
             Spacer()
         }.padding()
+    }
+    
+    private func addStage() {
+        
+    }
+    
+    private func addIngredient() {
+        
+    }
+    
+    private func saveRecipe() {
+        
     }
     
     init(recipe: RecipeViewModel) {
@@ -60,6 +107,8 @@ struct RecipeViewDetail: View {
         self._recipeAbv = State(wrappedValue: recipe.abv)
         self._recipeColor = State(wrappedValue: recipe.color)
         self._recipeIbu = State(wrappedValue: recipe.ibu)
+        
+        self.recipes.fetchAll(recipe: recipe.recipeId)
     }
 }
 

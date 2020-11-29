@@ -10,7 +10,7 @@ import Foundation
 
 struct Recipe: Codable{
     
-    let id: Int64?
+    let id: Int?
     let name: String?
     let color: Int?
     let ibu: Int?

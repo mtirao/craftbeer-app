@@ -12,6 +12,9 @@ enum RecipeAPI: ApiConfiguration {
     
     case fetchRecipes
     case fetchIngredient(recipe: Int)
+    case fetchStage(recipe: Int)
+    
+    case updateRecipe(recipe: Recipe)
     
     var param: Parameters? {
         switch self {
@@ -19,6 +22,10 @@ enum RecipeAPI: ApiConfiguration {
             return nil
         case .fetchIngredient:
            return nil
+        case .fetchStage:
+            return nil
+        case .updateRecipe:
+            return nil
         }
     }
    
@@ -28,6 +35,10 @@ enum RecipeAPI: ApiConfiguration {
             return .get
         case .fetchIngredient:
             return .get
+        case .fetchStage:
+            return .get
+        case .updateRecipe:
+            return .put
         }
     }
     
@@ -36,7 +47,13 @@ enum RecipeAPI: ApiConfiguration {
         case .fetchRecipes:
             return "/craftbeer/recipes"
         case .fetchIngredient(let recipe):
-            let url = "/craftbeer/recipe/ingredients/\(recipe)"
+            let url = "/craftbeer/recipe/\(recipe)/ingredients"
+            return url
+        case .fetchStage(let recipe):
+            let url = "/craftbeer/recipe/\(recipe)/stages"
+            return url
+        case .updateRecipe(let recipe):
+            let url = "/craftbeer/recipe/\(String(describing: recipe.id))"
             return url
         }
     }
@@ -52,6 +69,15 @@ enum RecipeAPI: ApiConfiguration {
         //Http method
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        switch self  {
+        case .updateRecipe(let body):
+            let jsonBody = try? JSONEncoder().encode(body)
+            urlRequest.httpBody = jsonBody
+            break;
+        default:
+            break
+        }
             
         //Encoding
         let encoding: ParameterEncoding = {

@@ -8,14 +8,26 @@
 import Foundation
 
 
+enum UnitEnum: Int, Codable {
+    case kilo = 1
+    case grams = 2
+    case liter = 3
+}
+
+enum TypeEnum: String, Codable {
+    case malt = "malt"
+    case yeast = "yeast"
+    case water = "water"
+    case hop = "hop"
+}
+
 struct Ingredient: Codable{
     
-    let id: Int64?
-    let recipe: Int64?
+    let id: Int?
+    let recipe: Int?
     let name: String?
-    let type: String?
-    let unit: Int?
-    let amount: Int?
-    let style: String?
+    let type: TypeEnum?
+    let unit: UnitEnum?
+    let value: Int?
   
 }

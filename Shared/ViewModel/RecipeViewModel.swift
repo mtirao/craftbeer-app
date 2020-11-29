@@ -15,6 +15,10 @@ class RecipeViewModel: Identifiable {
         self.recipe = recipe
     }
     
+    var recipeId: Int {
+        return (recipe.id ?? 0)
+    }
+    
     var name: String {
         return recipe.name ?? ""
     }
