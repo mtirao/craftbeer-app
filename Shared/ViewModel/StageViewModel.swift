@@ -9,13 +9,44 @@ import Foundation
 
 class StageViewModel: Identifiable {
 
-    private let stage: Stage
-    
-    init(stage: Stage) {
-        self.stage = stage
+    var stage: Stage {
+        
+        let stag = Stage(id: self.stageId,
+                         recipe: self.stageRecipe,
+                         type: self.stageTypeT,
+                         temp: self.stageTempT,
+                         time: self.stageTimeT)
+        
+        return stag
     }
     
-    var type: String {
+    
+    private let stageId: Int?
+    private var stageRecipe: Int?
+    private var stageTypeT: StageEnum?
+    private var stageTempT: Int?
+    private var stageTimeT: Int?
+  
+    
+    init(stage: Stage) {
+        
+        self.stageId = stage.id
+        self.stageRecipe = stage.recipe
+        self.stageTypeT = stage.type
+        self.stageTempT = stage.temp
+        self.stageTimeT = stage.time
+        
+    }
+    
+    init(recipe: Int?) {
+        self.stageRecipe = recipe
+        self.stageId = nil
+        self.stageTypeT = nil
+        self.stageTempT = nil
+        self.stageTimeT = nil
+    }
+    
+    var typeT: String {
         switch stage.type {
         case .mash:
             return "Mash"
@@ -32,7 +63,8 @@ class StageViewModel: Identifiable {
         }
     }
     
-    var temp: String {
+    //MARK:- Value in formatted text
+    var tempT: String {
         let val = Float(stage.temp ?? 0) / 100
         
         let formatter = NumberFormatter()
@@ -44,7 +76,7 @@ class StageViewModel: Identifiable {
         return "\(str)º C"
     }
     
-    var time: String {
+    var timeT: String {
         
         if let time = stage.time {
             return "\(time) min"
@@ -52,5 +84,27 @@ class StageViewModel: Identifiable {
         return ""
     }
     
+    //MARK:- Builder pattern function
+    func recipe(id: Int) -> StageViewModel {
+        self.stageRecipe = id
+        return self
+    }
     
+    func type(type: Int) -> StageViewModel {
+        self.stageTypeT = StageEnum(rawValue: type + 1)
+        return self
+    }
+    
+    func temp(temp: String) -> StageViewModel {
+        let t = Int(temp)
+        self.stageTempT = t
+        return self
+    }
+    
+    func time(time: String) -> StageViewModel {
+        let t = Int(time)
+        self.stageTimeT = t
+        return self
+    }
+     
 }

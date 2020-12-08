@@ -7,23 +7,20 @@
 
 import SwiftUI
 
+
 struct RecipeViewDetail: View {
     
-    let recipe: RecipeViewModel
+    @ObservedObject var recipe: RecipeViewModel
     
-    @State private var recipeName = ""
-    @State private var recipeStyle = ""
-    @State private var recipeAbv = ""
-    @State private var recipeColor = ""
-    @State private var recipeIbu = ""
+    @EnvironmentObject  var recipes : RecipeDataProvider  //= RecipeDataProvider()
     
-    
-    @ObservedObject var recipes = RecipeDataProvider()
+    @State private var showingIngredientSheet = false
+    @State private var showingStageSheet = false
     
     var body: some View {
         VStack {
             HStack {
-                TextField("Recipe Name", text: $recipeName)
+                TextField("Recipe Name", text: self.$recipe.recipeName)
                     .font(.title)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -32,12 +29,15 @@ struct RecipeViewDetail: View {
                 Spacer()
                 
                 Button(action: saveRecipe) {
-                    Label("Save Recipe", systemImage: "square.and.arrow.down")
+                    Image(systemName: "square.and.arrow.down")
+                }
+                Button(action: deleteRecipe) {
+                    Image(systemName: "trash")
                 }
                 
             }
             HStack {
-                TextField("Recipe Style", text: $recipeStyle)
+                TextField("Recipe Style", text: self.$recipe.recipeStyle)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -48,11 +48,11 @@ struct RecipeViewDetail: View {
             }
             HStack {
                 
-                FieldView(text: "ABV", fieldText: $recipeAbv)
+                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: self.$recipe.recipeAbv)
                 Spacer()
-                FieldView(text: "IBU", fieldText: $recipeIbu)
+                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: self.$recipe.recipeIbu)
                 Spacer()
-                FieldView(text: "Color", fieldText: $recipeColor)
+                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: self.$recipe.recipeColor)
                 Spacer()
             }
             Divider()
@@ -61,7 +61,10 @@ struct RecipeViewDetail: View {
                     Text("Ingredients")
                     Spacer()
                     Button(action: addIngredient) {
-                        Label("Add Ingredient", systemImage: "plus")
+                        Image(systemName: "plus")
+                    }.sheet(isPresented: $showingIngredientSheet) {
+                        IngredientSheet(isVisible: self.$showingIngredientSheet, recipe: self.recipe)
+                            .environmentObject(self.recipes)
                     }
                 }
                 List(recipes.ingredientList) {item in
@@ -75,7 +78,10 @@ struct RecipeViewDetail: View {
                     Text("Stages")
                     Spacer()
                     Button(action: addStage) {
-                        Label("Add Stage", systemImage: "plus")
+                        Image(systemName: "plus")
+                    }.sheet(isPresented: $showingStageSheet) {
+                        StageSheet(isVisible: self.$showingStageSheet, recipe: self.recipe)
+                            .environmentObject(self.recipes)
                     }
                 }
                 List(recipes.stageList) {item in
@@ -86,29 +92,34 @@ struct RecipeViewDetail: View {
             
             Spacer()
         }.padding()
+        .onAppear() {
+            self.recipes.fetchAll(recipe: recipe.recipeId!)
+        }
+        .onReceive(self.recipes.updatedRecipe) {recipe in
+            
+            self.recipes.fetchAll()
+        }
     }
     
     private func addStage() {
-        
+        self.showingStageSheet = true
     }
     
     private func addIngredient() {
-        
+        self.showingIngredientSheet = true
     }
     
     private func saveRecipe() {
+        self.recipes.updateRecipe(recipe: self.recipe)
+    }
+    
+    private func deleteRecipe() {
         
     }
     
     init(recipe: RecipeViewModel) {
         self.recipe = recipe
-        self._recipeName = State(wrappedValue: recipe.name)
-        self._recipeStyle = State(wrappedValue: recipe.style)
-        self._recipeAbv = State(wrappedValue: recipe.abv)
-        self._recipeColor = State(wrappedValue: recipe.color)
-        self._recipeIbu = State(wrappedValue: recipe.ibu)
         
-        self.recipes.fetchAll(recipe: recipe.recipeId)
     }
 }
 

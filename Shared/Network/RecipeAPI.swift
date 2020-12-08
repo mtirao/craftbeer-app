@@ -16,6 +16,10 @@ enum RecipeAPI: ApiConfiguration {
     
     case updateRecipe(recipe: Recipe)
     
+    case postRecipe(recipe: Recipe)
+    case postIngredient(ingredient: Ingredient)
+    case postStage(stage: Stage)
+    
     var param: Parameters? {
         switch self {
         case .fetchRecipes:
@@ -25,6 +29,12 @@ enum RecipeAPI: ApiConfiguration {
         case .fetchStage:
             return nil
         case .updateRecipe:
+            return nil
+        case .postRecipe:
+            return nil
+        case .postIngredient:
+            return nil
+        case .postStage:
             return nil
         }
     }
@@ -39,6 +49,12 @@ enum RecipeAPI: ApiConfiguration {
             return .get
         case .updateRecipe:
             return .put
+        case .postRecipe:
+            return .post
+        case .postIngredient:
+            return .post
+        case .postStage:
+            return .post
         }
     }
     
@@ -53,7 +69,17 @@ enum RecipeAPI: ApiConfiguration {
             let url = "/craftbeer/recipe/\(recipe)/stages"
             return url
         case .updateRecipe(let recipe):
-            let url = "/craftbeer/recipe/\(String(describing: recipe.id))"
+            let id = recipe.id ?? -1
+            let url = "/craftbeer/recipe/\(id))"
+            return url
+        case .postRecipe:
+            let url = "/craftbeer/recipe"
+            return url
+        case .postIngredient:
+            let url = "/craftbeer/ingredient"
+            return url
+        case .postStage:
+            let url = "/craftbeer/stage"
             return url
         }
     }
@@ -73,6 +99,22 @@ enum RecipeAPI: ApiConfiguration {
         switch self  {
         case .updateRecipe(let body):
             let jsonBody = try? JSONEncoder().encode(body)
+            print(String(data: jsonBody!, encoding: .utf8) ?? "")
+            urlRequest.httpBody = jsonBody
+            break;
+        case .postRecipe(let body):
+            let jsonBody = try? JSONEncoder().encode(body)
+            print(String(data: jsonBody!, encoding: .utf8) ?? "")
+            urlRequest.httpBody = jsonBody
+            break;
+        case .postIngredient(let body):
+            let jsonBody = try? JSONEncoder().encode(body)
+            print(String(data: jsonBody!, encoding: .utf8) ?? "")
+            urlRequest.httpBody = jsonBody
+            break;
+        case .postStage(let body):
+            let jsonBody = try? JSONEncoder().encode(body)
+            print(String(data: jsonBody!, encoding: .utf8) ?? "")
             urlRequest.httpBody = jsonBody
             break;
         default:

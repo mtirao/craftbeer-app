@@ -14,12 +14,12 @@ struct IngredientView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(ingredient.type)
+                Text(ingredient.typeT)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
-                Text(ingredient.name)
+                Text(ingredient.nameT)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -29,14 +29,14 @@ struct IngredientView: View {
                 
             }
             HStack {
-                Text("\(ingredient.value)")
+                Text("\(ingredient.valueT)")
                     .font(.subheadline)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
-                Text("\(ingredient.unit)")
+                Text("\(ingredient.unitT)")
                     .font(.subheadline)
                     .opacity(0.625)
                     .lineLimit(nil)

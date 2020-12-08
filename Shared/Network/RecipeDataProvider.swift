@@ -16,12 +16,87 @@ class RecipeDataProvider: ObservableObject {
     @Published var ingredientList: [IngredientViewModel] = []
     @Published var stageList: [StageViewModel] = []
     
+    let updatedRecipe = PassthroughSubject<RecipeViewModel, Never> ()
+    
     init() {
         
     }
     
     func updateRecipe(recipe: RecipeViewModel) {
         
+
+        AF.request(RecipeAPI.updateRecipe(recipe: recipe.recipe)).responseDecodable{[weak self](response: DataResponse<Recipe, AFError>) in
+            
+            switch response.result {
+            case .success:
+                if let recipe = response.value {
+                    let recipeViewModel = RecipeViewModel(recipe: recipe)
+                    self?.recipeList.append(recipeViewModel)
+                   
+                }
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
+        
+    }
+    
+    func post(recipe: RecipeViewModel) {
+        
+        AF.request(RecipeAPI.postRecipe(recipe: recipe.recipe)).responseDecodable{[weak self](response: DataResponse<Recipe, AFError>) in
+            
+            switch response.result {
+            case .success:
+                if let recipe = response.value {
+                    let recipeViewModel = RecipeViewModel(recipe: recipe)
+                    self?.updatedRecipe.send(recipeViewModel)
+                }
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
+    }
+    
+    func post(ingredient: IngredientViewModel) {
+        
+        AF.request(RecipeAPI.postIngredient(ingredient: ingredient.ingredient)).responseDecodable{[weak self](response: DataResponse<Ingredient, AFError>) in
+            
+            switch response.result {
+            case .success:
+                if let ingredient = response.value {
+                    let ingredientViewModel = IngredientViewModel(ingredient: ingredient)
+                    self?.ingredientList.append(ingredientViewModel)
+                    //self?.updatedRecipe.send(recipeViewModel)
+                }
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
+    }
+    
+    func post(stage: StageViewModel) {
+        
+        AF.request(RecipeAPI.postStage(stage: stage.stage)).responseDecodable{[weak self](response: DataResponse<Stage, AFError>) in
+            
+            switch response.result {
+            case .success:
+                if let stage = response.value {
+                    let stageViewModel = StageViewModel(stage: stage)
+                    self?.stageList.append(stageViewModel)
+                    //self?.updatedRecipe.send(recipeViewModel)
+                }
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
     }
     
     func fetchAll() {

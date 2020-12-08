@@ -14,7 +14,7 @@ struct StageView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(stage.type)
+                Text(stage.typeT)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -22,14 +22,14 @@ struct StageView: View {
                 Spacer()
             }
             HStack {
-                Text("\(stage.temp)")
+                Text("\(stage.tempT)")
                     .font(.subheadline)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
-                Text("\(stage.time)")
+                Text("\(stage.timeT)")
                     .font(.subheadline)
                     .opacity(0.625)
                     .lineLimit(nil)

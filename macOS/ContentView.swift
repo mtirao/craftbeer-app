@@ -20,6 +20,8 @@ struct ContentView: View {
     
     @ObservedObject var recipes = RecipeDataProvider()
     
+    var updateRecipe = RecipeDataProvider()
+    
     @State private var searchText = ""
     @State private var showingSheet = false
     
@@ -29,7 +31,10 @@ struct ContentView: View {
                 VStack {
                     List {
                         ForEach(recipes.recipeList.indices) { index in
-                            NavigationLink(destination: RecipeViewDetail(recipe: recipes.recipeList[index])) {
+                            let detail = recipes.recipeList[index]
+                            NavigationLink(
+                                destination:
+                                    RecipeViewDetail(recipe:detail).environmentObject(self.updateRecipe)) {
                                 RecipeView(recipe: recipes.recipeList[index])
                             }
                         }.onDelete(perform: deleteItems)
@@ -48,15 +53,13 @@ struct ContentView: View {
                         .buttonStyle(BorderlessButtonStyle())
                         .sheet(isPresented: $showingSheet) {
                             RecipeSheet(isVisible: self.$showingSheet)
+                                .environmentObject(self.updateRecipe)
                         }
                         
                         TextField("Search...", text: self.$searchText).padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     
-                        //SearchBar(text: self.$searchText)
                     }
                 }
-                
-                
                 
             }.onAppear() {
                 self.recipes.fetchAll()

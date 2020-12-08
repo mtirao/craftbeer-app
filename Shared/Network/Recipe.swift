@@ -16,6 +16,7 @@ struct Recipe: Codable{
     let ibu: Int?
     let abv: Int?
     let style: String?
+  
 }
 
 

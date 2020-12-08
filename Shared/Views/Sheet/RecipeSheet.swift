@@ -18,18 +18,22 @@ struct RecipeSheet: View {
     @State var abv: String = ""
     @State var color: String = ""
     
+    
+    @EnvironmentObject  var recipes : RecipeDataProvider 
+    
     var body: some View {
         VStack {
             Section(header:
-                HStack(alignment: .top) {Text("New Recipe: ")
-                    .fontWeight(.bold)
-                    .truncationMode(.tail)
-                    .frame(minWidth: 20.0)
+                HStack(alignment: .top) {
+                    Text("New Recipe: ")
+                        .fontWeight(.bold)
+                        .truncationMode(.tail)
+                        .frame(minWidth: 20.0)
                     Spacer()
                 }
             ) {
-                TextField("Number", text:$name)
-                TextField("Summary", text:$style)
+                TextField("Name", text:$name)
+                TextField("Style", text:$style)
                 TextField("IBU", text:$ibu)
                 TextField("ABV", text:$abv)
                 TextField("Color", text:$color)
@@ -39,13 +43,17 @@ struct RecipeSheet: View {
             HStack {
                 Button("Save") {
                     
-                  /* let mantis = MantisViewModel(number: self.number,
-                                                summary: self.summary,
-                                                customer: self.customer)
+                    let recipe = RecipeViewModel()
+                                    .name(recipe: self.name)
+                                    .style(recipe: self.style)
+                                    .ibu(recipe: self.ibu)
+                                    .abv(recipe: self.abv)
+                                    .color(recipe: self.color)
+                    
+                    
                                        
-                                       
-                    self.postIncident.post(incident: mantis)
-                    */
+                    self.recipes.post(recipe: recipe)
+                    
                     
                     self.isVisible = false
                     

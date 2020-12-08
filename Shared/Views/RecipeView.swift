@@ -14,7 +14,7 @@ struct RecipeView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(recipe.name)
+                Text(recipe.recipeName)
                     .fontWeight(.bold)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -24,7 +24,7 @@ struct RecipeView: View {
                 
             }
             HStack {
-                Text(recipe.style)
+                Text(recipe.recipeStyle)
                     .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
@@ -32,22 +32,6 @@ struct RecipeView: View {
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
                 Spacer()
-            }
-            HStack {
-                Text("ABV: \(recipe.abv)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .truncationMode(.middle)
-                Spacer()
-                Text("IBU: \(recipe.ibu)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .truncationMode(.middle)
-                Spacer()
-                Text("Color: \(recipe.color)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .truncationMode(.middle)
             }
         }
     }
