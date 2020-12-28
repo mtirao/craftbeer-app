@@ -45,6 +45,8 @@ struct IngredientView: View {
                     .foregroundColor(Color.black)
                 Spacer()
             }
+            
+            Divider()
         }
     }
 }

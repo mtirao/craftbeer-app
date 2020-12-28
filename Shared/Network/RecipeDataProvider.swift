@@ -16,6 +16,7 @@ class RecipeDataProvider: ObservableObject {
     @Published var ingredientList: [IngredientViewModel] = []
     @Published var stageList: [StageViewModel] = []
     
+    
     let updatedRecipe = PassthroughSubject<RecipeViewModel, Never> ()
     
     init() {
@@ -155,6 +156,33 @@ class RecipeDataProvider: ObservableObject {
             }
         }
         
+    }
+    
+    func delete(recipe: RecipeViewModel) {
+        AF.request(RecipeAPI.deleteRecipe(recipe: recipe.recipe)).responseDecodable{(response: DataResponse<Recipe, AFError>) in
+            
+            switch response.result {
+            case .success:
+                
+                var index = 0
+                for i in 0 ..< self.recipeList.count {
+                    if self.recipeList[i].recipeId == recipe.recipeId {
+                        index = i
+                    }
+                }
+                
+                self.recipeList.remove(at: index)
+                /*if let recipe = response.value {
+                    let recipeViewModel = RecipeViewModel(recipe: recipe)
+                    self?.recipeList.append(recipeViewModel)
+                   
+                }*/
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
     }
 }
 

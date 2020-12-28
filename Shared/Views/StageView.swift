@@ -38,6 +38,7 @@ struct StageView: View {
                     .foregroundColor(Color.black)
                 Spacer()
             }
+            Divider()
         }
     }
 }

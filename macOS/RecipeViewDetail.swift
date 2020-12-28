@@ -84,14 +84,15 @@ struct RecipeViewDetail: View {
                             .environmentObject(self.recipes)
                     }
                 }
+                
                 List(recipes.stageList) {item in
                     StageView(stage: item)
-                   
                 }
             }
             
             Spacer()
         }.padding()
+        .background(Color("color_grayscale_200"))
         .onAppear() {
             self.recipes.fetchAll(recipe: recipe.recipeId!)
         }
@@ -114,7 +115,7 @@ struct RecipeViewDetail: View {
     }
     
     private func deleteRecipe() {
-        
+        self.recipes.delete(recipe: self.recipe)
     }
     
     init(recipe: RecipeViewModel) {

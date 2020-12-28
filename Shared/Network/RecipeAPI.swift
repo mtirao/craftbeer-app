@@ -20,6 +20,8 @@ enum RecipeAPI: ApiConfiguration {
     case postIngredient(ingredient: Ingredient)
     case postStage(stage: Stage)
     
+    case deleteRecipe(recipe: Recipe)
+    
     var param: Parameters? {
         switch self {
         case .fetchRecipes:
@@ -35,6 +37,8 @@ enum RecipeAPI: ApiConfiguration {
         case .postIngredient:
             return nil
         case .postStage:
+            return nil
+        case .deleteRecipe:
             return nil
         }
     }
@@ -55,6 +59,8 @@ enum RecipeAPI: ApiConfiguration {
             return .post
         case .postStage:
             return .post
+        case .deleteRecipe:
+            return .delete
         }
     }
     
@@ -70,7 +76,7 @@ enum RecipeAPI: ApiConfiguration {
             return url
         case .updateRecipe(let recipe):
             let id = recipe.id ?? -1
-            let url = "/craftbeer/recipe/\(id))"
+            let url = "/craftbeer/recipe/\(id)"
             return url
         case .postRecipe:
             let url = "/craftbeer/recipe"
@@ -80,6 +86,10 @@ enum RecipeAPI: ApiConfiguration {
             return url
         case .postStage:
             let url = "/craftbeer/stage"
+            return url
+        case .deleteRecipe(let recipe):
+            let id = recipe.id ?? -1
+            let url = "/craftbeer/recipe/\(id)"
             return url
         }
     }
