@@ -29,11 +29,11 @@ class RecipeViewModel: Identifiable, ObservableObject {
         return recipe
     }
     
-    @Published var recipeName: String
-    @Published var recipeStyle: String
-    @Published var recipeAbv: String
-    @Published var recipeColor: String
-    @Published var recipeIbu: String
+    private(set) var recipeName: String
+    private(set) var recipeStyle: String
+    private(set) var recipeAbv: String
+    private(set) var recipeColor: String
+    private(set) var recipeIbu: String
     
     let recipeId: Int?
     
@@ -59,6 +59,15 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeIbu = "0"
     }
     
+    init(recipeId: Int?) {
+        self.recipeId = recipeId
+        self.recipeName = ""
+        self.recipeStyle = ""
+        self.recipeAbv = "0"
+        self.recipeColor = "0"
+        self.recipeIbu = "0"
+    }
+    
     func name(recipe: String) -> RecipeViewModel {
         
         self.recipeName = recipe
@@ -73,7 +82,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
     
     func abv(recipe: String) -> RecipeViewModel {
         
-        self.recipeAbv = recipe
+        self.recipeAbv = recipe.replacingOccurrences(of: ",", with: "")
         return self
     }
     

@@ -24,7 +24,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(recipes.recipeList) { item in
-                    NavigationLink(destination: RecipeViewDetail(recipe: item)) {
+                    NavigationLink(destination: RecipeViewDetail(recipe: item).environmentObject(recipes)) {
                         RecipeView(recipe: item)
                     }
                 }.onDelete(perform: deleteItems)

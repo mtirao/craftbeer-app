@@ -10,17 +10,27 @@ import SwiftUI
 
 struct RecipeViewDetail: View {
     
-    @ObservedObject var recipe: RecipeViewModel
     
-    @EnvironmentObject  var recipes : RecipeDataProvider  //= RecipeDataProvider()
+    @EnvironmentObject var recipes : RecipeDataProvider //= RecipeDataProvider()
+    
     
     @State private var showingIngredientSheet = false
     @State private var showingStageSheet = false
     
+    @State private var recipeName : String
+    @State private var recipeStyle : String
+    @State private var recipeAbv : String
+    @State private var recipeIbu : String
+    @State private var recipeColor : String
+    
+    private let recipe: RecipeViewModel
+
+    private let recipeProvider : RecipeDataProvider = RecipeDataProvider()
+    
     var body: some View {
         VStack {
             HStack {
-                TextField("Recipe Name", text: self.$recipe.recipeName)
+                TextField("Recipe Name", text: $recipeName)
                     .font(.title)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -37,7 +47,7 @@ struct RecipeViewDetail: View {
                 
             }
             HStack {
-                TextField("Recipe Style", text: self.$recipe.recipeStyle)
+                TextField("Recipe Style", text: $recipeStyle)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -48,11 +58,11 @@ struct RecipeViewDetail: View {
             }
             HStack {
                 
-                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: self.$recipe.recipeAbv)
+                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: $recipeAbv)
                 Spacer()
-                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: self.$recipe.recipeIbu)
+                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: $recipeIbu)
                 Spacer()
-                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: self.$recipe.recipeColor)
+                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: $recipeColor)
                 Spacer()
             }
             Divider()
@@ -67,7 +77,7 @@ struct RecipeViewDetail: View {
                             .environmentObject(self.recipes)
                     }
                 }
-                List(recipes.ingredientList) {item in
+                List(recipeProvider.ingredientList) {item in
                     IngredientView(ingredient: item)
                    
                 }
@@ -85,7 +95,7 @@ struct RecipeViewDetail: View {
                     }
                 }
                 
-                List(recipes.stageList) {item in
+                List(recipeProvider.stageList) {item in
                     StageView(stage: item)
                 }
             }
@@ -94,7 +104,7 @@ struct RecipeViewDetail: View {
         }.padding()
         .background(Color("color_grayscale_200"))
         .onAppear() {
-            self.recipes.fetchAll(recipe: recipe.recipeId!)
+            self.recipeProvider.fetchAll(recipe: recipe.recipeId!)
         }
         .onReceive(self.recipes.updatedRecipe) {recipe in
             
@@ -111,7 +121,15 @@ struct RecipeViewDetail: View {
     }
     
     private func saveRecipe() {
-        self.recipes.updateRecipe(recipe: self.recipe)
+        
+        let aux = RecipeViewModel(recipeId: self.recipe.recipeId)
+            .abv(recipe: self.recipeAbv)
+            .color(recipe: self.recipeColor)
+            .ibu(recipe: self.recipeIbu)
+            .name(recipe: self.recipeName)
+            .style(recipe: self.recipeStyle)
+        
+        self.recipes.updateRecipe(recipe: aux)
     }
     
     private func deleteRecipe() {
@@ -120,7 +138,12 @@ struct RecipeViewDetail: View {
     
     init(recipe: RecipeViewModel) {
         self.recipe = recipe
-        
+        self.recipeName = recipe.recipeName
+        self.recipeStyle = recipe.recipeStyle
+        self.recipeAbv = recipe.recipeAbv
+        self.recipeIbu = recipe.recipeIbu
+        self.recipeColor = recipe.recipeColor
     }
+   
 }
 

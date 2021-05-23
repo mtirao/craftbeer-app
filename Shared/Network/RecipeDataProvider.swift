@@ -32,7 +32,7 @@ class RecipeDataProvider: ObservableObject {
             case .success:
                 if let recipe = response.value {
                     let recipeViewModel = RecipeViewModel(recipe: recipe)
-                    self?.recipeList.append(recipeViewModel)
+                    self?.updatedRecipe.send(recipeViewModel)
                    
                 }
                 break;
@@ -52,7 +52,8 @@ class RecipeDataProvider: ObservableObject {
             case .success:
                 if let recipe = response.value {
                     let recipeViewModel = RecipeViewModel(recipe: recipe)
-                    self?.updatedRecipe.send(recipeViewModel)
+                    self?.recipeList.append(recipeViewModel)
+                    //self?.updatedRecipe.send(recipeViewModel)
                 }
                 break;
             case .failure(let error):
