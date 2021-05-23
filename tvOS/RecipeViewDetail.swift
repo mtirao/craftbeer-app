@@ -17,7 +17,7 @@ struct RecipeViewDetail: View {
     var body: some View {
         VStack {
             HStack {
-                Text(self.recipe.name)
+                Text(self.recipe.recipeName)
                     .font(.title)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -27,7 +27,7 @@ struct RecipeViewDetail: View {
                 
             }
             HStack {
-                Text(self.recipe.style)
+                Text(self.recipe.recipeStyle)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -38,21 +38,21 @@ struct RecipeViewDetail: View {
             }
             HStack {
                 
-                Text("ABV: \(self.recipe.abv)")
+                Text("ABV: \(self.recipe.recipeAbv)")
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.gray)
                     .textFieldStyle(PlainTextFieldStyle())
                 Spacer()
-                Text("IBU: \(self.recipe.ibu)")
+                Text("IBU: \(self.recipe.recipeIbu)")
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.gray)
                     .textFieldStyle(PlainTextFieldStyle())
                 Spacer()
-                Text("Color: \(self.recipe.color)")
+                Text("Color: \(self.recipe.recipeColor)")
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -110,7 +110,7 @@ struct RecipeViewDetail: View {
     init(recipe: RecipeViewModel) {
         self.recipe = recipe
         
-        self.recipes.fetchAll(recipe: recipe.recipeId)
+        self.recipes.fetchAll(recipe: recipe.recipeId ?? 0)
     }
 }
 
