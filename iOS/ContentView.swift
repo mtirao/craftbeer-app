@@ -6,79 +6,63 @@
 //
 
 import SwiftUI
-import CoreData
+import PopupView
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
     
+    private var currentRecipe = -1
     
     @ObservedObject var recipes = RecipeDataProvider()
     
+    @State private var searchText = ""
+    @State private var showingSheet = false
+    
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(recipes.recipeList) { item in
-                    NavigationLink(destination: RecipeViewDetail(recipe: item).environmentObject(recipes)) {
-                        RecipeView(recipe: item)
+        VStack {
+            NavigationView {
+                
+                List {
+                    ForEach(recipes.recipeList.indices) { index in
+                        let detail = recipes.recipeList[index]
+                        NavigationLink(
+                            destination:
+                                RecipeViewDetail(recipe:detail).environmentObject(recipes)) {
+                            RecipeView(recipe: recipes.recipeList[index])
+                        }
                     }
-                }.onDelete(perform: deleteItems)
-               
-            }.navigationBarItems(trailing:
-                                    Button(action: addItem) {
-                                        Label("", systemImage: "plus")
-            })
-            .navigationTitle("Craftbeer")
-            .id(UUID())
-        }.onAppear() {
-            self.recipes.fetchAll()
+                   
+                }.id(UUID())
+                .navigationTitle("Craftbeer")
+                .sheet(isPresented: $showingSheet){
+                    RecipeSheet(isVisible: self.$showingSheet)
+                        .environmentObject(self.recipes)
+                }
+                .toolbar{
+                    Button(action: {
+                        self.showingSheet = true
+                    }){
+                        Label("New Recipe", systemImage: "plus")
+                    }.padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .buttonStyle(BorderlessButtonStyle())
+                }
+    
+            }.onAppear() {
+                self.recipes.fetchAll()
+            }
+            
         }
         
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+    private mutating func selectCurrentRecipe(index: Int) {
+        self.currentRecipe = index
     }
+    
+    
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -47,6 +47,7 @@ struct ContentView: View {
                         .sheet(isPresented: $showingSheet) {
                             RecipeSheet(isVisible: self.$showingSheet)
                                 .environmentObject(self.recipes)
+                                .frame(width: 200, height: 190)
                         }
                         
                         TextField("Search...", text: self.$searchText).padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)

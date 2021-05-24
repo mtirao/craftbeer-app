@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct RecipeSheet: View {
     
     @Binding var isVisible: Bool
@@ -67,7 +69,7 @@ struct RecipeSheet: View {
                 
                 
             }
-        }.frame(width: 200, height: 190)
+        }
         .padding()
     }
     

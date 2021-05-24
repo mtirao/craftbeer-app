@@ -46,7 +46,9 @@ struct IngredientView: View {
                 Spacer()
             }
             
+            #if os(macOS)
             Divider()
+            #endif
         }
     }
 }

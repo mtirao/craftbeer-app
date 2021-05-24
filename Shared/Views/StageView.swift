@@ -38,7 +38,9 @@ struct StageView: View {
                     .foregroundColor(Color.black)
                 Spacer()
             }
+            #if os(macOS)
             Divider()
+            #endif
         }
     }
 }
