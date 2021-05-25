@@ -28,12 +28,16 @@ struct ContentView: View {
                                 destination:
                                     RecipeViewDetail(recipe:detail).environmentObject(recipes)) {
                                 RecipeView(recipe: recipes.recipeList[index])
+                                    .frame(height:80)
                             }
+                            Divider()
                         }
                        
                     }.id(UUID())
                     .navigationTitle("Craftbeer")
-                    .listStyle(SidebarListStyle())
+                    .listStyle(PlainListStyle())
+                    .background(Color.white)
+                    
                     
                     HStack {
                         
@@ -57,7 +61,7 @@ struct ContentView: View {
                 
             }.onAppear() {
                 self.recipes.fetchAll()
-            }
+            }.background(Color.white)
             
         }
         

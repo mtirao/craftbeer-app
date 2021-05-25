@@ -29,6 +29,7 @@ struct ContentView: View {
                             destination:
                                 RecipeViewDetail(recipe:detail).environmentObject(recipes)) {
                             RecipeView(recipe: recipes.recipeList[index])
+                                .frame(height:80)
                         }
                     }
                    
@@ -46,6 +47,7 @@ struct ContentView: View {
                     }.padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .buttonStyle(BorderlessButtonStyle())
                 }
+                .listStyle(PlainListStyle())
     
             }.onAppear() {
                 self.recipes.fetchAll()

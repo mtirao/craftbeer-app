@@ -23,6 +23,7 @@ struct RecipeView: View {
                 
                 
             }
+            
             HStack {
                 Text(recipe.recipeStyle)
                     .font(.caption)
@@ -33,6 +34,34 @@ struct RecipeView: View {
                     .foregroundColor(Color.black)
                 Spacer()
             }
+            .padding([.bottom], 4)
+            
+            #if os(iOS) || os(macOS)
+                HStack {
+                    
+                    VStack {
+                        Text("ABV")
+                            .font(.caption)
+                        Text(ABVFormatter().string(for: recipe.recipeAbv) ?? "")
+                            .font(.caption)
+                    }
+                    Spacer()
+                    
+                    VStack {
+                        Text("IBU")
+                            .font(.caption)
+                        Text(IBUFormatter().string(for: recipe.recipeIbu) ?? "")
+                            .font(.caption)
+                    }
+                    Spacer()
+                    VStack {
+                        Text("Color")
+                            .font(.caption)
+                        Text(ColorFormatter().string(for: recipe.recipeColor) ?? "")
+                            .font(.caption)
+                    }
+                }
+            #endif
         }
     }
 }

@@ -7,17 +7,30 @@
 
 import SwiftUI
 
+
 struct RecipeViewDetail: View {
     
-    let recipe: RecipeViewModel
+    
+    @EnvironmentObject var recipes : RecipeDataProvider //= RecipeDataProvider()
     
     
-    @ObservedObject var recipes = RecipeDataProvider()
+    @State private var showingIngredientSheet = false
+    @State private var showingStageSheet = false
+    
+    @State private var recipeName : String
+    @State private var recipeStyle : String
+    @State private var recipeAbv : String
+    @State private var recipeIbu : String
+    @State private var recipeColor : String
+    
+    private let recipe: RecipeViewModel
+
+    @ObservedObject var recipeProvider : RecipeDataProvider = RecipeDataProvider()
     
     var body: some View {
         VStack {
             HStack {
-                Text(self.recipe.recipeName)
+                TextField("Recipe Name", text: $recipeName)
                     .font(.title)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -25,9 +38,16 @@ struct RecipeViewDetail: View {
                     .textFieldStyle(PlainTextFieldStyle())
                 Spacer()
                 
+                Button(action: saveRecipe) {
+                    Image(systemName: "square.and.arrow.down")
+                }
+                Button(action: deleteRecipe) {
+                    Image(systemName: "trash")
+                }
+                
             }
             HStack {
-                Text(self.recipe.recipeStyle)
+                TextField("Recipe Style", text: $recipeStyle)
                     .font(.headline)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
@@ -38,39 +58,29 @@ struct RecipeViewDetail: View {
             }
             HStack {
                 
-                Text("ABV: \(self.recipe.recipeAbv)")
-                    .font(.headline)
-                    .truncationMode(.tail)
-                    .frame(minWidth: 20.0)
-                    .foregroundColor(Color.gray)
-                    .textFieldStyle(PlainTextFieldStyle())
+                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: $recipeAbv)
+                    .foregroundColor(Color.black)
                 Spacer()
-                Text("IBU: \(self.recipe.recipeIbu)")
-                    .font(.headline)
-                    .truncationMode(.tail)
-                    .frame(minWidth: 20.0)
-                    .foregroundColor(Color.gray)
-                    .textFieldStyle(PlainTextFieldStyle())
+                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: $recipeIbu)
+                    .foregroundColor(Color.black)
                 Spacer()
-                Text("Color: \(self.recipe.recipeColor)")
-                    .font(.headline)
-                    .truncationMode(.tail)
-                    .frame(minWidth: 20.0)
-                    .foregroundColor(Color.gray)
-                    .textFieldStyle(PlainTextFieldStyle())
+                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: $recipeColor)
+                    .foregroundColor(Color.black)
                 Spacer()
             }
             Divider()
             VStack {
                 HStack {
                     Text("Ingredients")
-                        .font(.headline)
-                        .truncationMode(.tail)
-                        .frame(minWidth: 20.0)
-                        .foregroundColor(Color.black)
                     Spacer()
+                    Button(action: addIngredient) {
+                        Image(systemName: "plus")
+                    }.sheet(isPresented: $showingIngredientSheet) {
+                        IngredientSheet(isVisible: self.$showingIngredientSheet, recipe: self.recipe)
+                            .environmentObject(self.recipes)
+                    }
                 }
-                List(recipes.ingredientList) {item in
+                List(recipeProvider.ingredientList) {item in
                     IngredientView(ingredient: item)
                    
                 }
@@ -79,38 +89,65 @@ struct RecipeViewDetail: View {
             VStack {
                 HStack {
                     Text("Stages")
-                        .font(.headline)
-                        .truncationMode(.tail)
-                        .frame(minWidth: 20.0)
-                        .foregroundColor(Color.black)
                     Spacer()
+                    Button(action: addStage) {
+                        Image(systemName: "plus")
+                    }.sheet(isPresented: $showingStageSheet) {
+                        StageSheet(isVisible: self.$showingStageSheet, recipe: self.recipe)
+                            .environmentObject(self.recipes)
+                    }
                 }
-                List(recipes.ingredientList) {item in
-                    IngredientView(ingredient: item)
-                   
+                
+                List(recipeProvider.stageList) {item in
+                    StageView(stage: item)
                 }
             }
             
             Spacer()
         }.padding()
+        .background(Color("color_grayscale_200"))
+        .onAppear() {
+            self.recipeProvider.fetchAll(recipe: recipe.recipeId!)
+        }
+        .onReceive(self.recipes.updatedRecipe) {recipe in
+            
+            self.recipes.fetchAll()
+        }
+        
     }
     
     private func addStage() {
-        
+        self.showingStageSheet = true
     }
     
     private func addIngredient() {
-        
+        self.showingIngredientSheet = true
     }
     
     private func saveRecipe() {
         
+        let aux = RecipeViewModel(recipeId: self.recipe.recipeId)
+            .abv(recipe: self.recipeAbv)
+            .color(recipe: self.recipeColor)
+            .ibu(recipe: self.recipeIbu)
+            .name(recipe: self.recipeName)
+            .style(recipe: self.recipeStyle)
+        
+        self.recipes.updateRecipe(recipe: aux)
+    }
+    
+    private func deleteRecipe() {
+        self.recipes.delete(recipe: self.recipe)
     }
     
     init(recipe: RecipeViewModel) {
         self.recipe = recipe
-        
-        self.recipes.fetchAll(recipe: recipe.recipeId ?? 0)
+        self.recipeName = recipe.recipeName
+        self.recipeStyle = recipe.recipeStyle
+        self.recipeAbv = recipe.recipeAbv
+        self.recipeIbu = recipe.recipeIbu
+        self.recipeColor = recipe.recipeColor
     }
+   
 }
 
