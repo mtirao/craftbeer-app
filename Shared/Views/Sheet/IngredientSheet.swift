@@ -99,11 +99,14 @@ struct IngredientSheet: View {
     func saveIngredient() {
         self.isVisible = false
         
-        let ingredient = IngredientViewModel(recipe: self.recipe.recipeId)
-            .name(ingredient: self.name)
-            .value(value: self.value)
-            .unit(unit: self.unit)
-            .type(type: self.types[self.type])
+        
+        
+        let ingredient = IngredientViewModel(ingredient: Ingredient(id: nil,
+                        recipe: self.recipe.recipeId,
+                        name: self.name,
+                        type: TypeEnum(rawValue: self.types[self.type].lowercased()),
+                        unit: UnitEnum(rawValue: self.unit + 1),
+                        value: Int(self.value)))
         
                            
         self.recipes.post(ingredient: ingredient)

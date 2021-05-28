@@ -52,8 +52,7 @@ struct ContentView: View {
             }.onAppear() {
                 self.recipes.fetchAll()
             }
-            
-        }
+        }.accentColor(Color("wannaka_red"))
         
     }
 

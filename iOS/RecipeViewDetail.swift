@@ -28,89 +28,90 @@ struct RecipeViewDetail: View {
     @ObservedObject var recipeProvider : RecipeDataProvider = RecipeDataProvider()
     
     var body: some View {
-        VStack {
-            HStack {
+        List {
+            Section(header: Text("Recipe")) {
                 TextField("Recipe Name", text: $recipeName)
                     .font(.title)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
                     .textFieldStyle(PlainTextFieldStyle())
-                Spacer()
                 
+                VStack {
+                    HStack {
+                        Text("Style")
+                        Spacer()
+                    }
+                    TextField("Recipe Style", text: $recipeStyle)
+                        .font(.headline)
+                        .truncationMode(.tail)
+                        .frame(minWidth: 20.0)
+                        .foregroundColor(Color.gray)
+                        .textFieldStyle(PlainTextFieldStyle())
+                }
+                
+                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: $recipeAbv)
+                
+                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: $recipeIbu)
+                
+                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: $recipeColor)
+            }
+            
+            
+            Section(header: sectionHeader(title: "Ingredients", action: addIngredient)) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(recipeProvider.ingredientList, id: \.self) {item in
+                            IngredientView(ingredient: item)
+                                .padding([.top, .bottom, .leading, .trailing], 4)
+                        }
+                    }
+                }
+                
+            }.frame(minHeight:40)
+            
+            
+            Section(header: sectionHeader(title: "Stages", action: addStage)) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(recipeProvider.stageList, id: \.self) {item in
+                            StageView(stage: item)
+                                .padding([.top, .bottom, .leading, .trailing], 4)
+                        }
+                    }
+                }
+                
+            }.frame(minHeight:40)
+            
+            
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar{
+            HStack {
                 Button(action: saveRecipe) {
                     Image(systemName: "square.and.arrow.down")
                 }
                 Button(action: deleteRecipe) {
                     Image(systemName: "trash")
                 }
-                
             }
-            HStack {
-                TextField("Recipe Style", text: $recipeStyle)
-                    .font(.headline)
-                    .truncationMode(.tail)
-                    .frame(minWidth: 20.0)
-                    .foregroundColor(Color.gray)
-                    .textFieldStyle(PlainTextFieldStyle())
-                Spacer()
-                
-            }
-            HStack {
-                
-                FieldView(text: "ABV", formatter: ABVFormatter(), fieldText: $recipeAbv)
-                Spacer()
-                FieldView(text: "IBU", formatter: IBUFormatter(), fieldText: $recipeIbu)
-                Spacer()
-                FieldView(text: "Color", formatter: ColorFormatter(), fieldText: $recipeColor)
-                Spacer()
-            }
-            Divider()
-            VStack {
-                HStack {
-                    Text("Ingredients")
-                    Spacer()
-                    Button(action: addIngredient) {
-                        Image(systemName: "plus")
-                    }.sheet(isPresented: $showingIngredientSheet) {
-                        IngredientSheet(isVisible: self.$showingIngredientSheet, recipe: self.recipe)
-                            .environmentObject(self.recipes)
-                    }
-                }
-                List(recipeProvider.ingredientList) {item in
-                    IngredientView(ingredient: item)
-                   
-                }
-            }
-            Divider()
-            VStack {
-                HStack {
-                    Text("Stages")
-                    Spacer()
-                    Button(action: addStage) {
-                        Image(systemName: "plus")
-                    }.sheet(isPresented: $showingStageSheet) {
-                        StageSheet(isVisible: self.$showingStageSheet, recipe: self.recipe)
-                            .environmentObject(self.recipes)
-                    }
-                }
-                
-                List(recipeProvider.stageList) {item in
-                    StageView(stage: item)
-                }
-            }
-            
-            Spacer()
-        }.padding()
-        .background(Color("color_grayscale_200"))
-        .onAppear() {
+        }.onAppear() {
             self.recipeProvider.fetchAll(recipe: recipe.recipeId!)
         }
         .onReceive(self.recipes.updatedRecipe) {recipe in
             
             self.recipes.fetchAll()
-        }.navigationBarTitleDisplayMode(.inline)
-        
+        }.accentColor(Color("wannaka_red"))
+    }
+    
+    @ViewBuilder func sectionHeader(title: String, action: @escaping () -> Void) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Button(action: action) {
+                Image(systemName: "plus")
+            }.foregroundColor(Color("wannaka_red"))
+        }
     }
     
     private func addStage() {

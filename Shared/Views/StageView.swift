@@ -15,32 +15,29 @@ struct StageView: View {
         VStack {
             HStack {
                 Text(stage.typeT)
-                    .font(.headline)
+                    .font(.footnote)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
-                Spacer()
             }
             HStack {
                 Text("\(stage.tempT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
                 Text("\(stage.timeT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
-                Spacer()
             }
-            #if os(macOS)
-            Divider()
-            #endif
-        }
+        }.frame(width: 100, height: 90)
+        .background(Color("color_grayscale_200"))
+        .cornerRadius(16)
     }
 }

@@ -7,7 +7,10 @@
 
 import Foundation
 
-class IngredientViewModel: Identifiable {
+struct IngredientViewModel: Identifiable, Hashable {
+    
+    var id = UUID()
+    
 
     var ingredient: Ingredient {
         
@@ -92,27 +95,27 @@ class IngredientViewModel: Identifiable {
     }
     
     //MARK:- Builder pattern function
-    func recipe(id: Int) -> IngredientViewModel {
+    mutating func recipe(id: Int) -> IngredientViewModel {
         self.recipe = id
         return self
     }
     
-    func name(ingredient: String) -> IngredientViewModel {
+    mutating func name(ingredient: String) -> IngredientViewModel {
         self.ingredientN = ingredient
         return self
     }
     
-    func value(value: String) -> IngredientViewModel {
+    mutating func value(value: String) -> IngredientViewModel {
         self.ingredientV = Int(value)
         return self
     }
     
-    func unit(unit: Int) -> IngredientViewModel {
+    mutating func unit(unit: Int) -> IngredientViewModel {
         self.ingredientU = UnitEnum(rawValue: unit + 1)
         return self
     }
     
-    func type(type: String) -> IngredientViewModel {
+    mutating func type(type: String) -> IngredientViewModel {
         self.ingredientT = TypeEnum(rawValue: type.lowercased())
         return self
     }

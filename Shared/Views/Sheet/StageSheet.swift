@@ -86,10 +86,12 @@ struct StageSheet: View {
     }
     
     func saveStage() {
-        let stage = StageViewModel(recipe: self.recipe.recipeId)
-            .type(type: self.stage)
-            .temp(temp: self.temp)
-            .time(time: self.time)
+        
+        let stage = StageViewModel(stage: Stage(id: nil,
+                                                recipe: self.recipe.recipeId,
+                                                type: StageEnum(rawValue: self.stage),
+                                                temp: Int(self.temp),
+                                                time: Int(self.time)))
         
         self.recipes.post(stage: stage)
         

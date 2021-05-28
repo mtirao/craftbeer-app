@@ -7,8 +7,10 @@
 
 import Foundation
 
-class StageViewModel: Identifiable {
+struct StageViewModel: Identifiable, Hashable {
 
+    var id = UUID()
+    
     var stage: Stage {
         
         let stag = Stage(id: self.stageId,
@@ -29,7 +31,6 @@ class StageViewModel: Identifiable {
   
     
     init(stage: Stage) {
-        
         self.stageId = stage.id
         self.stageRecipe = stage.recipe
         self.stageTypeT = stage.type
@@ -82,29 +83,6 @@ class StageViewModel: Identifiable {
             return "\(time) min"
         }
         return ""
-    }
-    
-    //MARK:- Builder pattern function
-    func recipe(id: Int) -> StageViewModel {
-        self.stageRecipe = id
-        return self
-    }
-    
-    func type(type: Int) -> StageViewModel {
-        self.stageTypeT = StageEnum(rawValue: type + 1)
-        return self
-    }
-    
-    func temp(temp: String) -> StageViewModel {
-        let t = Int(temp)
-        self.stageTempT = t
-        return self
-    }
-    
-    func time(time: String) -> StageViewModel {
-        let t = Int(time)
-        self.stageTimeT = t
-        return self
     }
      
 }
