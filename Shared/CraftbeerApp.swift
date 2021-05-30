@@ -20,7 +20,7 @@ struct CraftbeerApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
             #else
                 ContentView()
-                    .frame(width: 1000, height: 700)
+                    .frame(width: 1000, height: 500)
                     .background(Color.white)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             #endif

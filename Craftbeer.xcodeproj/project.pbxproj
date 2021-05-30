@@ -86,6 +86,16 @@
 		DAC35959257D3AEF00197BA9 /* StageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC35958257D3A9800197BA9 /* StageSheet.swift */; };
 		DAC3595F257D3AF000197BA9 /* StageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC35958257D3A9800197BA9 /* StageSheet.swift */; };
 		DAC35965257D3AF300197BA9 /* StageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC35958257D3A9800197BA9 /* StageSheet.swift */; };
+		DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */; };
+		DAC94B352664433900BE3AD2 /* IngredientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */; };
+		DAC94B362664433900BE3AD2 /* IngredientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */; };
+		DAC94B372664433900BE3AD2 /* IngredientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */; };
+		DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */; };
+		DAC94B3A2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
+		DAC94B3B2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
+		DAC94B3C2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
+		DAC94B3D2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
+		DAC94B3E2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
 		DAC9C6B8265B219300AA4D26 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DAC9C6B7265B219300AA4D26 /* PopupView */; };
 		DACA0DC526571CFB00511337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACA0DC426571CFB00511337 /* Images.xcassets */; };
 		DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
@@ -150,6 +160,8 @@
 		DAB91D64255214050034089C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DAC35949257D284E00197BA9 /* IngredientSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSheet.swift; sourceTree = "<group>"; };
 		DAC35958257D3A9800197BA9 /* StageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSheet.swift; sourceTree = "<group>"; };
+		DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDataProvider.swift; sourceTree = "<group>"; };
+		DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageDataProvider.swift; sourceTree = "<group>"; };
 		DACA0DC426571CFB00511337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DAD437CA254A074D00CEA901 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
@@ -240,6 +252,8 @@
 				DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */,
 				DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */,
 				DA63ECDB25616252009F5FDB /* Stage.swift */,
+				DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */,
+				DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -603,6 +617,7 @@
 				DAB91D2525520F9C0034089C /* Persistence.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAB91D1325520F570034089C /* DataProvider.swift in Sources */,
+				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB91D1025520F570034089C /* Ingredient.swift in Sources */,
 				DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */,
 				DAB91D1425520F570034089C /* Recipe.swift in Sources */,
@@ -611,6 +626,7 @@
 				DA63ECE025616252009F5FDB /* Stage.swift in Sources */,
 				DAB91D2B25520FA00034089C /* Craftbeer.xcdatamodeld in Sources */,
 				DAB91D1525520F570034089C /* RecipeAPI.swift in Sources */,
+				DAC94B3E2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB91D0025520F450034089C /* RecipeView.swift in Sources */,
 				DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */,
 				DAB91D59255213BD0034089C /* RecipeViewDetail.swift in Sources */,
@@ -633,6 +649,7 @@
 				DAB277FE254F552C004F333C /* Ingredient.swift in Sources */,
 				DA63ECE7256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */,
+				DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */,
 				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
@@ -641,6 +658,7 @@
 				DA63ECDC25616252009F5FDB /* Stage.swift in Sources */,
 				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DAB8DC72254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAC94B3A2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB27805254F59BB004F333C /* IngredientViewModel.swift in Sources */,
 				DA63ECF72561E1AF009F5FDB /* StageView.swift in Sources */,
 				DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */,
@@ -663,6 +681,7 @@
 				DAB277FF254F552C004F333C /* Ingredient.swift in Sources */,
 				DA63ECE8256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAB2781D254F7BB1004F333C /* IngredientView.swift in Sources */,
+				DAC94B352664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */,
@@ -671,6 +690,7 @@
 				DA63ECDD25616252009F5FDB /* Stage.swift in Sources */,
 				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAB8DC73254630BA00AD4F03 /* DataProvider.swift in Sources */,
+				DAC94B3B2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB27806254F59BB004F333C /* IngredientViewModel.swift in Sources */,
 				DA63ECFD2561E1B0009F5FDB /* StageView.swift in Sources */,
 				DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */,
@@ -689,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB8DC862546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
+				DAC94B362664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
 				DA63ECDE25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -696,6 +717,7 @@
 				DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECE9256162E7009F5FDB /* StageViewModel.swift in Sources */,
+				DAC94B3C2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB8DC5925462B7A00AD4F03 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB8DC872546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
+				DAC94B372664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
 				DA63ECDF25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -712,6 +735,7 @@
 				DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECEA256162E7009F5FDB /* StageViewModel.swift in Sources */,
+				DAC94B3D2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB8DC5A25462B7A00AD4F03 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

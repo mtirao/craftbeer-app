@@ -11,6 +11,15 @@ struct IngredientView: View {
     
     let ingredient: IngredientViewModel
     
+    #if os(tvOS)
+        let width: CGFloat = 220
+        let height: CGFloat = 100
+    #else
+        let width: CGFloat = 100
+        let height: CGFloat = 90
+    #endif
+        
+    
     var body: some View {
         VStack {
             VStack {
@@ -41,7 +50,7 @@ struct IngredientView: View {
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
             }
-        }.frame(width: 100, height: 90)
+        }.frame(width: width, height: height)
         .background(Color("color_grayscale_200"))
         .cornerRadius(16)
     }

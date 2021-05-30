@@ -11,7 +11,7 @@ import SwiftUI
 struct RecipeViewDetail: View {
     
     
-    @EnvironmentObject var recipes : RecipeDataProvider //= RecipeDataProvider()
+    @EnvironmentObject var recipes : RecipeDataProvider 
     
     
     @State private var showingIngredientSheet = false
@@ -24,8 +24,9 @@ struct RecipeViewDetail: View {
     @State private var recipeColor : String
     
     private let recipe: RecipeViewModel
-
-    private let recipeProvider : RecipeDataProvider = RecipeDataProvider()
+    
+    @StateObject var ingredientProvider = IngredientDataProvider()
+    @StateObject var stageProvider = StageDataProvider()
     
     var body: some View {
         VStack {
@@ -66,51 +67,53 @@ struct RecipeViewDetail: View {
                 Spacer()
             }
             Divider()
-            VStack {
-                HStack {
-                    Text("Ingredients")
-                    Spacer()
-                    Button(action: addIngredient) {
-                        Image(systemName: "plus")
-                    }.sheet(isPresented: $showingIngredientSheet) {
-                        IngredientSheet(isVisible: self.$showingIngredientSheet, recipe: self.recipe)
-                            .environmentObject(self.recipes)
-                    }
-                }
-                List(recipeProvider.ingredientList) {item in
-                    IngredientView(ingredient: item)
-                   
-                }
-            }
-            Divider()
-            VStack {
-                HStack {
-                    Text("Stages")
-                    Spacer()
-                    Button(action: addStage) {
-                        Image(systemName: "plus")
-                    }.sheet(isPresented: $showingStageSheet) {
-                        StageSheet(isVisible: self.$showingStageSheet, recipe: self.recipe)
-                            .environmentObject(self.recipes)
+            
+            Section(header: sectionHeader(title: "Ingredients", action: addIngredient)) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(ingredientProvider.ingredientList, id: \.self) {item in
+                            IngredientView(ingredient: item)
+                                .padding([.top, .bottom, .leading, .trailing], 4)
+                        }
                     }
                 }
                 
-                List(recipeProvider.stageList) {item in
-                    StageView(stage: item)
+            }.frame(minHeight:40)
+            
+            
+            Section(header: sectionHeader(title: "Stages", action: addStage)) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(stageProvider.stageList, id: \.self) {item in
+                            StageView(stage: item)
+                                .padding([.top, .bottom, .leading, .trailing], 4)
+                        }
+                    }
                 }
-            }
+                
+            }.frame(minHeight:40)
             
             Spacer()
         }.padding()
-        .background(Color("color_grayscale_200"))
-        .onAppear() {
-            self.recipeProvider.fetchAll(recipe: recipe.recipeId!)
-        }
-        .onReceive(self.recipes.updatedRecipe) {recipe in
-            
-            self.recipes.fetchAll()
+        .background(Color.white)
+        .onAppear{
+            if let recipeId = recipe.recipeId {
+                self.ingredientProvider.fetchAll(recipe: recipeId)
+                self.stageProvider.fetchAll(recipe: recipeId)
+            }
         }
     }
+    
+    @ViewBuilder func sectionHeader(title: String, action: @escaping () -> Void) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Button(action: action) {
+                Image(systemName: "plus")
+            }.foregroundColor(Color("wannaka_red"))
+        }
+    }
+    
     
     private func addStage() {
         self.showingStageSheet = true

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RecipeViewDetail: View {
     
+    private let recipe: RecipeViewModel
     
     @EnvironmentObject var recipes : RecipeDataProvider //= RecipeDataProvider()
     
@@ -23,9 +24,10 @@ struct RecipeViewDetail: View {
     @State private var recipeIbu : String
     @State private var recipeColor : String
     
-    private let recipe: RecipeViewModel
 
-    @ObservedObject var recipeProvider : RecipeDataProvider = RecipeDataProvider()
+    @StateObject var ingredientProvider = IngredientDataProvider()
+    @StateObject var stageProvider = StageDataProvider()
+    
     
     var body: some View {
         List {
@@ -61,10 +63,20 @@ struct RecipeViewDetail: View {
             Section(header: sectionHeader(title: "Ingredients", action: addIngredient)) {
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(recipeProvider.ingredientList, id: \.self) {item in
+                        ForEach(self.ingredientProvider.ingredientList, id: \.self) {item in
                             IngredientView(ingredient: item)
                                 .padding([.top, .bottom, .leading, .trailing], 4)
                         }
+                    }.actionSheet(isPresented: $showingIngredientSheet) {
+                        ActionSheet(
+                            title: Text("Ingredients"),
+                            message: Text("Select ingredients type"),
+                            buttons: [ .default(Text("Malt")),
+                                       .default(Text("Hop")),
+                                       .default(Text("Yeast")),
+                                       .default(Text("Malt")),
+                                       .cancel(Text("Cancel"))]
+                        )
                     }
                 }
                 
@@ -74,10 +86,21 @@ struct RecipeViewDetail: View {
             Section(header: sectionHeader(title: "Stages", action: addStage)) {
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(recipeProvider.stageList, id: \.self) {item in
+                        ForEach(self.stageProvider.stageList, id: \.self) {item in
                             StageView(stage: item)
                                 .padding([.top, .bottom, .leading, .trailing], 4)
                         }
+                    }.actionSheet(isPresented: $showingStageSheet) {
+                        ActionSheet(
+                            title: Text("Stages"),
+                            message: Text("Select stages"),
+                            buttons: [ .default(Text("Mash")),
+                                       .default(Text("Liquor")),
+                                       .default(Text("Boil")),
+                                       .default(Text("Fermetation")),
+                                       .default(Text("Wash")),
+                                       .cancel(Text("Cancel"))]
+                        )
                     }
                 }
                 
@@ -95,8 +118,11 @@ struct RecipeViewDetail: View {
                     Image(systemName: "trash")
                 }
             }
-        }.onAppear() {
-            self.recipeProvider.fetchAll(recipe: recipe.recipeId!)
+        }.onAppear{
+            if let recipeId = recipe.recipeId {
+                self.ingredientProvider.fetchAll(recipe: recipeId)
+                self.stageProvider.fetchAll(recipe: recipeId)
+            }
         }
         .onReceive(self.recipes.updatedRecipe) {recipe in
             
@@ -145,6 +171,7 @@ struct RecipeViewDetail: View {
         self.recipeAbv = recipe.recipeAbv
         self.recipeIbu = recipe.recipeIbu
         self.recipeColor = recipe.recipeColor
+        
     }
    
 }
