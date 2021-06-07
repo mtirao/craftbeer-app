@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PopupView
+import PartialSheet
 
 struct ContentView: View {
     
@@ -27,7 +28,7 @@ struct ContentView: View {
                         let detail = recipes.recipeList[index]
                         NavigationLink(
                             destination:
-                                RecipeViewDetail(recipe:detail).environmentObject(recipes)) {
+                                RecipeViewDetail(recipe:detail)) {
                             RecipeView(recipe: recipes.recipeList[index])
                                 .frame(height:80)
                         }
@@ -51,7 +52,7 @@ struct ContentView: View {
     
             }.onAppear() {
                 self.recipes.fetchAll()
-            }
+            }.navigationViewStyle(StackNavigationViewStyle())
         }.accentColor(Color("wannaka_red"))
         
     }

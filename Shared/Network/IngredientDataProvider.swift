@@ -37,4 +37,23 @@ class IngredientDataProvider: ObservableObject {
             }
         }
     }
+    
+    func post(ingredient: IngredientViewModel) {
+        
+        AF.request(RecipeAPI.postIngredient(ingredient: ingredient.ingredient)).responseDecodable{[weak self](response: DataResponse<Ingredient, AFError>) in
+            
+            switch response.result {
+            case .success:
+                if let ingredient = response.value {
+                    let ingredientViewModel = IngredientViewModel(ingredient: ingredient)
+                    self?.ingredientList.append(ingredientViewModel)
+                    //self?.updatedRecipe.send(recipeViewModel)
+                }
+                break;
+            case .failure(let error):
+                print(error)
+                break;
+            }
+        }
+    }
 }

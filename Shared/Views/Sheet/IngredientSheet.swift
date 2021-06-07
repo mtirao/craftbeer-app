@@ -11,18 +11,19 @@ struct IngredientSheet: View {
     
     @Binding var isVisible: Bool
     
-    @State private var type: Int = 0
     @State private var name: String = ""
-    @State private var unit: Int = 0
     @State private var value: String = ""
     
     var types = ["Malt", "Yeast", "Water", "Hop"]
     var units = ["Kilo", "Grams", "Liter"]
     
     
-    @EnvironmentObject  var recipes : RecipeDataProvider 
+    @EnvironmentObject  var ingredientProvider : IngredientDataProvider
     
-    let recipe: RecipeViewModel
+    
+    let recipeId: Int
+    let unitType: UnitEnum
+    let type: TypeEnum
     
     var body: some View {
         VStack {
@@ -35,14 +36,6 @@ struct IngredientSheet: View {
                 Spacer()
             }) {
                 
-               
-                Picker("", selection: self.$type) {
-                    ForEach(0 ..< self.types.count, id:\.self) {index in
-                        Text(self.types[index]).tag(index)
-                    }
-                }
-                
-                
                 TextField("Name", text:$name)
                     .padding()
                     .overlay(
@@ -50,12 +43,6 @@ struct IngredientSheet: View {
                             .stroke(Color("wannaka_red"), lineWidth: 1)
                             .frame(height:40)
                     )
-                
-                Picker("", selection: self.$unit) {
-                    ForEach(0 ..< self.units.count, id:\.self) {index in
-                        Text(self.units[index]).tag(index)
-                    }
-                }
                 
                 TextField("Value", text:$value)
                     .padding()
@@ -102,13 +89,13 @@ struct IngredientSheet: View {
         
         
         let ingredient = IngredientViewModel(ingredient: Ingredient(id: nil,
-                        recipe: self.recipe.recipeId,
+                        recipe: self.recipeId,
                         name: self.name,
-                        type: TypeEnum(rawValue: self.types[self.type].lowercased()),
-                        unit: UnitEnum(rawValue: self.unit + 1),
+                        type: type  /*TypeEnum(rawValue: self.types[self.type].lowercased())*/,
+                        unit: unitType /*UnitEnum(rawValue: self.unit + 1)*/,
                         value: Int(self.value)))
         
                            
-        self.recipes.post(ingredient: ingredient)
+        self.ingredientProvider.post(ingredient: ingredient)
     }
 }

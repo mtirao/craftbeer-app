@@ -24,7 +24,9 @@ struct RecipeViewDetail: View {
     @State private var recipeIbu : String
     @State private var recipeColor : String
     
-
+    @State private var ingredientType = ""
+    @State private var stageType = ""
+    
     @StateObject var ingredientProvider = IngredientDataProvider()
     @StateObject var stageProvider = StageDataProvider()
     
@@ -71,10 +73,9 @@ struct RecipeViewDetail: View {
                         ActionSheet(
                             title: Text("Ingredients"),
                             message: Text("Select ingredients type"),
-                            buttons: [ .default(Text("Malt")),
-                                       .default(Text("Hop")),
-                                       .default(Text("Yeast")),
-                                       .default(Text("Malt")),
+                            buttons: [ .default(Text("Malt"){self.ingredientType = "malt"}),
+                                       .default(Text("Hop"){self.ingredientType = "hop"}),
+                                       .default(Text("Yeast"){self.ingredientType = "yeast"}),
                                        .cancel(Text("Cancel"))]
                         )
                     }
@@ -94,11 +95,11 @@ struct RecipeViewDetail: View {
                         ActionSheet(
                             title: Text("Stages"),
                             message: Text("Select stages"),
-                            buttons: [ .default(Text("Mash")),
-                                       .default(Text("Liquor")),
-                                       .default(Text("Boil")),
-                                       .default(Text("Fermetation")),
-                                       .default(Text("Wash")),
+                            buttons: [ .default(Text("Mash"){self.stageType = "mash"}),
+                                       .default(Text("Liquor"){self.stageType = "liquor"}),
+                                       .default(Text("Boil"){self.stageType = "boil"}),
+                                       .default(Text("Fermetation"){self.stageType = "fermentation"}),
+                                       .default(Text("Wash"){self.stageType = "wash"}),
                                        .cancel(Text("Cancel"))]
                         )
                     }
@@ -174,3 +175,4 @@ struct RecipeViewDetail: View {
     }
    
 }
+

@@ -78,7 +78,6 @@
 		DAB91D2B25520FA00034089C /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
 		DAB91D3225520FD20034089C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAB91D3125520FD20034089C /* Alamofire */; };
 		DAB91D3E255210B00034089C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
-		DAB91D59255213BD0034089C /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91D58255213BD0034089C /* RecipeViewDetail.swift */; };
 		DAB91D65255214060034089C /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91D64255214050034089C /* RecipeViewDetail.swift */; };
 		DAC3594A257D284E00197BA9 /* IngredientSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC35949257D284E00197BA9 /* IngredientSheet.swift */; };
 		DAC3594B257D284E00197BA9 /* IngredientSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC35949257D284E00197BA9 /* IngredientSheet.swift */; };
@@ -96,6 +95,12 @@
 		DAC94B3C2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
 		DAC94B3D2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
 		DAC94B3E2664466E00BE3AD2 /* StageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */; };
+		DAC94B45266586E900BE3AD2 /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B40266586E900BE3AD2 /* RecipeViewDetail.swift */; };
+		DAC94B4726666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
+		DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
+		DAC94B4926666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
+		DAC94B4A26666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
+		DAC94B4B26666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
 		DAC9C6B8265B219300AA4D26 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DAC9C6B7265B219300AA4D26 /* PopupView */; };
 		DACA0DC526571CFB00511337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACA0DC426571CFB00511337 /* Images.xcassets */; };
 		DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
@@ -156,12 +161,13 @@
 		DAB91CCA255208DF0034089C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAB91CCF255208E10034089C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAB91CD6255208E10034089C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB91D58255213BD0034089C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DAB91D64255214050034089C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DAC35949257D284E00197BA9 /* IngredientSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSheet.swift; sourceTree = "<group>"; };
 		DAC35958257D3A9800197BA9 /* StageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSheet.swift; sourceTree = "<group>"; };
 		DAC94B332664433900BE3AD2 /* IngredientDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDataProvider.swift; sourceTree = "<group>"; };
 		DAC94B392664466E00BE3AD2 /* StageDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageDataProvider.swift; sourceTree = "<group>"; };
+		DAC94B40266586E900BE3AD2 /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
+		DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		DACA0DC426571CFB00511337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DAD437CA254A074D00CEA901 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
@@ -302,10 +308,10 @@
 			isa = PBXGroup;
 			children = (
 				DACA0DC426571CFB00511337 /* Images.xcassets */,
-				DAB91D58255213BD0034089C /* RecipeViewDetail.swift */,
 				DAB91CCA255208DF0034089C /* ContentView.swift */,
 				DAB91CD6255208E10034089C /* Info.plist */,
 				DAB91CCE255208E10034089C /* Preview Content */,
+				DAC94B40266586E900BE3AD2 /* RecipeViewDetail.swift */,
 			);
 			path = tvOS;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				DAB91C71255206310034089C /* RecipeSheet.swift */,
 				DAC35958257D3A9800197BA9 /* StageSheet.swift */,
 				DAC35949257D284E00197BA9 /* IngredientSheet.swift */,
+				DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";
@@ -620,6 +627,7 @@
 				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB91D1025520F570034089C /* Ingredient.swift in Sources */,
 				DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */,
+				DAC94B45266586E900BE3AD2 /* RecipeViewDetail.swift in Sources */,
 				DAB91D1425520F570034089C /* Recipe.swift in Sources */,
 				DAB91D0125520F450034089C /* IngredientView.swift in Sources */,
 				DAC3594C257D284E00197BA9 /* IngredientSheet.swift in Sources */,
@@ -629,10 +637,10 @@
 				DAC94B3E2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB91D0025520F450034089C /* RecipeView.swift in Sources */,
 				DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */,
-				DAB91D59255213BD0034089C /* RecipeViewDetail.swift in Sources */,
 				DAB91D1225520F570034089C /* ApiConfiguration.swift in Sources */,
 				DAB91D0925520F4D0034089C /* RecipeViewModel.swift in Sources */,
 				DAB91CF925520F400034089C /* Formatter.swift in Sources */,
+				DAC94B4B26666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB91D0A25520F4D0034089C /* IngredientViewModel.swift in Sources */,
 				DAB91CCB255208DF0034089C /* ContentView.swift in Sources */,
 				DAB91D0325520F450034089C /* FieldView.swift in Sources */,
@@ -665,6 +673,7 @@
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAB91C72255206310034089C /* RecipeSheet.swift in Sources */,
 				DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAC94B4726666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */,
 				DAD437D2254A196E00CEA901 /* RecipeViewDetail.swift in Sources */,
@@ -697,6 +706,7 @@
 				DAB91D65255214060034089C /* RecipeViewDetail.swift in Sources */,
 				DADED326254317A700EB8BB0 /* ContentView.swift in Sources */,
 				DAB91C73255206310034089C /* RecipeSheet.swift in Sources */,
+				DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAB8DC5825462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA7CC6232550B2CD0095BE4A /* Formatter.swift in Sources */,
@@ -713,6 +723,7 @@
 				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
 				DA63ECDE25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAC94B4926666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
@@ -731,6 +742,7 @@
 				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
 				DA63ECDF25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
+				DAC94B4A26666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7E2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
@@ -770,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wanaka.Craftbeer;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wannaka.Craftbeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
@@ -793,7 +805,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wanaka.Craftbeer;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wannaka.Craftbeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;

@@ -15,7 +15,7 @@ struct StageView: View {
         let width: CGFloat = 220
         let height: CGFloat = 100
     #else
-        let width: CGFloat = 100
+        let width: CGFloat = 120
         let height: CGFloat = 90
     #endif
     

@@ -17,7 +17,8 @@ struct StageSheet: View {
     
     var stages = ["Mash", "Liquor", "Boil", "Fermetation", "Wash"]
     
-    let recipe: RecipeViewModel
+    let recipeId: Int
+    let stageType: StageEnum
 
     @EnvironmentObject  var recipes : RecipeDataProvider
     
@@ -25,18 +26,12 @@ struct StageSheet: View {
         VStack {
             
             Section(header: HStack(alignment: .top) {
-                Text("New Stage: ")
+                Text("New settings for stage " + stages[stageType.rawValue - 1] + ":")
                     .fontWeight(.bold)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                 Spacer()
             }) {
-                
-                Picker("", selection: self.$stage ) {
-                    ForEach(0 ..< self.stages.count, id:\.self) {index in
-                        Text(self.stages[index]).tag(index)
-                    }
-                }.frame(width: 190)
                 
                 TextField("Temp", text:$temp)
                     .padding()
@@ -88,9 +83,9 @@ struct StageSheet: View {
     func saveStage() {
         
         let stage = StageViewModel(stage: Stage(id: nil,
-                                                recipe: self.recipe.recipeId,
-                                                type: StageEnum(rawValue: self.stage),
-                                                temp: Int(self.temp),
+                                                recipe: self.recipeId,
+                                                type: stageType,
+                                                temp: (Int(self.temp) ?? 0) * 100,
                                                 time: Int(self.time)))
         
         self.recipes.post(stage: stage)

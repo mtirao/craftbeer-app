@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-
 struct RecipeViewDetail: View {
     
     private let recipe: RecipeViewModel
     
-    @EnvironmentObject var recipes : RecipeDataProvider //= RecipeDataProvider()
-    
+    @State private var showingAddIngredientSheet = false
+    @State private var showingAddStageSheet = false
     
     @State private var showingIngredientSheet = false
     @State private var showingStageSheet = false
@@ -24,10 +23,16 @@ struct RecipeViewDetail: View {
     @State private var recipeIbu : String
     @State private var recipeColor : String
     
-
+    @State private var ingredientType = ""
+    @State private var unitType = 0
+    
+    @State private var stageType: Int = 0
+    
+    
+    
     @StateObject var ingredientProvider = IngredientDataProvider()
     @StateObject var stageProvider = StageDataProvider()
-    
+    @StateObject var recipes : RecipeDataProvider = RecipeDataProvider()
     
     var body: some View {
         List {
@@ -60,7 +65,7 @@ struct RecipeViewDetail: View {
             }
             
             
-            Section(header: sectionHeader(title: "Ingredients", action: addIngredient)) {
+            Section(header: sectionHeader(title: "Ingredients", action: showAddIngredient)) {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(self.ingredientProvider.ingredientList, id: \.self) {item in
@@ -71,19 +76,29 @@ struct RecipeViewDetail: View {
                         ActionSheet(
                             title: Text("Ingredients"),
                             message: Text("Select ingredients type"),
-                            buttons: [ .default(Text("Malt")),
-                                       .default(Text("Hop")),
-                                       .default(Text("Yeast")),
-                                       .default(Text("Malt")),
+                            buttons: [ .default(Text("Malt")){self.addIngredient(type: "malt")},
+                                       .default(Text("Hop")){self.addIngredient(type: "hop")},
+                                       .default(Text("Yeast")){self.addIngredient(type: "yeast")},
+                                       .default(Text("Water")){self.addIngredient(type: "Water")},
                                        .cancel(Text("Cancel"))]
                         )
+                    }.sheet(isPresented: self.$showingAddIngredientSheet) {
+                        
+                        if let recipeId = self.recipe.recipeId, let unitType = UnitEnum(rawValue: self.unitType), let type = TypeEnum(rawValue: ingredientType)  {
+                            
+                            IngredientSheet(isVisible: self.$showingAddIngredientSheet,
+                                             recipeId: recipeId,
+                                             unitType: unitType,
+                                             type: type)
+                                .environmentObject(ingredientProvider)
+                        }
                     }
                 }
                 
             }.frame(minHeight:40)
             
             
-            Section(header: sectionHeader(title: "Stages", action: addStage)) {
+            Section(header: sectionHeader(title: "Stages", action: showAddStage)) {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(self.stageProvider.stageList, id: \.self) {item in
@@ -94,21 +109,29 @@ struct RecipeViewDetail: View {
                         ActionSheet(
                             title: Text("Stages"),
                             message: Text("Select stages"),
-                            buttons: [ .default(Text("Mash")),
-                                       .default(Text("Liquor")),
-                                       .default(Text("Boil")),
-                                       .default(Text("Fermetation")),
-                                       .default(Text("Wash")),
+                            buttons: [ .default(Text("Mash")){self.addStage(stage: 1)},
+                                       .default(Text("Liquor")){self.addStage(stage: 2)},
+                                       .default(Text("Boil")){self.addStage(stage: 3)},
+                                       .default(Text("Fermentation")){self.addStage(stage: 4)},
+                                       .default(Text("Wash")){self.addStage(stage: 5)},
                                        .cancel(Text("Cancel"))]
                         )
+                    }.sheet(isPresented: self.$showingAddStageSheet) {
+                        
+                        if let recipeId = self.recipe.recipeId, let stageType = StageEnum(rawValue: self.stageType)  {
+                            StageSheet(isVisible: self.$showingAddStageSheet,
+                                   recipeId: recipeId,
+                                   stageType: stageType)
+                                .environmentObject(self.recipes)
+                                .frame(height:300)
+                        }
                     }
                 }
                 
             }.frame(minHeight:40)
             
             
-        }
-        .navigationBarTitleDisplayMode(.inline)
+        }.navigationBarTitleDisplayMode(.inline)
         .toolbar{
             HStack {
                 Button(action: saveRecipe) {
@@ -130,6 +153,7 @@ struct RecipeViewDetail: View {
         }.accentColor(Color("wannaka_red"))
     }
     
+    
     @ViewBuilder func sectionHeader(title: String, action: @escaping () -> Void) -> some View {
         HStack {
             Text(title)
@@ -140,11 +164,47 @@ struct RecipeViewDetail: View {
         }
     }
     
-    private func addStage() {
+    private func addStage(stage: Int) {
+        self.showingStageSheet = false
+        
+        self.stageType = stage
+    
+        self.showingAddStageSheet = true
+    }
+    
+    private func addIngredient(type: String) {
+        self.showingIngredientSheet = false
+        
+        self.ingredientType = type
+        
+        switch(type) {
+        case "malt":
+            self.unitType = 1
+            break;
+        case "hop":
+            self.unitType = 1
+            break;
+        case "yeast":
+            self.unitType = 2
+            break;
+        case "water":
+            self.unitType = 3
+            break;
+        default:
+            self.unitType = 1
+            break;
+        }
+        
+       // self.stageType = stage
+    
+        self.showingAddIngredientSheet = true
+    }
+    
+    private func showAddStage() {
         self.showingStageSheet = true
     }
     
-    private func addIngredient() {
+    private func showAddIngredient() {
         self.showingIngredientSheet = true
     }
     
