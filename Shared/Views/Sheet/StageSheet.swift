@@ -35,6 +35,7 @@ struct StageSheet: View {
                 
                 TextField("Temp", text:$temp)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -43,6 +44,7 @@ struct StageSheet: View {
                
                 TextField("Ttime", text:$time)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)

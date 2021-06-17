@@ -35,8 +35,7 @@ struct ContentView: View {
                        
                     }.id(UUID())
                     .navigationTitle("Craftbeer")
-                    .listStyle(PlainListStyle())
-                    .background(Color.white)
+                    
                     
                     
                     HStack {
@@ -51,17 +50,20 @@ struct ContentView: View {
                         .sheet(isPresented: $showingSheet) {
                             RecipeSheet(isVisible: self.$showingSheet)
                                 .environmentObject(self.recipes)
-                                .frame(width: 200, height: 190)
+                                .frame(width: 420, height: 380)
                         }
                         
-                        TextField("Search...", text: self.$searchText).padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        TextField("Search...", text: self.$searchText)
+                            .padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(8)
+                            .frame(minHeight:30)
                     
                     }
                 }
                 
             }.onAppear() {
                 self.recipes.fetchAll()
-            }.background(Color.white)
+            }
             
         }
         

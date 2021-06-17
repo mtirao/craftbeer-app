@@ -38,6 +38,7 @@ struct IngredientSheet: View {
                 
                 TextField("Name", text:$name)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -46,6 +47,7 @@ struct IngredientSheet: View {
                 
                 TextField("Value", text:$value)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)

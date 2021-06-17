@@ -32,11 +32,24 @@ struct RecipeSheet: View {
                         .truncationMode(.tail)
                         .frame(minWidth: 20.0)
                     Spacer()
+                    
+                    #if os(macOS)
+                    Button(action: saveRecipe){
+                        Image(systemName: "tray.and.arrow.down")
+                    }.buttonStyle(BorderlessButtonStyle())
+                    
+                    Button(action: {
+                        self.isVisible = false
+                    }){
+                        Image(systemName: "xmark")
+                    }.buttonStyle(BorderlessButtonStyle())
+                    #endif
                 }
             ) {
                
                 TextField("Name", text:$name)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -44,6 +57,7 @@ struct RecipeSheet: View {
                     )
                 TextField("Style", text:$style)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -52,6 +66,7 @@ struct RecipeSheet: View {
             
                 TextField("IBU", text:$ibu)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -59,6 +74,7 @@ struct RecipeSheet: View {
                     )
                 TextField("ABV", text:$abv)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -66,6 +82,7 @@ struct RecipeSheet: View {
                     )
                 TextField("Color", text:$color)
                     .padding()
+                    .textFieldStyle(PlainTextFieldStyle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("wannaka_red"), lineWidth: 1)
@@ -74,18 +91,16 @@ struct RecipeSheet: View {
                 
             }
             
+            #if !os(macOS)
+            
             HStack {
-                Spacer()
                 
-                Button(action:saveRecipe) {
+                Button(action: saveRecipe){
                     Text("Save")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .font(.system(size: 18))
-                            .padding()
-                            .foregroundColor(.white)
-                }.background(Color("wannaka_red"))
-                .cornerRadius(16)
-            }.padding()
+                        .font(.system(size: 18))
+                }.buttonStyle(BorderlessButtonStyle())
+                
+            }
             
             HStack {
                 Spacer()
@@ -97,6 +112,7 @@ struct RecipeSheet: View {
                 Spacer()
                 
             }
+            #endif
         }
         .padding()
     }
