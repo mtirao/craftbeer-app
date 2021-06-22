@@ -21,7 +21,16 @@ struct RecipeView: View {
                     .foregroundColor(Color.black)
                 Spacer()
                 
-                
+                if recipe.recipeStatus == .ready || recipe.recipeStatus == .finished {
+                    Image("hop")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }else {
+                    Image("hop")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color("processing_status"))
+                }
             }
             
             HStack {

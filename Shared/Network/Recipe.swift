@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum RecipeStatusEnum: String, Codable {
+    case ready = "ready"
+    case finished = "finished"
+    case processing = "processing"
+}
+
 
 struct Recipe: Codable{
     
@@ -16,7 +22,8 @@ struct Recipe: Codable{
     let ibu: Int?
     let abv: Int?
     let style: String?
-  
+    let status: RecipeStatusEnum?
+    
 }
 
 

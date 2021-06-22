@@ -40,10 +40,6 @@
 		DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
 		DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
 		DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */; };
-		DAB8DC72254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
-		DAB8DC73254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
-		DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
-		DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
 		DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
 		DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
 		DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
@@ -71,7 +67,6 @@
 		DAB91D1025520F570034089C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277FD254F552C004F333C /* Ingredient.swift */; };
 		DAB91D1125520F570034089C /* RecipeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */; };
 		DAB91D1225520F570034089C /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
-		DAB91D1325520F570034089C /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC71254630BA00AD4F03 /* DataProvider.swift */; };
 		DAB91D1425520F570034089C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
 		DAB91D1525520F570034089C /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */; };
 		DAB91D2525520F9C0034089C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
@@ -148,7 +143,6 @@
 		DAB27813254F7979004F333C /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
 		DAB8DC5625462B7A00AD4F03 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
-		DAB8DC71254630BA00AD4F03 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
 		DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataProvider.swift; sourceTree = "<group>"; };
 		DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
@@ -253,7 +247,6 @@
 			children = (
 				DAB277FD254F552C004F333C /* Ingredient.swift */,
 				DAB8DC5625462B7A00AD4F03 /* Recipe.swift */,
-				DAB8DC71254630BA00AD4F03 /* DataProvider.swift */,
 				DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */,
 				DAB8DC832546349B00AD4F03 /* RecipeDataProvider.swift */,
 				DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */,
@@ -623,7 +616,6 @@
 				DAB91CF325520F010034089C /* CraftbeerApp.swift in Sources */,
 				DAB91D2525520F9C0034089C /* Persistence.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
-				DAB91D1325520F570034089C /* DataProvider.swift in Sources */,
 				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB91D1025520F570034089C /* Ingredient.swift in Sources */,
 				DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */,
@@ -665,7 +657,6 @@
 				DAC3594A257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECDC25616252009F5FDB /* Stage.swift in Sources */,
 				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
-				DAB8DC72254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAC94B3A2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB27805254F59BB004F333C /* IngredientViewModel.swift in Sources */,
 				DA63ECF72561E1AF009F5FDB /* StageView.swift in Sources */,
@@ -698,7 +689,6 @@
 				DAC3594B257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECDD25616252009F5FDB /* Stage.swift in Sources */,
 				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
-				DAB8DC73254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAC94B3B2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DAB27806254F59BB004F333C /* IngredientViewModel.swift in Sources */,
 				DA63ECFD2561E1B0009F5FDB /* StageView.swift in Sources */,
@@ -725,7 +715,6 @@
 				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAC94B4926666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */,
-				DAB8DC74254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECE9256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAC94B3C2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
@@ -744,7 +733,6 @@
 				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAC94B4A26666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7E2546310400AD4F03 /* RecipeAPI.swift in Sources */,
-				DAB8DC75254630BA00AD4F03 /* DataProvider.swift in Sources */,
 				DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECEA256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAC94B3D2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,

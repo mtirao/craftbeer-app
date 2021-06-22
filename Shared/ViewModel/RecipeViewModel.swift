@@ -25,7 +25,8 @@ class RecipeViewModel: Identifiable, ObservableObject {
                             color: Int(self.recipeColor) ?? 0,
                             ibu: Int(self.recipeIbu) ?? 0,
                             abv: Int(val),
-                            style: self.recipeStyle)
+                            style: self.recipeStyle,
+                            status: nil)
         return recipe
     }
     
@@ -34,6 +35,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
     private(set) var recipeAbv: String
     private(set) var recipeColor: String
     private(set) var recipeIbu: String
+    private(set) var recipeStatus: RecipeStatusEnum
     
     let recipeId: Int?
     
@@ -46,7 +48,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeAbv = String(recipe.abv ?? 0)
         self.recipeColor = String(recipe.color ?? 0)
         self.recipeIbu = String(recipe.ibu ?? 0)
-        
+        self.recipeStatus = recipe.status ?? .ready
     }
     
     init() {
@@ -57,6 +59,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeAbv = "0"
         self.recipeColor = "0"
         self.recipeIbu = "0"
+        self.recipeStatus = .ready
     }
     
     init(recipeId: Int?) {
@@ -66,6 +69,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeAbv = "0"
         self.recipeColor = "0"
         self.recipeIbu = "0"
+        self.recipeStatus = .ready
     }
     
     func name(recipe: String) -> RecipeViewModel {

@@ -41,10 +41,11 @@ struct RecipeViewDetail: View {
                 
                 Button(action: saveRecipe) {
                     Image(systemName: "square.and.arrow.down")
-                }
+                }.buttonStyle(BorderlessButtonStyle())
+                
                 Button(action: deleteRecipe) {
                     Image(systemName: "trash")
-                }
+                }.buttonStyle(BorderlessButtonStyle())
                 
             }
             HStack {
@@ -111,6 +112,7 @@ struct RecipeViewDetail: View {
             Button(action: action) {
                 Image(systemName: "plus")
             }.foregroundColor(Color("wannaka_red"))
+            .buttonStyle(BorderlessButtonStyle())
         }
     }
     

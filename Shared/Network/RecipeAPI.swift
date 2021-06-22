@@ -22,6 +22,10 @@ enum RecipeAPI: ApiConfiguration {
     
     case deleteRecipe(recipe: Recipe)
     
+    var server: String {
+       return "http://localhost:4000"
+    }
+    
     var param: Parameters? {
         switch self {
         case .fetchRecipes:
@@ -67,7 +71,7 @@ enum RecipeAPI: ApiConfiguration {
     var path: String {
         switch self {
         case .fetchRecipes:
-            return "/craftbeer/recipes"
+            return "/api/craftbeer/recipes"
         case .fetchIngredient(let recipe):
             let url = "/craftbeer/recipe/\(recipe)/ingredients"
             return url
@@ -96,8 +100,7 @@ enum RecipeAPI: ApiConfiguration {
     
     
     func asURLRequest() throws -> URLRequest {
-        let url = try DataProvider.server.rawValue.asURL()
-        
+        let url = try server.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
