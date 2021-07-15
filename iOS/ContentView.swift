@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import PopupView
-import PartialSheet
 
 struct ContentView: View {
     

@@ -17,11 +17,11 @@ struct RecipeViewDetail: View {
     @State private var showingIngredientSheet = false
     @State private var showingStageSheet = false
     
-    @State private var recipeName : String
-    @State private var recipeStyle : String
-    @State private var recipeAbv : String
-    @State private var recipeIbu : String
-    @State private var recipeColor : String
+    @State private var recipeName : String = ""
+    @State private var recipeStyle : String = ""
+    @State private var recipeAbv : String = ""
+    @State private var recipeIbu : String = ""
+    @State private var recipeColor : String = ""
     
     @State private var ingredientType = ""
     @State private var unitType = 0
@@ -231,6 +231,8 @@ struct RecipeViewDetail: View {
         self.recipeAbv = recipe.recipeAbv
         self.recipeIbu = recipe.recipeIbu
         self.recipeColor = recipe.recipeColor
+        
+       
         
     }
    
