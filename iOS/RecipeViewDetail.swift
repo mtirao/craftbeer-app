@@ -78,7 +78,7 @@ struct RecipeViewDetail: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
-                List(recipes.) {item in
+                List(recipes) {item in
                     IngredientView(ingredient: item)
                    
                 }
