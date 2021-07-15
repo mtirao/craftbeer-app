@@ -11,42 +11,47 @@ struct IngredientView: View {
     
     let ingredient: IngredientViewModel
     
+    #if os(tvOS)
+        let width: CGFloat = 220
+        let height: CGFloat = 100
+    #else
+        let width: CGFloat = 100
+        let height: CGFloat = 90
+    #endif
+        
+    
     var body: some View {
         VStack {
-            HStack {
+            VStack {
                 Text(ingredient.typeT)
-                    .font(.headline)
+                    .font(.footnote)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
                 Text(ingredient.nameT)
-                    .font(.headline)
+                    .font(.caption)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
-                Spacer()
-                
-                
             }
             HStack {
                 Text("\(ingredient.valueT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
                 Text("\(ingredient.unitT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
-                Spacer()
             }
-            
-            Divider()
-        }
+        }.frame(width: width, height: height)
+        .background(Color("color_grayscale_200"))
+        .cornerRadius(16)
     }
 }

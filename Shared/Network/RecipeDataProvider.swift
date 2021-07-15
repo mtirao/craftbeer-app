@@ -32,7 +32,7 @@ class RecipeDataProvider: ObservableObject {
             case .success:
                 if let recipe = response.value {
                     let recipeViewModel = RecipeViewModel(recipe: recipe)
-                    self?.recipeList.append(recipeViewModel)
+                    self?.updatedRecipe.send(recipeViewModel)
                    
                 }
                 break;
@@ -52,25 +52,7 @@ class RecipeDataProvider: ObservableObject {
             case .success:
                 if let recipe = response.value {
                     let recipeViewModel = RecipeViewModel(recipe: recipe)
-                    self?.updatedRecipe.send(recipeViewModel)
-                }
-                break;
-            case .failure(let error):
-                print(error)
-                break;
-            }
-        }
-    }
-    
-    func post(ingredient: IngredientViewModel) {
-        
-        AF.request(RecipeAPI.postIngredient(ingredient: ingredient.ingredient)).responseDecodable{[weak self](response: DataResponse<Ingredient, AFError>) in
-            
-            switch response.result {
-            case .success:
-                if let ingredient = response.value {
-                    let ingredientViewModel = IngredientViewModel(ingredient: ingredient)
-                    self?.ingredientList.append(ingredientViewModel)
+                    self?.recipeList.append(recipeViewModel)
                     //self?.updatedRecipe.send(recipeViewModel)
                 }
                 break;
@@ -117,45 +99,6 @@ class RecipeDataProvider: ObservableObject {
                 break;
             }
         }
-    }
-    
-    //Fetch Ingredient and Stage
-    func fetchAll(recipe: Int) {
-        //Fetch ingredient
-        AF.request(RecipeAPI.fetchIngredient(recipe: recipe)).responseDecodable{[weak self](response: DataResponse<[Ingredient], AFError>) in
-            
-            switch response.result {
-            case .success:
-                if let ingredients = response.value {
-                    
-                    
-                    self?.ingredientList = ingredients.map(IngredientViewModel.init)
-                    
-                    //self?.objectWillChange.send(self?.recipeList ?? [])
-                }
-                break;
-            case .failure:
-                print("Error")
-                break;
-            }
-        }
-        
-        //------
-        
-        AF.request(RecipeAPI.fetchStage(recipe: recipe)).responseDecodable{[weak self](response: DataResponse<[Stage], AFError>) in
-            
-            switch response.result {
-            case .success:
-                if let stages = response.value {
-                    self?.stageList = stages.map(StageViewModel.init)
-                }
-                break;
-            case .failure:
-                print("Error")
-                break;
-            }
-        }
-        
     }
     
     func delete(recipe: RecipeViewModel) {

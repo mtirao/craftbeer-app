@@ -8,11 +8,11 @@
 import Foundation
 
 enum StageEnum: Int, Codable {
-    case mash = 1
-    case liquor = 2
-    case boil = 3
-    case fermentation = 4
-    case wash = 5
+    case liquor = 1
+    case mash = 2
+    case wash = 3
+    case boil = 4
+    case fermentation = 5
 }
 
 struct Stage: Codable{

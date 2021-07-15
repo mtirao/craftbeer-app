@@ -11,34 +11,41 @@ struct StageView: View {
     
     let stage: StageViewModel
     
+    #if os(tvOS)
+        let width: CGFloat = 220
+        let height: CGFloat = 100
+    #else
+        let width: CGFloat = 120
+        let height: CGFloat = 90
+    #endif
+    
     var body: some View {
         VStack {
             HStack {
                 Text(stage.typeT)
-                    .font(.headline)
+                    .font(.footnote)
                     .truncationMode(.tail)
                     .frame(minWidth: 20.0)
                     .foregroundColor(Color.black)
-                Spacer()
             }
             HStack {
                 Text("\(stage.tempT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
                 Text("\(stage.timeT)")
-                    .font(.subheadline)
+                    .font(.caption)
                     .opacity(0.625)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .truncationMode(.middle)
                     .foregroundColor(Color.black)
-                Spacer()
             }
-            Divider()
-        }
+        }.frame(width: width, height: height)
+        .background(Color("color_grayscale_200"))
+        .cornerRadius(16)
     }
 }

@@ -25,15 +25,17 @@ class RecipeViewModel: Identifiable, ObservableObject {
                             color: Int(self.recipeColor) ?? 0,
                             ibu: Int(self.recipeIbu) ?? 0,
                             abv: Int(val),
-                            style: self.recipeStyle)
+                            style: self.recipeStyle,
+                            status: nil)
         return recipe
     }
     
-    @Published var recipeName: String
-    @Published var recipeStyle: String
-    @Published var recipeAbv: String
-    @Published var recipeColor: String
-    @Published var recipeIbu: String
+    private(set) var recipeName: String
+    private(set) var recipeStyle: String
+    private(set) var recipeAbv: String
+    private(set) var recipeColor: String
+    private(set) var recipeIbu: String
+    private(set) var recipeStatus: RecipeStatusEnum
     
     let recipeId: Int?
     
@@ -46,7 +48,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeAbv = String(recipe.abv ?? 0)
         self.recipeColor = String(recipe.color ?? 0)
         self.recipeIbu = String(recipe.ibu ?? 0)
-        
+        self.recipeStatus = recipe.status ?? .ready
     }
     
     init() {
@@ -57,6 +59,17 @@ class RecipeViewModel: Identifiable, ObservableObject {
         self.recipeAbv = "0"
         self.recipeColor = "0"
         self.recipeIbu = "0"
+        self.recipeStatus = .ready
+    }
+    
+    init(recipeId: Int?) {
+        self.recipeId = recipeId
+        self.recipeName = ""
+        self.recipeStyle = ""
+        self.recipeAbv = "0"
+        self.recipeColor = "0"
+        self.recipeIbu = "0"
+        self.recipeStatus = .ready
     }
     
     func name(recipe: String) -> RecipeViewModel {
@@ -73,7 +86,7 @@ class RecipeViewModel: Identifiable, ObservableObject {
     
     func abv(recipe: String) -> RecipeViewModel {
         
-        self.recipeAbv = recipe
+        self.recipeAbv = recipe.replacingOccurrences(of: ",", with: "")
         return self
     }
     
