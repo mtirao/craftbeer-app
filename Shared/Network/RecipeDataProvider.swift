@@ -23,6 +23,11 @@ class RecipeDataProvider: ObservableObject {
         
     }
     
+    func addRecipe() {
+        recipeList.insert(
+            RecipeViewModel(recipe: Recipe(id: recipeList.count + 1, name: "Unnamed", color: 0, ibu: 0, abv: 0, style: "Unstyle", status: .ready)), at: 0)
+    }
+    
     func updateRecipe(recipe: RecipeViewModel) {
         
 

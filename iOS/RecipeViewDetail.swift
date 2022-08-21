@@ -150,7 +150,7 @@ struct RecipeViewDetail: View {
         .onReceive(self.recipes.updatedRecipe) {recipe in
             
             self.recipes.fetchAll()
-        }.accentColor(Color("wannaka_red"))
+        }
     }
     
     
@@ -160,7 +160,7 @@ struct RecipeViewDetail: View {
             Spacer()
             Button(action: action) {
                 Image(systemName: "plus")
-            }.foregroundColor(Color("wannaka_red"))
+            }
         }
     }
     

@@ -11,7 +11,7 @@ struct ContentView: View {
     
     private var currentRecipe = -1
     
-    @ObservedObject var recipes = RecipeDataProvider()
+    @StateObject var recipes = RecipeDataProvider()
     
     @State private var searchText = ""
     @State private var showingSheet = false
