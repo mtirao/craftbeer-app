@@ -18,8 +18,18 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var showingSheet = false
     
+    @State private var name: String = ""
+    @State private var presentation: String = ""
+    @State private var price: Float = 0
+    
+    @State private var showDetail = false
+
+    @State private var total: Float = 0
+    
     @Environment(\.managedObjectContext) private var viewContext
 
+    @State private var trxUUID = UUID()
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -41,6 +51,10 @@ struct ContentView: View {
                 .tabItem{
                     Label("Sales", systemImage: "bag")
                 }
+                .onAppear{
+                    self.trxUUID = UUID()
+                    self.total = 0
+                }
         }
         
     }
@@ -48,7 +62,52 @@ struct ContentView: View {
     
     @ViewBuilder private func salesView() -> some View {
         VStack {
-            Text("Test")
+            
+            HStack{
+                Spacer()
+                Button(action: {
+                    self.total = 0
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .padding(.trailing, 8)
+                }
+            }
+            
+            TextField("$0.00", value: $total, formatter: numberFormatter)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+                .font(.title)
+                .padding()
+                .multilineTextAlignment(.trailing)
+                .disabled(true)
+            
+            
+            List {
+                VStack {
+                    ForEach(items) { item in
+                        
+                        VStack {
+                            HStack {
+                                Text(item.name ?? "")
+                                    .font(.headline)
+                                Spacer()
+                            }
+                            HStack {
+                                Text(item.presentation ?? "")
+                                    .font(.callout)
+                                Spacer()
+                                Text(NSNumber(value: item.price), formatter: numberFormatter)
+                                    .font(.callout)
+                            }
+                        }.onTapGesture{
+                            self.total += item.price
+                            saleItem(item: item)
+                        }
+                    }
+                }
+            }
         }
     }
  
@@ -57,11 +116,28 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                    NavigationLink(isActive: $showDetail) {
+                        Form {
+                            Section(header: Text("Item")) {
+                                TextField("Name", text: $name)
+                                TextField("Presentation", text: $presentation)
+                                TextField("$0.00", value: $price, formatter: numberFormatter)
+                            }
+                        }.toolbar{
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button(action: {
+                                    updateItem(item: item)
+                                }) {
+                                    Label("Save Item", systemImage: "square.and.arrow.down")
+                                }
+                            }
+                        }
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+                        Text("\(item.name!)")
+                    }.onAppear(perform: {
+                        self.name = item.name ?? ""
+                        self.presentation = item.presentation ?? ""
+                    })
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -119,16 +195,30 @@ struct ContentView: View {
         }
     }
     
+    private func updateItem(item: Item) {
+        
+        item.name = self.name
+        item.presentation = self.presentation
+        item.price = Float(self.price)
+        
+        do {
+            try viewContext.save()
+            self.showDetail = false
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+            newItem.name = "Unnamed"
 
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
@@ -142,24 +232,41 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 
+    private func saleItem(item: Item) {
+        
+        let newItem = Transaction(context: viewContext)
+        newItem.timestamp = Date()
+        newItem.name = item.name
+        newItem.price = item.price
+        newItem.number = self.trxUUID
+        newItem.presentation = item.presentation
+        newItem.quantity = 1
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        
+    }
+    
     private mutating func selectCurrentRecipe(index: Int) {
         self.currentRecipe = index
     }
     
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+
+private let numberFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
     return formatter
 }()
 
