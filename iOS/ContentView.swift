@@ -35,6 +35,11 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: true)],
+        animation: .default)
+    private var transaction: FetchedResults<Transaction>
+    
     var body: some View {
         
         TabView {
@@ -55,10 +60,46 @@ struct ContentView: View {
                     self.trxUUID = UUID()
                     self.total = 0
                 }
+            
+            transactionView()
+                .tabItem{
+                    Label("Transaction", systemImage: "creditcard.fill")
+                }
+            
         }
         
     }
     
+    @ViewBuilder private func transactionView() -> some View {
+        NavigationView {
+            List {
+                ForEach(transaction.filter({$0.number == trxUUID})) { item in
+                    VStack{
+                        Text(item.name ?? "")
+                            .font(.headline)
+                        Text(item.presentation ?? "")
+                            .font(.callout)
+                        Text(NSNumber(value:item.price), formatter: numberFormatter)
+                            .font(.callout)
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                
+                ToolbarItem {
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                }
+            }
+            Text("Select an item")
+        }
+    }
     
     @ViewBuilder private func salesView() -> some View {
         VStack {
