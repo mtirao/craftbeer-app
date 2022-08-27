@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32A85728BA58F50053567C /* RecipeViewDetail.swift */; };
 		DA63ECDC25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
 		DA63ECDD25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
 		DA63ECDE25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
@@ -100,7 +101,6 @@
 		DACA0DC526571CFB00511337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACA0DC426571CFB00511337 /* Images.xcassets */; };
 		DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
 		DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
-		DAD437D2254A196E00CEA901 /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */; };
 		DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED313254317A700EB8BB0 /* Tests_iOS.swift */; };
 		DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED31E254317A700EB8BB0 /* Tests_macOS.swift */; };
 		DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
@@ -114,6 +114,18 @@
 		DADED32A254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
 		DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED33E2543524000EB8BB0 /* ContentView.swift */; };
 		DAF4B9AF28B30CB6001D58D8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */; };
+		DAF591C728B80B10000164CB /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
+		DAF591C828B80B10000164CB /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
+		DAF591C928B80B10000164CB /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
+		DAF591CB28B80C6F000164CB /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CA28B80C6F000164CB /* StockView.swift */; };
+		DAF591CC28B80C6F000164CB /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CA28B80C6F000164CB /* StockView.swift */; };
+		DAF591CD28B80C6F000164CB /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CA28B80C6F000164CB /* StockView.swift */; };
+		DAF591CF28B80D75000164CB /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CE28B80D75000164CB /* TransactionView.swift */; };
+		DAF591D028B80D75000164CB /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CE28B80D75000164CB /* TransactionView.swift */; };
+		DAF591D128B80D75000164CB /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CE28B80D75000164CB /* TransactionView.swift */; };
+		DAF591D328B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
+		DAF591D428B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
+		DAF591D528B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +146,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA32A85728BA58F50053567C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DA63ECDB25616252009F5FDB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		DA63ECE6256162E7009F5FDB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
 		DA63ECF12561E130009F5FDB /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
@@ -165,7 +178,6 @@
 		DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		DACA0DC426571CFB00511337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DAD437CA254A074D00CEA901 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
-		DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
 		DADED2F8254317A600EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +196,10 @@
 		DADED320254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DADED33E2543524000EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DAF591C628B80B10000164CB /* SalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesView.swift; sourceTree = "<group>"; };
+		DAF591CA28B80C6F000164CB /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
+		DAF591CE28B80D75000164CB /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		DAF591D228B80F67000164CB /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +293,10 @@
 				DAB27813254F7979004F333C /* IngredientView.swift */,
 				DA63ECF12561E130009F5FDB /* StageView.swift */,
 				DAB277EF254F4D9F004F333C /* FieldView.swift */,
+				DAF591C628B80B10000164CB /* SalesView.swift */,
+				DAF591CA28B80C6F000164CB /* StockView.swift */,
+				DAF591CE28B80D75000164CB /* TransactionView.swift */,
+				DAF591D228B80F67000164CB /* RecipesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,8 +396,8 @@
 		DADED301254317A700EB8BB0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DA32A85728BA58F50053567C /* RecipeViewDetail.swift */,
 				DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */,
-				DAD437D1254A196E00CEA901 /* RecipeViewDetail.swift */,
 				DADED33E2543524000EB8BB0 /* ContentView.swift */,
 				DADED302254317A700EB8BB0 /* Info.plist */,
 			);
@@ -616,16 +636,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF591C928B80B10000164CB /* SalesView.swift in Sources */,
 				DAB91D1125520F570034089C /* RecipeDataProvider.swift in Sources */,
 				DAB91CF325520F010034089C /* CraftbeerApp.swift in Sources */,
 				DAB91D2525520F9C0034089C /* Persistence.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
+				DAF591D128B80D75000164CB /* TransactionView.swift in Sources */,
 				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB91D1025520F570034089C /* Ingredient.swift in Sources */,
 				DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */,
 				DAC94B45266586E900BE3AD2 /* RecipeViewDetail.swift in Sources */,
+				DAF591CD28B80C6F000164CB /* StockView.swift in Sources */,
 				DAB91D1425520F570034089C /* Recipe.swift in Sources */,
 				DAB91D0125520F450034089C /* IngredientView.swift in Sources */,
+				DAF591D528B80F67000164CB /* RecipesView.swift in Sources */,
 				DAC3594C257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECE025616252009F5FDB /* Stage.swift in Sources */,
 				DAB91D2B25520FA00034089C /* Craftbeer.xcdatamodeld in Sources */,
@@ -648,16 +672,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF591C728B80B10000164CB /* SalesView.swift in Sources */,
 				DAB8DC842546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
 				DAB277FE254F552C004F333C /* Ingredient.swift in Sources */,
 				DA63ECE7256162E7009F5FDB /* StageViewModel.swift in Sources */,
+				DAF591CF28B80D75000164CB /* TransactionView.swift in Sources */,
 				DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */,
 				DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */,
 				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAF591CB28B80C6F000164CB /* StockView.swift in Sources */,
 				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */,
+				DAF591D328B80F67000164CB /* RecipesView.swift in Sources */,
 				DAC3594A257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECDC25616252009F5FDB /* Stage.swift in Sources */,
 				DADED327254317A700EB8BB0 /* Persistence.swift in Sources */,
@@ -671,7 +699,7 @@
 				DAC94B4726666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */,
-				DAD437D2254A196E00CEA901 /* RecipeViewDetail.swift in Sources */,
+				DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */,
 				DAC35959257D3AEF00197BA9 /* StageSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,16 +708,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF591C828B80B10000164CB /* SalesView.swift in Sources */,
 				DAB8DC852546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
 				DAB277FF254F552C004F333C /* Ingredient.swift in Sources */,
 				DA63ECE8256162E7009F5FDB /* StageViewModel.swift in Sources */,
+				DAF591D028B80D75000164CB /* TransactionView.swift in Sources */,
 				DAB2781D254F7BB1004F333C /* IngredientView.swift in Sources */,
 				DAC94B352664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DAF591CC28B80C6F000164CB /* StockView.swift in Sources */,
 				DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */,
+				DAF591D428B80F67000164CB /* RecipesView.swift in Sources */,
 				DAC3594B257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECDD25616252009F5FDB /* Stage.swift in Sources */,
 				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,

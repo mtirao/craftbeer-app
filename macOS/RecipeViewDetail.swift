@@ -10,7 +10,6 @@ import SwiftUI
 
 struct RecipeViewDetail: View {
     
-    
     @EnvironmentObject var recipes : RecipeDataProvider 
     
     
