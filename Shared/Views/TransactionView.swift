@@ -41,9 +41,11 @@ struct TransactionView: View {
             }
             .toolbar {
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                #if !os(macOS)
+                ToolbarItem(placement: .automatic) {
                     EditButton()
                 }
+                #endif
             }
         }
     }

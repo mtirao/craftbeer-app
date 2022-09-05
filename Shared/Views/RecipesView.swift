@@ -47,7 +47,7 @@ struct RecipesView: View {
                 
             }.onAppear() {
                 self.recipes.fetchAll()
-            }.navigationViewStyle(StackNavigationViewStyle())
+            }.navigationViewStyle(.automatic)
         }
     }
 }

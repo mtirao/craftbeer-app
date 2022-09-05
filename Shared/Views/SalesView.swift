@@ -40,6 +40,14 @@ struct SalesView: View {
                 }
             }
             
+            #if os(macOS)
+            TextField("$0.00", value: $total, formatter: numberFormatter)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .font(.title)
+                .padding()
+                .multilineTextAlignment(.trailing)
+                .disabled(true)
+            #elseif os(iOS) || os(tvOS)
             TextField("$0.00", value: $total, formatter: numberFormatter)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -47,7 +55,7 @@ struct SalesView: View {
                 .padding()
                 .multilineTextAlignment(.trailing)
                 .disabled(true)
-            
+            #endif
             
             List {
                 VStack {

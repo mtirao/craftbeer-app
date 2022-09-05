@@ -40,7 +40,7 @@ struct StockView: View {
                                 TextField("$0.00", value: $price, formatter: numberFormatter)
                             }
                         }.toolbar{
-                            ToolbarItem(placement: .navigationBarTrailing) {
+                            ToolbarItem(placement: .automatic ) {
                                 Button(action: {
                                     updateItem(item: item)
                                 }) {
@@ -59,9 +59,11 @@ struct StockView: View {
             }
             .toolbar {
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                #if !os(macOS)
+                ToolbarItem(placement: .automatic) {
                     EditButton()
                 }
+                #endif
                 
                 ToolbarItem {
                     Button(action: addItem) {
