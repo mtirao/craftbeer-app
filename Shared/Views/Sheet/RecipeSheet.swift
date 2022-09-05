@@ -91,7 +91,7 @@ struct RecipeSheet: View {
                 
             }
             
-            #if !os(macOS)
+            #if os(iOS)
             
             HStack {
                 

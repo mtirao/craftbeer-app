@@ -94,9 +94,6 @@
 		DAC94B45266586E900BE3AD2 /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B40266586E900BE3AD2 /* RecipeViewDetail.swift */; };
 		DAC94B4726666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
 		DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
-		DAC94B4926666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
-		DAC94B4A26666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
-		DAC94B4B26666AE500BE3AD2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94B4626666AE500BE3AD2 /* BottomSheetView.swift */; };
 		DAC9C6B8265B219300AA4D26 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DAC9C6B7265B219300AA4D26 /* PopupView */; };
 		DACA0DC526571CFB00511337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACA0DC426571CFB00511337 /* Images.xcassets */; };
 		DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD437CA254A074D00CEA901 /* RecipeView.swift */; };
@@ -107,12 +104,10 @@
 		DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
 		DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
 		DADED324254317A700EB8BB0 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
-		DADED326254317A700EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F8254317A600EB8BB0 /* ContentView.swift */; };
 		DADED327254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
 		DADED328254317A700EB8BB0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
 		DADED329254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
 		DADED32A254317A700EB8BB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADED2FA254317A700EB8BB0 /* Assets.xcassets */; };
-		DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED33E2543524000EB8BB0 /* ContentView.swift */; };
 		DAF4B9AF28B30CB6001D58D8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */; };
 		DAF591C728B80B10000164CB /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
 		DAF591C828B80B10000164CB /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
@@ -180,7 +175,6 @@
 		DAD437CA254A074D00CEA901 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		DADED2F6254317A600EB8BB0 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
-		DADED2F8254317A600EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DADED2F9254317A600EB8BB0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DADED2FA254317A700EB8BB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DADED2FF254317A700EB8BB0 /* Craftbeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Craftbeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +188,6 @@
 		DADED31A254317A700EB8BB0 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADED31E254317A700EB8BB0 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		DADED320254317A700EB8BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DADED33E2543524000EB8BB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DAF591C628B80B10000164CB /* SalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesView.swift; sourceTree = "<group>"; };
 		DAF591CA28B80C6F000164CB /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
@@ -398,7 +391,6 @@
 			children = (
 				DA32A85728BA58F50053567C /* RecipeViewDetail.swift */,
 				DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */,
-				DADED33E2543524000EB8BB0 /* ContentView.swift */,
 				DADED302254317A700EB8BB0 /* Info.plist */,
 			);
 			path = iOS;
@@ -408,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				DAB91D64255214050034089C /* RecipeViewDetail.swift */,
-				DADED2F8254317A600EB8BB0 /* ContentView.swift */,
 				DADED309254317A700EB8BB0 /* Info.plist */,
 				DADED30A254317A700EB8BB0 /* macOS.entitlements */,
 			);
@@ -660,7 +651,6 @@
 				DAB91D1225520F570034089C /* ApiConfiguration.swift in Sources */,
 				DAB91D0925520F4D0034089C /* RecipeViewModel.swift in Sources */,
 				DAB91CF925520F400034089C /* Formatter.swift in Sources */,
-				DAC94B4B26666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB91D0A25520F4D0034089C /* IngredientViewModel.swift in Sources */,
 				DAB91CCB255208DF0034089C /* ContentView.swift in Sources */,
 				DAB91D0325520F450034089C /* FieldView.swift in Sources */,
@@ -680,7 +670,6 @@
 				DAF591CF28B80D75000164CB /* TransactionView.swift in Sources */,
 				DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */,
 				DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
-				DADED33F2543525500EB8BB0 /* ContentView.swift in Sources */,
 				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DAF591CB28B80C6F000164CB /* StockView.swift in Sources */,
 				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
@@ -730,7 +719,6 @@
 				DA63ECFD2561E1B0009F5FDB /* StageView.swift in Sources */,
 				DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB91D65255214060034089C /* RecipeViewDetail.swift in Sources */,
-				DADED326254317A700EB8BB0 /* ContentView.swift in Sources */,
 				DAB91C73255206310034089C /* RecipeSheet.swift in Sources */,
 				DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -749,7 +737,6 @@
 				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
 				DA63ECDE25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
-				DAC94B4926666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7D2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB8DC942546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECE9256162E7009F5FDB /* StageViewModel.swift in Sources */,
@@ -767,7 +754,6 @@
 				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
 				DA63ECDF25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
-				DAC94B4A26666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC7E2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DA63ECEA256162E7009F5FDB /* StageViewModel.swift in Sources */,

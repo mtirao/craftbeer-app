@@ -59,7 +59,7 @@ struct StockView: View {
             }
             .toolbar {
                 
-                #if !os(macOS)
+                #if os(iOS)
                 ToolbarItem(placement: .automatic) {
                     EditButton()
                 }

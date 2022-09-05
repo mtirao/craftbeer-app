@@ -40,14 +40,14 @@ struct SalesView: View {
                 }
             }
             
-            #if os(macOS)
+            #if os(macOS) || os(tvOS)
             TextField("$0.00", value: $total, formatter: numberFormatter)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(DefaultTextFieldStyle())
                 .font(.title)
                 .padding()
                 .multilineTextAlignment(.trailing)
                 .disabled(true)
-            #elseif os(iOS) || os(tvOS)
+            #elseif os(iOS)
             TextField("$0.00", value: $total, formatter: numberFormatter)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -74,10 +74,10 @@ struct SalesView: View {
                                 Text(NSNumber(value: item.price), formatter: numberFormatter)
                                     .font(.callout)
                             }
-                        }.onTapGesture{
+                        }/*.onTapGesture{
                             self.total += item.price
                             saleItem(item: item)
-                        }
+                        }*/
                     }
                 }
             }

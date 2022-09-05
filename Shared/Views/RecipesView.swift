@@ -13,6 +13,8 @@ struct RecipesView: View {
     
     @State private var selection: String? = nil
     
+    @State private var searchText = ""
+    
     var body: some View {
         VStack {
             NavigationView {
@@ -34,6 +36,7 @@ struct RecipesView: View {
                 }.id(UUID())
                 .navigationTitle("Craftbeer")
                 .toolbar{
+                    
                     ToolbarItem {
                         Button(action: {
                             self.recipes.addRecipe()

@@ -13,16 +13,16 @@ struct CraftbeerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            #if os(iOS) || os(tvOS)
+            
+            #if os(iOS)
             ContentView()
                 //.frame(width: 750, height: 500)
                 .background(Color.white)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
             #else
-                ContentView()
-                    .frame(width: 1000, height: 500)
-                    .background(Color.white)
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RecipesView()
+                .frame(width: 1000, height: 500)
+                .background(Color.white)
             #endif
         }
     }
