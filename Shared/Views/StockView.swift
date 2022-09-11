@@ -32,7 +32,7 @@ struct StockView: View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    NavigationLink(isActive: $showDetail) {
+                    NavigationLink {
                         Form {
                             Section(header: Text("Item")) {
                                 TextField("Name", text: $name)
@@ -44,35 +44,37 @@ struct StockView: View {
                                 Button(action: {
                                     updateItem(item: item)
                                 }) {
-                                    Label("Save Item", systemImage: "square.and.arrow.down")
+                                   Text("Save")
                                 }
                             }
                         }
+                        .onAppear(perform: {
+                            self.name = item.name ?? ""
+                            self.presentation = item.presentation ?? ""
+                            self.price = item.price
+                        })
                     } label: {
                         Text("\(item.name!)")
-                    }.onAppear(perform: {
-                        self.name = item.name ?? ""
-                        self.presentation = item.presentation ?? ""
-                    })
+                    }
                 }
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
                 
-                #if os(iOS)
-                ToolbarItem(placement: .automatic) {
-                    EditButton()
-                }
-                #endif
-                
-                ToolbarItem {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                
+                #if os(iOS)
+                ToolbarItem {
+                    EditButton()
+                }
+                #endif
             }
             Text("Select an item")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func updateItem(item: Item) {
@@ -83,7 +85,6 @@ struct StockView: View {
         
         do {
             try viewContext.save()
-            self.showDetail = false
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

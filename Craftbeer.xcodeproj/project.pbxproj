@@ -23,6 +23,7 @@
 		DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
 		DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DA7CC6232550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
+		DAA8526828CE7E8B0089DBAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91CCA255208DF0034089C /* ContentView.swift */; };
 		DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277EF254F4D9F004F333C /* FieldView.swift */; };
 		DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277EF254F4D9F004F333C /* FieldView.swift */; };
 		DAB277FE254F552C004F333C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277FD254F552C004F333C /* Ingredient.swift */; };
@@ -55,8 +56,6 @@
 		DAB8DC952546F10200AD4F03 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC912546F10200AD4F03 /* ApiConfiguration.swift */; };
 		DAB91C72255206310034089C /* RecipeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91C71255206310034089C /* RecipeSheet.swift */; };
 		DAB91C73255206310034089C /* RecipeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91C71255206310034089C /* RecipeSheet.swift */; };
-		DAB91CCB255208DF0034089C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91CCA255208DF0034089C /* ContentView.swift */; };
-		DAB91CD0255208E10034089C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB91CCF255208E10034089C /* Preview Assets.xcassets */; };
 		DAB91CF325520F010034089C /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F7254317A600EB8BB0 /* CraftbeerApp.swift */; };
 		DAB91CF925520F400034089C /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB91C71255206310034089C /* RecipeSheet.swift */; };
@@ -141,6 +140,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer (iOS).entitlements"; sourceTree = "<group>"; };
+		DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		DA32A85728BA58F50053567C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DA63ECDB25616252009F5FDB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		DA63ECE6256162E7009F5FDB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		DAB91CA2255208830034089C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAB91CC6255208DF0034089C /* Craftbeer (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Craftbeer (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB91CCA255208DF0034089C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DAB91CCF255208E10034089C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAB91CD6255208E10034089C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAB91D64255214050034089C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DAC35949257D284E00197BA9 /* IngredientSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSheet.swift; sourceTree = "<group>"; };
@@ -249,6 +249,7 @@
 		DAB8DC522546263C00AD4F03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,20 +317,10 @@
 			isa = PBXGroup;
 			children = (
 				DACA0DC426571CFB00511337 /* Images.xcassets */,
-				DAB91CCA255208DF0034089C /* ContentView.swift */,
 				DAB91CD6255208E10034089C /* Info.plist */,
-				DAB91CCE255208E10034089C /* Preview Content */,
 				DAC94B40266586E900BE3AD2 /* RecipeViewDetail.swift */,
 			);
 			path = tvOS;
-			sourceTree = "<group>";
-		};
-		DAB91CCE255208E10034089C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DAB91CCF255208E10034089C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		DAC35952257D287E00197BA9 /* Sheet */ = {
@@ -346,6 +337,7 @@
 		DADED2EF254317A600EB8BB0 = {
 			isa = PBXGroup;
 			children = (
+				DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */,
 				DADED2F4254317A600EB8BB0 /* Shared */,
 				DAB91CC7255208DF0034089C /* tvOS */,
 				DADED301254317A700EB8BB0 /* iOS */,
@@ -389,6 +381,7 @@
 		DADED301254317A700EB8BB0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DAB91CCA255208DF0034089C /* ContentView.swift */,
 				DA32A85728BA58F50053567C /* RecipeViewDetail.swift */,
 				DAF4B9AE28B30CB6001D58D8 /* Launch Screen.storyboard */,
 				DADED302254317A700EB8BB0 /* Info.plist */,
@@ -584,7 +577,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACA0DC526571CFB00511337 /* Images.xcassets in Resources */,
-				DAB91CD0255208E10034089C /* Preview Assets.xcassets in Resources */,
 				DAB91D3E255210B00034089C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,7 +644,6 @@
 				DAB91D0925520F4D0034089C /* RecipeViewModel.swift in Sources */,
 				DAB91CF925520F400034089C /* Formatter.swift in Sources */,
 				DAB91D0A25520F4D0034089C /* IngredientViewModel.swift in Sources */,
-				DAB91CCB255208DF0034089C /* ContentView.swift in Sources */,
 				DAB91D0325520F450034089C /* FieldView.swift in Sources */,
 				DAC35965257D3AF300197BA9 /* StageSheet.swift in Sources */,
 			);
@@ -688,6 +679,7 @@
 				DAC94B4726666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */,
+				DAA8526828CE7E8B0089DBAB /* ContentView.swift in Sources */,
 				DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */,
 				DAC35959257D3AEF00197BA9 /* StageSheet.swift in Sources */,
 			);
@@ -941,6 +933,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Craftbeer (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;
@@ -963,6 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Craftbeer (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;

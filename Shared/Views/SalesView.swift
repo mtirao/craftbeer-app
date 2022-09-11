@@ -74,10 +74,14 @@ struct SalesView: View {
                                 Text(NSNumber(value: item.price), formatter: numberFormatter)
                                     .font(.callout)
                             }
-                        }/*.onTapGesture{
+                            Spacer()
+                        }
+                        #if os(macOS) || os(iOS)
+                        .onTapGesture{
                             self.total += item.price
                             saleItem(item: item)
-                        }*/
+                        }
+                        #endif
                     }
                 }
             }

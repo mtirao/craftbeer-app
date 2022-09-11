@@ -16,8 +16,6 @@ struct TransactionView: View {
         animation: .default)
     private var transaction: FetchedResults<Transaction>
     
-    @Binding var trxUUID: UUID
-    
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -27,7 +25,7 @@ struct TransactionView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(transaction.filter({$0.number == trxUUID})) { item in
+                ForEach(transaction) { item in
                     VStack{
                         Text(item.name ?? "")
                             .font(.headline)
@@ -66,6 +64,6 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionView(trxUUID: .constant(UUID()))
+        TransactionView()
     }
 }
