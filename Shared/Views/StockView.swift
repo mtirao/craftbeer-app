@@ -17,42 +17,12 @@ struct StockView: View {
     private var items: FetchedResults<Item>
     
     
-    @State private var showDetail = false
-    @State private var name: String = ""
-    @State private var presentation: String = ""
-    @State private var price: Float = 0
-    
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
-    
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Form {
-                            Section(header: Text("Item")) {
-                                TextField("Name", text: $name)
-                                TextField("Presentation", text: $presentation)
-                                TextField("$0.00", value: $price, formatter: numberFormatter)
-                            }
-                        }.toolbar{
-                            ToolbarItem(placement: .automatic ) {
-                                Button(action: {
-                                    updateItem(item: item)
-                                }) {
-                                   Text("Save")
-                                }
-                            }
-                        }
-                        .onAppear(perform: {
-                            self.name = item.name ?? ""
-                            self.presentation = item.presentation ?? ""
-                            self.price = item.price
-                        })
+                        StockDetailView(item: item)
                     } label: {
                         Text("\(item.name!)")
                     }
@@ -77,19 +47,7 @@ struct StockView: View {
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func updateItem(item: Item) {
-        
-        item.name = self.name
-        item.presentation = self.presentation
-        item.price = Float(self.price)
-        
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-    }
+    
     
     private func addItem() {
         withAnimation {
