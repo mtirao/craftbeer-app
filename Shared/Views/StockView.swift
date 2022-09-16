@@ -29,6 +29,7 @@ struct StockView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .navigationTitle("Stock")
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -43,8 +44,8 @@ struct StockView: View {
                 }
                 #endif
             }
-            Text("Select an item")
         }.navigationViewStyle(StackNavigationViewStyle())
+        
     }
     
     
