@@ -57,7 +57,44 @@ struct SalesView: View {
                 .disabled(true)
             #endif
             
-            List {
+            ScrollView {
+                ForEach(update(items), id: \.self) {(sections: [Item]) in
+                    Section {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 16) {
+                                ForEach(sections) { item in
+                                    VStack{
+                                        Text(item.name ?? "")
+                                            .font(.headline)
+                                        Text(NSNumber(value:item.price), formatter: numberFormatter)
+                                            .font(.callout)
+                                    }.background(Color("color_grayscale_200"))
+                                    .padding()
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.gray)
+                                    )
+                                    #if os(macOS) || os(iOS)
+                                    .onTapGesture{
+                                        self.total += item.price
+                                        saleItem(item: item)
+                                    }
+                                    #endif
+                                }
+                            }
+                        }
+                        Divider()
+                    } header: {
+                        HStack {
+                            Text(sections[0].presentation!)
+                                .font(.headline)
+                            Spacer()
+                        }
+                    }
+                }
+            }.padding()
+            
+            /*List {
                 VStack {
                     ForEach(items) { item in
                         
@@ -84,8 +121,17 @@ struct SalesView: View {
                         #endif
                     }
                 }
-            }
+            }*/
         }
+    }
+    
+    func update(_ result : FetchedResults<Item>)-> [[Item]]{
+        
+        let results = Dictionary(grouping: result){ (element : Item)  in
+            element.presentation
+        }.values.sorted() { $0[0].presentation! < $1[0].presentation! }
+        
+        return results
     }
     
     private func saleItem(item: Item) {
