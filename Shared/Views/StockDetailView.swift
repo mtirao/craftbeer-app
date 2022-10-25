@@ -14,8 +14,10 @@ struct StockDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State private var name: String = ""
-    @State private var presentation: String = ""
+    @State private var presentation: String = "Growler"
     @State private var price: Float = 0
+    
+    private let presentations = ["Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar"]
     
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -29,7 +31,12 @@ struct StockDetailView: View {
         Form {
             Section(header: Text("Item")) {
                 TextField("Name", text: $name)
-                TextField("Presentation", text: $presentation)
+                 Picker("Presentation", selection: $presentation) {
+                    ForEach(presentations, id: \.self) {
+                        Text($0)
+                            .id($0)
+                    }
+                 }.pickerStyle(.menu)
                 TextField("$0.00", value: $price, formatter: numberFormatter)
             }
         }.toolbar{

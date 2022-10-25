@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             
             
-            SalesView(total: $total, trxUUID: $trxUUID)
+            SalesView(total: $total)
                 .tabItem{
                     Label("Sales", systemImage: "bag")
                 }

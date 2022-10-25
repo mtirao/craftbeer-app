@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2879E92907203600D67107 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2879E82907203600D67107 /* TransactionDetailView.swift */; };
 		DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32A85728BA58F50053567C /* RecipeViewDetail.swift */; };
+		DA4A5D6428F44D0C00ECE6D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */; };
 		DA63ECDC25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
 		DA63ECDD25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
 		DA63ECDE25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
@@ -23,6 +25,7 @@
 		DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
 		DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DA7CC6232550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
+		DA8CD47828F838D1009943CB /* PDFTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CD47728F838D1009943CB /* PDFTicketView.swift */; };
 		DA96F5CE28CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
 		DA96F5CF28CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
 		DA96F5D028CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
@@ -147,11 +150,13 @@
 /* Begin PBXFileReference section */
 		DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer (iOS).entitlements"; sourceTree = "<group>"; };
 		DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA2879E82907203600D67107 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		DA32A85728BA58F50053567C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DA63ECDB25616252009F5FDB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		DA63ECE6256162E7009F5FDB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
 		DA63ECF12561E130009F5FDB /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		DA7CC6212550B2CD0095BE4A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		DA8CD47728F838D1009943CB /* PDFTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFTicketView.swift; sourceTree = "<group>"; };
 		DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
 		DAB277EF254F4D9F004F333C /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		DAB277FD254F552C004F333C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4A5D6428F44D0C00ECE6D4 /* CloudKit.framework in Frameworks */,
 				DAC9C6B8265B219300AA4D26 /* PopupView in Frameworks */,
 				DAB8DC542546263C00AD4F03 /* Alamofire in Frameworks */,
 			);
@@ -298,6 +304,8 @@
 				DAF591CE28B80D75000164CB /* TransactionView.swift */,
 				DAF591D228B80F67000164CB /* RecipesView.swift */,
 				DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */,
+				DA8CD47728F838D1009943CB /* PDFTicketView.swift */,
+				DA2879E82907203600D67107 /* TransactionDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -531,7 +539,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					DAB91CC5255208DF0034089C = {
 						CreatedOnToolsVersion = 12.2;
@@ -664,12 +672,14 @@
 				DAF591C728B80B10000164CB /* SalesView.swift in Sources */,
 				DAB8DC842546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DADED323254317A700EB8BB0 /* CraftbeerApp.swift in Sources */,
+				DA8CD47828F838D1009943CB /* PDFTicketView.swift in Sources */,
 				DAB277FE254F552C004F333C /* Ingredient.swift in Sources */,
 				DA63ECE7256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAF591CF28B80D75000164CB /* TransactionView.swift in Sources */,
 				DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */,
 				DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DA2879E92907203600D67107 /* TransactionDetailView.swift in Sources */,
 				DAF591CB28B80C6F000164CB /* StockView.swift in Sources */,
 				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */,
@@ -863,6 +873,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -922,6 +933,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -996,6 +1008,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1021,6 +1034,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1088,6 +1102,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = TGG8A6SJD4;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1110,6 +1125,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = TGG8A6SJD4;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -26,52 +26,27 @@ struct TransactionView: View {
         NavigationView {
             List {
                 ForEach(update(transaction), id: \.self) {(sections: [Transaction]) in
-                    Section(header: Text(sectionHeader(transaction: sections))) {
-                        ForEach(sections) { item in
-                            VStack{
-                                Text(item.name ?? "")
-                                    .font(.headline)
-                                Text(item.presentation ?? "")
-                                    .font(.callout)
-                                Text(NSNumber(value:item.price), formatter: numberFormatter)
-                                    .font(.callout)
+                    Section(header:
+                                Text(sectionHeader(transaction: sections))
+                        .font(.headline)) {
+                            NavigationLink {
+                                TransactionDetailView(transaction: sections)
+                            } label: {
+                                Text(computeTotalSales(transaction: sections))
                             }
-                        }
-                        .onDelete(perform: deleteItems)
                     }
                 }
-            }
+            }.background(Color.white)
             .navigationTitle("Transactions")
-            .toolbar {
-                
-                #if os(iOS)
-                ToolbarItem(placement: .automatic) {
-                    EditButton()
-                }
-                #endif
-            }
         }
+        
     }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { transaction[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
     
     func update(_ result : FetchedResults<Transaction>)-> [[Transaction]]{
         
         let results = Dictionary(grouping: result){ (element : Transaction)  in
             dateFormater(date: element.timestamp!)
-        }.values.sorted() { $0[0].timestamp! < $1[0].timestamp! }
+        }.values.sorted() { $0[0].timestamp! > $1[0].timestamp! }
         
         return results
     }
@@ -83,13 +58,19 @@ struct TransactionView: View {
     }
     
     func sectionHeader(transaction: [Transaction]) -> String {
-        let date = self.dateFormater(date: transaction[0].timestamp!)
-        let total = transaction.reduce(0) { $0 + $1.price }
-        let totalTxt = numberFormatter.string(from: NSNumber(value: total)) ?? ""
-        
-        return "\(date) Total: \(totalTxt)"
+        guard let date = transaction.first?.timestamp else {
+            return ""
+        }        
+        let dateTxt = self.dateFormater(date: date)
+        return "\(dateTxt)"
     }
     
+    func computeTotalSales(transaction: [Transaction]) -> String {
+        let total = transaction.reduce(0) { $0 + $1.price }
+        let txt = numberFormatter.string(from: NSNumber(value: total)) ?? ""
+        
+        return "Ventas Totales: \(txt)"
+    }
     
 }
 

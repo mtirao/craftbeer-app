@@ -9,9 +9,10 @@ import SwiftUI
 
 struct SalesView: View {
     
-    @Binding var total: Float
-    @Binding var trxUUID: UUID
+    static private var trxUUID: UUID = UUID()
     
+    @Binding var total: Float
+    @State private var isPresented = false
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
@@ -19,6 +20,12 @@ struct SalesView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: true)],
+        predicate: NSPredicate(format: "number == %@", SalesView.trxUUID as CVarArg),
+        animation: .default)
+    private var saleItems: FetchedResults<Transaction>
     
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -31,13 +38,23 @@ struct SalesView: View {
             HStack{
                 Spacer()
                 Button(action: {
+                    isPresented.toggle()
                     self.total = 0
+                    PDFTicketView.lastTrxUUID = SalesView.trxUUID
+                    SalesView.trxUUID = UUID()
                 }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                        .padding(.trailing, 8)
-                }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color(UIColor.systemBlue))
+                            .background(Color(UIColor.systemBlue))
+                        Text("TOTAL")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }.frame(width: 130, height: 60, alignment: .center)
+                        .padding()
+                }.fullScreenCover(isPresented: $isPresented, content: {
+                    PDFTicketView()
+                })
             }
             
             #if os(macOS) || os(tvOS)
@@ -66,9 +83,11 @@ struct SalesView: View {
                                     VStack{
                                         Text(item.name ?? "")
                                             .font(.headline)
+                                            .lineLimit(2)
                                         Text(NSNumber(value:item.price), formatter: numberFormatter)
                                             .font(.callout)
-                                    }.background(Color("color_grayscale_200"))
+                                    }
+                                    .frame(width: 130, height:80, alignment: .center)
                                     .padding()
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 5)
@@ -86,7 +105,7 @@ struct SalesView: View {
                         Divider()
                     } header: {
                         HStack {
-                            Text(sections[0].presentation!)
+                            Text(sections.first?.presentation ?? "")
                                 .font(.headline)
                             Spacer()
                         }
@@ -94,34 +113,6 @@ struct SalesView: View {
                 }
             }.padding()
             
-            /*List {
-                VStack {
-                    ForEach(items) { item in
-                        
-                        VStack {
-                            HStack {
-                                Text(item.name ?? "")
-                                    .font(.headline)
-                                Spacer()
-                            }
-                            HStack {
-                                Text(item.presentation ?? "")
-                                    .font(.callout)
-                                Spacer()
-                                Text(NSNumber(value: item.price), formatter: numberFormatter)
-                                    .font(.callout)
-                            }
-                            Spacer()
-                        }
-                        #if os(macOS) || os(iOS)
-                        .onTapGesture{
-                            self.total += item.price
-                            saleItem(item: item)
-                        }
-                        #endif
-                    }
-                }
-            }*/
         }
     }
     
@@ -129,7 +120,7 @@ struct SalesView: View {
         
         let results = Dictionary(grouping: result){ (element : Item)  in
             element.presentation
-        }.values.sorted() { $0[0].presentation! < $1[0].presentation! }
+        }.values.sorted() { ($0.first?.presentation ?? "") < ($1.first?.presentation ?? "") }
         
         return results
     }
@@ -140,7 +131,12 @@ struct SalesView: View {
         newItem.timestamp = Date()
         newItem.name = item.name
         newItem.price = item.price
-        newItem.number = self.trxUUID
+        
+        if saleItems.count == 0 {
+            SalesView.trxUUID = UUID()
+        }
+        
+        newItem.number = SalesView.trxUUID
         newItem.presentation = item.presentation
         newItem.quantity = 1
 
@@ -156,6 +152,6 @@ struct SalesView: View {
 
 struct SalesView_Previews: PreviewProvider {
     static var previews: some View {
-        SalesView(total: .constant(0), trxUUID: .constant(UUID()))
+        SalesView(total: .constant(0))
     }
 }
