@@ -12,7 +12,7 @@ struct StockView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.name, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
     
@@ -54,8 +54,9 @@ struct StockView: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-            newItem.name = "Unnamed"
-
+            newItem.name = "#Unnamed"
+            newItem.presentation = "Growler"
+            
             do {
                 try viewContext.save()
             } catch {

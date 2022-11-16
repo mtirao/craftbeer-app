@@ -17,7 +17,7 @@ struct StockDetailView: View {
     @State private var presentation: String = "Growler"
     @State private var price: Float = 0
     
-    private let presentations = ["Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar"]
+    private let presentations = ["Clothes", "Package", "Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar"]
     
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
