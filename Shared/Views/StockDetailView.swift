@@ -16,28 +16,45 @@ struct StockDetailView: View {
     @State private var name: String = ""
     @State private var presentation: String = "Growler"
     @State private var price: Float = 0
+    @State private var purchasePrice: Float = 0
     
     private let presentations = ["Clothes", "Package", "Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar"]
-    
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
+
     
     var item: Item
     
     var body: some View {
         Form {
             Section(header: Text("Item")) {
-                TextField("Name", text: $name)
-                 Picker("Presentation", selection: $presentation) {
+                HStack {
+                    Text("Name:")
+                        .font(.headline)
+                    Spacer()
+                    TextField("Name", text: $name)
+                        .multilineTextAlignment(.trailing)
+                }
+                HStack {
+                    Text("Purchase Price:")
+                        .font(.headline)
+                    Spacer()
+                    TextField("$0.00", value: $purchasePrice, formatter: NumberFormatter.priceFormatter)
+                        .multilineTextAlignment(.trailing)
+                }
+                HStack {
+                    Text("Sell Price:")
+                        .font(.headline)
+                    Spacer()
+                    TextField("$0.00", value: $price, formatter: NumberFormatter.priceFormatter)
+                        .multilineTextAlignment(.trailing)
+                }
+                Picker("Presentation", selection: $presentation) {
                     ForEach(presentations, id: \.self) {
                         Text($0)
                             .id($0)
                     }
                  }.pickerStyle(.menu)
-                TextField("$0.00", value: $price, formatter: numberFormatter)
+                
+                
             }
         }.toolbar{
             ToolbarItem(placement: .automatic ) {
@@ -51,6 +68,7 @@ struct StockDetailView: View {
             self.name = item.name ?? ""
             self.presentation = item.presentation ?? ""
             self.price = item.price
+            self.purchasePrice = item.purchasePrice
         })
     }
     
@@ -60,6 +78,7 @@ struct StockDetailView: View {
         item.name = self.name
         item.presentation = self.presentation
         item.price = Float(self.price)
+        item.purchasePrice = Float(self.purchasePrice)
         
         do {
             self.presentationMode.wrappedValue.dismiss()

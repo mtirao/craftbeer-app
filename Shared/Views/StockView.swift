@@ -44,7 +44,7 @@ struct StockView: View {
                 }
                 #endif
             }
-        }//.navigationViewStyle(DefaultListStyle())
+        }
         
     }
     

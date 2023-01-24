@@ -7,6 +7,16 @@
 
 import Foundation
 
+
+extension NumberFormatter {
+    
+    static let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+}
+
 class ColorFormatter: Formatter {
     
     override func string(for obj: Any?) -> String? {

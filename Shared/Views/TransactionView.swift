@@ -22,24 +22,66 @@ struct TransactionView: View {
         return formatter
     }()
     
+    @State private var isActive: Bool = false
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(update(transaction), id: \.self) {(sections: [Transaction]) in
-                    Section(header:
-                                Text(sectionHeader(transaction: sections))
-                        .font(.headline)) {
-                            NavigationLink {
-                                TransactionDetailView(transaction: sections)
-                            } label: {
-                                Text(computeTotalSales(transaction: sections))
+            VStack {
+                NavigationLink(isActive: $isActive) {
+                    List {
+                        ForEach(monthly(transaction), id: \.self) {(sections: [Transaction]) in
+                            Section(header:
+                                        Text(sectionMonthlyHeader(transaction: sections))
+                                .font(.headline)) {
+                                    Text(computeTotalSales(transaction: sections))
+                                }
+                        }
+                    }
+                } label: {
+                    EmptyView()
+                }
+                
+                List {
+                    ForEach(update(transaction), id: \.self) {(sections: [Transaction]) in
+                        Section(header:
+                                    Text(sectionHeader(transaction: sections))
+                            .font(.headline)) {
+                                NavigationLink {
+                                    TransactionDetailView(transaction: sections)
+                                } label: {
+                                    VStack {
+                                        HStack {
+                                            Text(computeTotalSales(transaction: sections))
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text(computeTotalPurchase(transaction: sections))
+                                            Spacer()
+                                        }
+                                    }
+                                }
                             }
                     }
-                }
-            }.background(Color.white)
-            .navigationTitle("Transactions")
+                }.background(Color.white)
+                    .navigationTitle("Transactions")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {isActive.toggle()}) {
+                                Text("Monthly")
+                            }
+                        }
+                    }
+            }
         }
         
+    }
+    
+    func monthly(_ result : FetchedResults<Transaction>) -> [[Transaction]] {
+        let results = Dictionary(grouping: result){ (element : Transaction)  in
+            dateMonthlyFormater(date: element.timestamp!)
+        }.values.sorted() { $0[0].timestamp! > $1[0].timestamp! }
+        
+        return results
     }
     
     func update(_ result : FetchedResults<Transaction>)-> [[Transaction]]{
@@ -57,6 +99,20 @@ struct TransactionView: View {
         return dateFormatter.string(from: date)
     }
     
+    func dateMonthlyFormater(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
+    func sectionMonthlyHeader(transaction: [Transaction]) -> String {
+        guard let date = transaction.first?.timestamp else {
+            return ""
+        }
+        let dateTxt = self.dateMonthlyFormater(date: date)
+        return "\(dateTxt)"
+    }
+    
     func sectionHeader(transaction: [Transaction]) -> String {
         guard let date = transaction.first?.timestamp else {
             return ""
@@ -70,6 +126,13 @@ struct TransactionView: View {
         let txt = numberFormatter.string(from: NSNumber(value: total)) ?? ""
         
         return "Ventas Totales: \(txt)"
+    }
+    
+    func computeTotalPurchase(transaction: [Transaction]) -> String {
+        let total = transaction.reduce(0) { $0 + $1.purchasePrice }
+        let txt = numberFormatter.string(from: NSNumber(value: total)) ?? ""
+        
+        return "Costo Totales: \(txt)"
     }
     
 }

@@ -11,13 +11,6 @@ struct TransactionDetailView: View {
     
     let transaction: [Transaction]
     
-    
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
-    
     var body: some View {
         
         List {
@@ -32,7 +25,7 @@ struct TransactionDetailView: View {
                         Spacer()
                     }
                     HStack {
-                        Text(NSNumber(value:item.price), formatter: numberFormatter)
+                        Text(NSNumber(value:item.price), formatter: NumberFormatter.priceFormatter )
                             .font(.callout)
                         Spacer()
                     }
