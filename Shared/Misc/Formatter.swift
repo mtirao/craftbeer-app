@@ -17,6 +17,14 @@ extension NumberFormatter {
     }()
 }
 
+extension DateFormatter {
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        return dateFormatter
+    }()
+}
+
 class ColorFormatter: Formatter {
     
     override func string(for obj: Any?) -> String? {

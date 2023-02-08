@@ -56,6 +56,7 @@ struct StockView: View {
             newItem.timestamp = Date()
             newItem.name = "#Unnamed"
             newItem.presentation = "Growler"
+            newItem.itemDescription = "No item description"
             
             do {
                 try viewContext.save()

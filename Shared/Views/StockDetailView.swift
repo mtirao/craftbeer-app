@@ -14,6 +14,7 @@ struct StockDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State private var name: String = ""
+    @State private var itemDescription: String = ""
     @State private var presentation: String = "Growler"
     @State private var price: Float = 0
     @State private var purchasePrice: Float = 0
@@ -31,6 +32,13 @@ struct StockDetailView: View {
                         .font(.headline)
                     Spacer()
                     TextField("Name", text: $name)
+                        .multilineTextAlignment(.trailing)
+                }
+                HStack {
+                    Text("Description:")
+                        .font(.headline)
+                    Spacer()
+                    TextField("Description", text: $itemDescription)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
@@ -79,6 +87,7 @@ struct StockDetailView: View {
         item.presentation = self.presentation
         item.price = Float(self.price)
         item.purchasePrice = Float(self.purchasePrice)
+        item.itemDescription = self.itemDescription
         
         do {
             self.presentationMode.wrappedValue.dismiss()

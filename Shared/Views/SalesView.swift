@@ -20,18 +20,12 @@ struct SalesView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: true)],
         predicate: NSPredicate(format: "number == %@", SalesView.trxUUID as CVarArg),
         animation: .default)
     private var saleItems: FetchedResults<Transaction>
-    
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
+
     
     var body: some View {
         NavigationView {
@@ -40,14 +34,14 @@ struct SalesView: View {
                     TicketView(total: $total)
                 } label: {
 #if os(macOS) || os(tvOS)
-                    TextField("$0.00", value: $total, formatter: numberFormatter)
+                    TextField("$0.00", value: $total, formatter: NumberFormatter.priceFormatter)
                         .textFieldStyle(DefaultTextFieldStyle())
                         .font(.title)
                         .padding()
                         .multilineTextAlignment(.trailing)
                         .disabled(true)
 #elseif os(iOS)
-                    TextField("$0.00", value: $total, formatter: numberFormatter)
+                    TextField("$0.00", value: $total, formatter: NumberFormatter.priceFormatter)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .font(.title)
@@ -63,19 +57,7 @@ struct SalesView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
                                     ForEach(sections) { item in
-                                        VStack{
-                                            Text(item.name ?? "")
-                                                .font(.headline)
-                                                .lineLimit(2)
-                                            Text(NSNumber(value:item.price), formatter: numberFormatter)
-                                                .font(.callout)
-                                        }
-                                        .frame(width: 130, height:80, alignment: .center)
-                                        .padding()
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 5)
-                                                .stroke(.gray)
-                                        )
+                                        ItemView(item: item)
 #if os(macOS) || os(iOS)
                                         .onTapGesture{
                                             self.total += item.price
@@ -115,6 +97,7 @@ struct SalesView: View {
         newItem.name = item.name
         newItem.price = item.price
         newItem.purchasePrice = item.purchasePrice
+        newItem.itemDescription = item.itemDescription
         
         newItem.number = SalesView.trxUUID
         newItem.presentation = item.presentation

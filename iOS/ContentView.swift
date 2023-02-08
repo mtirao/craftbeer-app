@@ -10,15 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     private var currentRecipe = -1
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     @State private var searchText = ""
-
     @State private var total: Float = 0
-    
-    @Environment(\.managedObjectContext) private var viewContext
-
     @State private var trxUUID = UUID()
-    
+
+    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -38,15 +36,21 @@ struct ContentView: View {
                     Label("Stock", systemImage: "cart")
                 }
             
-            
-            SalesView(total: $total)
-                .tabItem{
-                    Label("Sales", systemImage: "bag")
-                }
-                .onAppear{
-                    self.trxUUID = UUID()
-                    self.total = 0
-                }
+            if idiom == .pad {
+                SaleViewiPad()
+                    .tabItem{
+                        Label("Sales", systemImage: "bag")
+                    }
+            }else {
+                SalesView(total: $total)
+                    .tabItem{
+                        Label("Sales", systemImage: "bag")
+                    }
+                    .onAppear{
+                        self.trxUUID = UUID()
+                        self.total = 0
+                    }
+            }
             
             TransactionView()
                 .tabItem{
