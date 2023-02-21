@@ -41,14 +41,10 @@ struct ContentView: View {
                     .tabItem{
                         Label("Sales", systemImage: "bag")
                     }
-            }else {
-                SalesView(total: $total)
+                
+                ReportsView()
                     .tabItem{
-                        Label("Sales", systemImage: "bag")
-                    }
-                    .onAppear{
-                        self.trxUUID = UUID()
-                        self.total = 0
+                        Label("Reports", systemImage: "rectangle.and.pencil.and.ellipsis")
                     }
             }
             

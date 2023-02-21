@@ -16,24 +16,24 @@ struct SaleViewiPad: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: true)],
-        predicate: NSPredicate(format: "number == %@", SalesView.trxUUID as CVarArg),
-        animation: .default)
-    private var saleItems: FetchedResults<Transaction>
-
-    @State var total: Float = 0.0
+    @StateObject private var transactionProvider: TransactionDataProvider = TransactionDataProvider()
     
     var body: some View {
         HStack {
             JournalView()
+                .environmentObject(transactionProvider)
             Rectangle()
                 .frame(width: 1)
                 .backgroundStyle(.black)
             
-            KeyPadView(total: $total)
+            KeyPadView()
+                .environmentObject(transactionProvider)
+        }.onAppear {
+            transactionProvider.viewContext = self.viewContext
         }
     }
+    
+    
 }
 
 struct SaleViewiPad_Previews: PreviewProvider {

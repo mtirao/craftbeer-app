@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct KeyPadView: View {
+    
     
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -16,12 +18,15 @@ struct KeyPadView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @Binding var total: Float
+    @EnvironmentObject var dataProvider: TransactionDataProvider
+    
+    
+    private let tenders = ["Card", "Cash", "Transfer", "QR"]
     
     var body: some View {
         
         VStack {
-            TextField("$0.00", value: $total, formatter: NumberFormatter.priceFormatter)
+            TextField("$0.00", value: $dataProvider.total, formatter: NumberFormatter.priceFormatter)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .font(.title)
                 .padding()
@@ -36,8 +41,7 @@ struct KeyPadView: View {
                             HStack(spacing: 16) {
                                 ForEach(sections) { item in
                                     ItemView(item: item)                                    .onTapGesture{
-                                            self.total += item.price
-                                            saleItem(item: item)
+                                            dataProvider.saleItem(item: item)
                                         }
                                 }
                             }
@@ -54,19 +58,9 @@ struct KeyPadView: View {
             }.padding()
             
             HStack {
-                
-                Button{
-                    self.total = 0.0
-                    SalesView.trxUUID = UUID()
+                ForEach(tenders, id: \.self) { name in
+                    TenderButtonView(name:name)
                 }
-                label: {
-                    Text("PAGAR").font(.title)
-                    
-                }
-                .frame(width: 520, height: 80)
-                .padding()
-                .background(Color(uiColor: Colors.itemBlue.uiColor))
-                .foregroundColor(.white)
             }.padding()
         }
     }
@@ -80,30 +74,10 @@ struct KeyPadView: View {
         return results
     }
     
-    private func saleItem(item: Item) {
-        
-        let newItem = Transaction(context: viewContext)
-        newItem.timestamp = Date()
-        newItem.name = item.name
-        newItem.price = item.price
-        newItem.purchasePrice = item.purchasePrice
-        newItem.itemDescription = item.itemDescription
-        
-        newItem.number = SalesView.trxUUID
-        newItem.presentation = item.presentation
-        newItem.quantity = 1
-
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-    }
 }
 
 struct KeyPadView_Previews: PreviewProvider {
     static var previews: some View {
-        KeyPadView(total: .constant(0.0))
+        KeyPadView()
     }
 }

@@ -8,6 +8,12 @@
         <attribute name="purchasePrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Tender" representedClassName="Tender" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="itemDescription" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>

@@ -12,6 +12,16 @@
 		DA1712DC29377F1500C4DEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DB29377F1500C4DEF4 /* Assets.xcassets */; };
 		DA1712DF29377F1500C4DEF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */; };
 		DA2879E92907203600D67107 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2879E82907203600D67107 /* TransactionDetailView.swift */; };
+		DA2F668029A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
+		DA2F668129A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
+		DA2F668229A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
+		DA2F668329A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
+		DA2F668429A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
+		DA2F668629A5083500EF7BEE /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
+		DA2F668729A5083500EF7BEE /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
+		DA2F668829A5083500EF7BEE /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
+		DA2F668929A5083500EF7BEE /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
+		DA2F668A29A5083500EF7BEE /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
 		DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32A85728BA58F50053567C /* RecipeViewDetail.swift */; };
 		DA4A5D6428F44D0C00ECE6D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */; };
 		DA63ECDC25616252009F5FDB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECDB25616252009F5FDB /* Stage.swift */; };
@@ -137,6 +147,9 @@
 		DAF591D328B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
 		DAF591D428B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
 		DAF591D528B80F67000164CB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591D228B80F67000164CB /* RecipesView.swift */; };
+		DAFE312429969E1200DC7D34 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE312329969E1200DC7D34 /* ReportsView.swift */; };
+		DAFE312529969E3700DC7D34 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE312329969E1200DC7D34 /* ReportsView.swift */; };
+		DAFE312629969E3A00DC7D34 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE312329969E1200DC7D34 /* ReportsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +178,8 @@
 		DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer (iOS).entitlements"; sourceTree = "<group>"; };
 		DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		DA2879E82907203600D67107 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataProvider.swift; sourceTree = "<group>"; };
+		DA2F668529A5083500EF7BEE /* TenderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderButtonView.swift; sourceTree = "<group>"; };
 		DA32A85728BA58F50053567C /* RecipeViewDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewDetail.swift; sourceTree = "<group>"; };
 		DA63ECDB25616252009F5FDB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		DA63ECE6256162E7009F5FDB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
@@ -223,6 +238,7 @@
 		DAF591CA28B80C6F000164CB /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 		DAF591CE28B80D75000164CB /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		DAF591D228B80F67000164CB /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		DAFE312329969E1200DC7D34 /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +331,7 @@
 		DAB8DC552546275200AD4F03 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */,
 				DAB277FD254F552C004F333C /* Ingredient.swift */,
 				DAB8DC5625462B7A00AD4F03 /* Recipe.swift */,
 				DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */,
@@ -353,6 +370,8 @@
 				DA8CD47728F838D1009943CB /* TicketView.swift */,
 				DA2879E82907203600D67107 /* TransactionDetailView.swift */,
 				DAE73EBC29918CDF009C03D6 /* ItemView.swift */,
+				DAFE312329969E1200DC7D34 /* ReportsView.swift */,
+				DA2F668529A5083500EF7BEE /* TenderButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -735,8 +754,10 @@
 			files = (
 				DAF591C928B80B10000164CB /* SalesView.swift in Sources */,
 				DAB91D1125520F570034089C /* RecipeDataProvider.swift in Sources */,
+				DAFE312629969E3A00DC7D34 /* ReportsView.swift in Sources */,
 				DA96F5D228CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DAB91CF325520F010034089C /* CraftbeerApp.swift in Sources */,
+				DA2F668A29A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DAB91D2525520F9C0034089C /* Persistence.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAF591D128B80D75000164CB /* TransactionView.swift in Sources */,
@@ -761,6 +782,7 @@
 				DAB91D0A25520F4D0034089C /* IngredientViewModel.swift in Sources */,
 				DAB91D0325520F450034089C /* FieldView.swift in Sources */,
 				DAC35965257D3AF300197BA9 /* StageSheet.swift in Sources */,
+				DA2F668429A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,8 +800,10 @@
 				DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */,
 				DAC94B342664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB8DC922546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DA2F668629A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DA2879E92907203600D67107 /* TransactionDetailView.swift in Sources */,
 				DAF591CB28B80C6F000164CB /* StockView.swift in Sources */,
+				DAFE312429969E1200DC7D34 /* ReportsView.swift in Sources */,
 				DAD437CB254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F0254F4D9F004F333C /* FieldView.swift in Sources */,
 				DAF591D328B80F67000164CB /* RecipesView.swift in Sources */,
@@ -793,6 +817,7 @@
 				DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAB91C72255206310034089C /* RecipeSheet.swift in Sources */,
+				DA2F668029A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 				DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAE73EB9299189B4009C03D6 /* JournalView.swift in Sources */,
 				DAE73EBF2993BDE5009C03D6 /* Colors.swift in Sources */,
@@ -822,12 +847,15 @@
 				DAC94B352664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
+				DA2F668729A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DAF591CC28B80C6F000164CB /* StockView.swift in Sources */,
+				DA2F668129A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 				DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */,
 				DAF591D428B80F67000164CB /* RecipesView.swift in Sources */,
 				DAC3594B257D284E00197BA9 /* IngredientSheet.swift in Sources */,
 				DA63ECDD25616252009F5FDB /* Stage.swift in Sources */,
+				DAFE312529969E3700DC7D34 /* ReportsView.swift in Sources */,
 				DA96F5CF28CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DADED322254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAC94B3B2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
@@ -850,6 +878,7 @@
 			files = (
 				DAB8DC862546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DAC94B362664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
+				DA2F668829A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DADED314254317A700EB8BB0 /* Tests_iOS.swift in Sources */,
 				DA63ECDE25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6725462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -859,6 +888,7 @@
 				DAC94B3C2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DA96F5D028CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DAB8DC5925462B7A00AD4F03 /* Recipe.swift in Sources */,
+				DA2F668229A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +898,7 @@
 			files = (
 				DAB8DC872546349B00AD4F03 /* RecipeDataProvider.swift in Sources */,
 				DAC94B372664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
+				DA2F668929A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DADED31F254317A700EB8BB0 /* Tests_macOS.swift in Sources */,
 				DA63ECDF25616252009F5FDB /* Stage.swift in Sources */,
 				DAB8DC6825462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -877,6 +908,7 @@
 				DAC94B3D2664466E00BE3AD2 /* StageDataProvider.swift in Sources */,
 				DA96F5D128CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DAB8DC5A25462B7A00AD4F03 /* Recipe.swift in Sources */,
+				DA2F668329A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
