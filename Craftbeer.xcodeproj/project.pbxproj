@@ -11,6 +11,11 @@
 		DA1712DA29377F1300C4DEF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1712D929377F1300C4DEF4 /* ContentView.swift */; };
 		DA1712DC29377F1500C4DEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DB29377F1500C4DEF4 /* Assets.xcassets */; };
 		DA1712DF29377F1500C4DEF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */; };
+		DA2811B029A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
+		DA2811B129A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
+		DA2811B229A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
+		DA2811B329A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
+		DA2811B429A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
 		DA2879E92907203600D67107 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2879E82907203600D67107 /* TransactionDetailView.swift */; };
 		DA2F668029A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
 		DA2F668129A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
@@ -177,6 +182,7 @@
 		DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer (iOS).entitlements"; sourceTree = "<group>"; };
 		DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		DA2879E82907203600D67107 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataProvider.swift; sourceTree = "<group>"; };
 		DA2F668529A5083500EF7BEE /* TenderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderButtonView.swift; sourceTree = "<group>"; };
@@ -350,6 +356,7 @@
 				DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */,
 				DAB27804254F59BB004F333C /* IngredientViewModel.swift */,
 				DA63ECE6256162E7009F5FDB /* StageViewModel.swift */,
+				DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -759,6 +766,7 @@
 				DAB91CF325520F010034089C /* CraftbeerApp.swift in Sources */,
 				DA2F668A29A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DAB91D2525520F9C0034089C /* Persistence.swift in Sources */,
+				DA2811B429A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAF591D128B80D75000164CB /* TransactionView.swift in Sources */,
 				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
@@ -817,6 +825,7 @@
 				DAB8DC7B2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAB91C72255206310034089C /* RecipeSheet.swift in Sources */,
+				DA2811B029A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 				DA2F668029A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 				DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAE73EB9299189B4009C03D6 /* JournalView.swift in Sources */,
@@ -863,6 +872,7 @@
 				DA63ECFD2561E1B0009F5FDB /* StageView.swift in Sources */,
 				DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB91D65255214060034089C /* RecipeViewDetail.swift in Sources */,
+				DA2811B129A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 				DAB91C73255206310034089C /* RecipeSheet.swift in Sources */,
 				DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DAB8DC6625462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
@@ -889,6 +899,7 @@
 				DA96F5D028CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DAB8DC5925462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA2F668229A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
+				DA2811B229A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +920,7 @@
 				DA96F5D128CFC8F800DFE9E3 /* StockDetailView.swift in Sources */,
 				DAB8DC5A25462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA2F668329A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
+				DA2811B329A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

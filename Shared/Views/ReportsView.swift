@@ -64,9 +64,44 @@ struct ReportsView: View {
                     Text("Total by Items")
                 }
                 
+                NavigationLink {
+                    List {
+                        ForEach(quantity(transactions), id: \.self) {(sections: [TransactionViewModel]) in
+                            Section(header:
+                                        Text(sections.first?.date ?? "")
+                                .font(.headline)) {
+                                    ForEach(sections, id: \.self) {transaction in
+                                        HStack {
+                                            Text("\(transaction.presentation)")
+                                            Spacer()
+                                            Text("\(transaction.quantity) /  \(transaction.quantity * 2)lts.")
+                                        }
+                                    }
+                                }
+                        }
+                    }
+                } label: {
+                    Text("Total by Quantity")
+                }
             }
             .navigationTitle("Reports")
         }
+    }
+    
+    func convertToLiter(transaction: TransactionViewModel) -> String {
+        if transaction.presentation == "Growler" {
+            return "\(transaction.quantity) / \(transaction.quantity * 2)lts."
+        }
+        
+        if transaction.presentation == "Pet" {
+            return "\(transaction.quantity) / \(transaction.quantity)lts."
+        }
+        
+        if transaction.presentation == "Pint" {
+            return "\(transaction.quantity) / \(Double(transaction.quantity) * 0.473)lts."
+        }
+        
+        return ""
     }
     
     func tendersTrx(_ result : FetchedResults<Tender>) -> [[Tender]] {
@@ -75,6 +110,51 @@ struct ReportsView: View {
         }.values.sorted() { $0[0].timestamp! > $1[0].timestamp! }
         
         return results
+    }
+    
+    func quantity(_ result : FetchedResults<Transaction>) -> [[TransactionViewModel]] {
+        
+        let results = Dictionary(grouping: result){ (element : Transaction)  in
+            dateMonthlyFormater(date: element.timestamp!)
+        }.values.sorted() { $0[0].timestamp! > $1[0].timestamp! }
+        
+        var filtered: [[TransactionViewModel]] = [[]]
+        for monthly in results {
+            var growler = TransactionViewModel(presentation: "Growler", name: "Growler", quantity: 0, date: dateMonthlyFormater(date: monthly.first?.timestamp ?? Date()))
+            var pet = TransactionViewModel(presentation: "Pet", name: "Pint", quantity: 0, date: dateMonthlyFormater(date: monthly.first?.timestamp ?? Date()))
+            var pint = TransactionViewModel(presentation: "Pint", name: "Pint", quantity: 0, date: dateMonthlyFormater(date: monthly.first?.timestamp ?? Date()))
+            
+            var transaction: [TransactionViewModel] = []
+            for trx in monthly {
+                if trx.presentation == "Growler" {
+                    growler = TransactionViewModel(presentation: "Growler", name: "Growler", quantity: growler.quantity + 1, date: growler.date)
+                }
+                if trx.presentation == "Pint" {
+                    pint = TransactionViewModel(presentation: "Pint", name: "Pint", quantity: pint.quantity + 1, date: growler.date)
+                }
+                if trx.presentation == "Pet" {
+                    pet = TransactionViewModel(presentation: "Pet", name: "Pint", quantity: pet.quantity + 1, date: growler.date)
+                }
+            }
+            
+            if growler.quantity != 0 {
+                transaction.append(growler)
+            }
+            
+            if pet.quantity != 0 {
+                transaction.append(pet)
+            }
+            
+            if pint.quantity != 0 {
+                transaction.append(pint)
+            }
+            
+            if transaction.count != 0 {
+                filtered.append(transaction)
+            }
+        }
+        
+        return filtered
     }
     
     func items(_ result : FetchedResults<Transaction>) -> [[Transaction]] {
@@ -100,7 +180,7 @@ struct ReportsView: View {
     }
     
     func sectionItemsHeader(transaction: [Transaction]) -> String {
-        guard let name = transaction.first?.name else {
+        guard let name = transaction.first?.presentation else {
             return ""
         }
         return name
@@ -135,6 +215,10 @@ struct ReportsView: View {
         let txt = NumberFormatter.priceFormatter.string(from: NSNumber(value: total)) ?? ""
         
         return "Totals: \(txt)"
+    }
+    
+    func computeTotalItems(transaction: Transaction) -> String {
+        return "Totals: \(transaction.description)"
     }
     
     func computeTotalTenders(tender: [Tender]) -> String {
