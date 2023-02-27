@@ -41,12 +41,12 @@ struct ContentView: View {
                     .tabItem{
                         Label("Sales", systemImage: "bag")
                     }
-                
-                ReportsView()
-                    .tabItem{
-                        Label("Reports", systemImage: "rectangle.and.pencil.and.ellipsis")
-                    }
             }
+            ReportsView()
+                .tabItem{
+                    Label("Reports", systemImage: "rectangle.and.pencil.and.ellipsis")
+                }
+        
             
             TransactionView()
                 .tabItem{

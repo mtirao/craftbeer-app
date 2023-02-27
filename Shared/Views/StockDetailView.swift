@@ -19,7 +19,7 @@ struct StockDetailView: View {
     @State private var price: Float = 0
     @State private var purchasePrice: Float = 0
     
-    private let presentations = ["Clothes", "Package", "Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar"]
+    private let presentations = ["Clothes", "Package", "Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar", "Container"]
 
     
     var item: Item
@@ -60,8 +60,10 @@ struct StockDetailView: View {
                         Text($0)
                             .id($0)
                     }
-                 }.pickerStyle(.menu)
-                
+                 }
+                #if os(iOS) || os(macOS)
+                .pickerStyle(.menu)
+                #endif
                 
             }
         }.toolbar{

@@ -65,11 +65,13 @@ struct TransactionView: View {
                 }.background(Color.white)
                     .navigationTitle("Transactions")
                     .toolbar {
+                        #if os(iOS) || os(macOS)
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: {isActive.toggle()}) {
                                 Text("Monthly")
                             }
                         }
+                        #endif
                     }
             }
         }

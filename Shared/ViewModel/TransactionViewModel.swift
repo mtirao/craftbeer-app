@@ -10,7 +10,7 @@ import Foundation
 struct TransactionViewModel: Hashable {
     
     let presentation: String
-    let name: String
+    let name: String 
     let quantity: Int
     let date: String
     

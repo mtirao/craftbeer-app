@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA1712D829377F1300C4DEF4 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1712D729377F1300C4DEF4 /* CraftbeerApp.swift */; };
-		DA1712DA29377F1300C4DEF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1712D929377F1300C4DEF4 /* ContentView.swift */; };
-		DA1712DC29377F1500C4DEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DB29377F1500C4DEF4 /* Assets.xcassets */; };
-		DA1712DF29377F1500C4DEF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */; };
+		DA04416E29ACD44600A9257C /* Craftbeer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F5254317A600EB8BB0 /* Craftbeer.xcdatamodeld */; };
+		DA04417129ACD51300A9257C /* TransactionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */; };
 		DA2811B029A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
 		DA2811B129A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
 		DA2811B229A6519A00A14340 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
@@ -42,9 +40,28 @@
 		DA63ECF72561E1AF009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
 		DA63ECFD2561E1B0009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
 		DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
+		DA7AB7DB29ACD9990082D93C /* Craftbeer Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DA9449BC29ABBE690072E656 /* Craftbeer Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DA7CC6232550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DA8CD47828F838D1009943CB /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CD47728F838D1009943CB /* TicketView.swift */; };
+		DA9449BF29ABBE690072E656 /* CraftbeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9449BE29ABBE690072E656 /* CraftbeerApp.swift */; };
+		DA9449C129ABBE690072E656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9449C029ABBE690072E656 /* ContentView.swift */; };
+		DA9449C329ABBE690072E656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9449C229ABBE690072E656 /* Assets.xcassets */; };
+		DA9449C629ABBE690072E656 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9449C529ABBE690072E656 /* Preview Assets.xcassets */; };
+		DA9449CA29ABC0760072E656 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADED2F9254317A600EB8BB0 /* Persistence.swift */; };
+		DA9449CC29ABC0BD0072E656 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
+		DA9449CD29ABC0BD0072E656 /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE312329969E1200DC7D34 /* ReportsView.swift */; };
+		DA9449CE29ABC0BD0072E656 /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591C628B80B10000164CB /* SalesView.swift */; };
+		DA9449D029ABC0BD0072E656 /* TenderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F668529A5083500EF7BEE /* TenderButtonView.swift */; };
+		DA9449D129ABC0BD0072E656 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CA28B80C6F000164CB /* StockView.swift */; };
+		DA9449D229ABC0BD0072E656 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CD47728F838D1009943CB /* TicketView.swift */; };
+		DA9449D429ABC0BD0072E656 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE73EBC29918CDF009C03D6 /* ItemView.swift */; };
+		DA9449D529ABC0BD0072E656 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF591CE28B80D75000164CB /* TransactionView.swift */; };
+		DA9449D629ABC0BD0072E656 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2879E82907203600D67107 /* TransactionDetailView.swift */; };
+		DA9449D729ABC0BD0072E656 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB277EF254F4D9F004F333C /* FieldView.swift */; };
+		DA9449D929ABC0C30072E656 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
+		DA9449DA29ABC0C30072E656 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE73EBE2993BDE5009C03D6 /* Colors.swift */; };
+		DA9449DB29ABC0C90072E656 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */; };
 		DA96F5CE28CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
 		DA96F5CF28CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
 		DA96F5D028CFC8F800DFE9E3 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */; };
@@ -158,6 +175,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DA7AB7DC29ACD9990082D93C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADED2F0254317A600EB8BB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA9449BB29ABBE690072E656;
+			remoteInfo = "Craftbeer Watch App";
+		};
 		DADED310254317A700EB8BB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DADED2F0254317A600EB8BB0 /* Project object */;
@@ -174,12 +198,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DA7AB7DE29ACD9990082D93C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DA7AB7DB29ACD9990082D93C /* Craftbeer Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		DA1712D529377F1300C4DEF4 /* Craftbeer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Craftbeer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA1712D729377F1300C4DEF4 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
-		DA1712D929377F1300C4DEF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DA1712DB29377F1500C4DEF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA04416F29ACD45F00A9257C /* Craftbeer-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Craftbeer-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DA04417029ACD46900A9257C /* Craftbeer Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer Watch App.entitlements"; sourceTree = "<group>"; };
 		DA227CCC28C7E99B0083A8F3 /* Craftbeer (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Craftbeer (iOS).entitlements"; sourceTree = "<group>"; };
 		DA227CCD28C7E9C30083A8F3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		DA2811AF29A6519A00A14340 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +227,11 @@
 		DA63ECF12561E130009F5FDB /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		DA7CC6212550B2CD0095BE4A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		DA8CD47728F838D1009943CB /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		DA9449BC29ABBE690072E656 /* Craftbeer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Craftbeer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9449BE29ABBE690072E656 /* CraftbeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftbeerApp.swift; sourceTree = "<group>"; };
+		DA9449C029ABBE690072E656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA9449C229ABBE690072E656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA9449C529ABBE690072E656 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
 		DAB277EF254F4D9F004F333C /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		DAB277FD254F552C004F333C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -248,7 +288,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA1712D229377F1300C4DEF4 /* Frameworks */ = {
+		DA9449B929ABBE690072E656 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,25 +338,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA1712D629377F1300C4DEF4 /* Craftbeer Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				DA1712D729377F1300C4DEF4 /* CraftbeerApp.swift */,
-				DA1712D929377F1300C4DEF4 /* ContentView.swift */,
-				DA1712DB29377F1500C4DEF4 /* Assets.xcassets */,
-				DA1712DD29377F1500C4DEF4 /* Preview Content */,
-			);
-			path = "Craftbeer Watch App";
-			sourceTree = "<group>";
-		};
-		DA1712DD29377F1500C4DEF4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DA1712DE29377F1500C4DEF4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		DA7CC6202550B2A80095BE4A /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +345,27 @@
 				DAE73EBE2993BDE5009C03D6 /* Colors.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		DA9449BD29ABBE690072E656 /* Craftbeer Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				DA04417029ACD46900A9257C /* Craftbeer Watch App.entitlements */,
+				DA04416F29ACD45F00A9257C /* Craftbeer-Watch-App-Info.plist */,
+				DA9449BE29ABBE690072E656 /* CraftbeerApp.swift */,
+				DA9449C029ABBE690072E656 /* ContentView.swift */,
+				DA9449C229ABBE690072E656 /* Assets.xcassets */,
+				DA9449C429ABBE690072E656 /* Preview Content */,
+			);
+			path = "Craftbeer Watch App";
+			sourceTree = "<group>";
+		};
+		DA9449C429ABBE690072E656 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA9449C529ABBE690072E656 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		DAB8DC522546263C00AD4F03 /* Frameworks */ = {
@@ -434,7 +476,7 @@
 				DADED31D254317A700EB8BB0 /* Tests macOS */,
 				DAB91C94255208830034089C /* CraftbeerTests */,
 				DAB91C9F255208830034089C /* CraftbeerUITests */,
-				DA1712D629377F1300C4DEF4 /* Craftbeer Watch App */,
+				DA9449BD29ABBE690072E656 /* Craftbeer Watch App */,
 				DADED300254317A700EB8BB0 /* Products */,
 				DAB8DC522546263C00AD4F03 /* Frameworks */,
 			);
@@ -463,7 +505,7 @@
 				DADED30F254317A700EB8BB0 /* Tests iOS.xctest */,
 				DADED31A254317A700EB8BB0 /* Tests macOS.xctest */,
 				DAB91CC6255208DF0034089C /* Craftbeer (tvOS).app */,
-				DA1712D529377F1300C4DEF4 /* Craftbeer Watch App.app */,
+				DA9449BC29ABBE690072E656 /* Craftbeer Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -521,13 +563,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA1712D429377F1300C4DEF4 /* Craftbeer Watch App */ = {
+		DA9449BB29ABBE690072E656 /* Craftbeer Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA1712E229377F1500C4DEF4 /* Build configuration list for PBXNativeTarget "Craftbeer Watch App" */;
+			buildConfigurationList = DA9449C929ABBE690072E656 /* Build configuration list for PBXNativeTarget "Craftbeer Watch App" */;
 			buildPhases = (
-				DA1712D129377F1300C4DEF4 /* Sources */,
-				DA1712D229377F1300C4DEF4 /* Frameworks */,
-				DA1712D329377F1300C4DEF4 /* Resources */,
+				DA9449B829ABBE690072E656 /* Sources */,
+				DA9449B929ABBE690072E656 /* Frameworks */,
+				DA9449BA29ABBE690072E656 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -535,7 +577,7 @@
 			);
 			name = "Craftbeer Watch App";
 			productName = "Craftbeer Watch App";
-			productReference = DA1712D529377F1300C4DEF4 /* Craftbeer Watch App.app */;
+			productReference = DA9449BC29ABBE690072E656 /* Craftbeer Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DAB91CC5255208DF0034089C /* Craftbeer (tvOS) */ = {
@@ -565,10 +607,12 @@
 				DADED2FB254317A700EB8BB0 /* Sources */,
 				DADED2FC254317A700EB8BB0 /* Frameworks */,
 				DADED2FD254317A700EB8BB0 /* Resources */,
+				DA7AB7DE29ACD9990082D93C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DA7AB7DD29ACD9990082D93C /* PBXTargetDependency */,
 			);
 			name = "Craftbeer (iOS)";
 			packageProductDependencies = (
@@ -641,11 +685,11 @@
 		DADED2F0254317A600EB8BB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					DA1712D429377F1300C4DEF4 = {
-						CreatedOnToolsVersion = 14.0.1;
+					DA9449BB29ABBE690072E656 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 					DAB91CC5255208DF0034089C = {
 						CreatedOnToolsVersion = 12.2;
@@ -688,18 +732,18 @@
 				DADED30E254317A700EB8BB0 /* Tests iOS */,
 				DADED319254317A700EB8BB0 /* Tests macOS */,
 				DAB91CC5255208DF0034089C /* Craftbeer (tvOS) */,
-				DA1712D429377F1300C4DEF4 /* Craftbeer Watch App */,
+				DA9449BB29ABBE690072E656 /* Craftbeer Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DA1712D329377F1300C4DEF4 /* Resources */ = {
+		DA9449BA29ABBE690072E656 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1712DF29377F1500C4DEF4 /* Preview Assets.xcassets in Resources */,
-				DA1712DC29377F1500C4DEF4 /* Assets.xcassets in Resources */,
+				DA9449C629ABBE690072E656 /* Preview Assets.xcassets in Resources */,
+				DA9449C329ABBE690072E656 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,12 +790,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DA1712D129377F1300C4DEF4 /* Sources */ = {
+		DA9449B829ABBE690072E656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1712DA29377F1300C4DEF4 /* ContentView.swift in Sources */,
-				DA1712D829377F1300C4DEF4 /* CraftbeerApp.swift in Sources */,
+				DA9449D229ABC0BD0072E656 /* TicketView.swift in Sources */,
+				DA9449CE29ABC0BD0072E656 /* SalesView.swift in Sources */,
+				DA9449CA29ABC0760072E656 /* Persistence.swift in Sources */,
+				DA9449D029ABC0BD0072E656 /* TenderButtonView.swift in Sources */,
+				DA9449CC29ABC0BD0072E656 /* StockDetailView.swift in Sources */,
+				DA9449D529ABC0BD0072E656 /* TransactionView.swift in Sources */,
+				DA9449D629ABC0BD0072E656 /* TransactionDetailView.swift in Sources */,
+				DA04416E29ACD44600A9257C /* Craftbeer.xcdatamodeld in Sources */,
+				DA9449D129ABC0BD0072E656 /* StockView.swift in Sources */,
+				DA04417129ACD51300A9257C /* TransactionDataProvider.swift in Sources */,
+				DA9449D729ABC0BD0072E656 /* FieldView.swift in Sources */,
+				DA9449C129ABBE690072E656 /* ContentView.swift in Sources */,
+				DA9449DA29ABC0C30072E656 /* Colors.swift in Sources */,
+				DA9449D929ABC0C30072E656 /* Formatter.swift in Sources */,
+				DA9449D429ABC0BD0072E656 /* ItemView.swift in Sources */,
+				DA9449CD29ABC0BD0072E656 /* ReportsView.swift in Sources */,
+				DA9449BF29ABBE690072E656 /* CraftbeerApp.swift in Sources */,
+				DA9449DB29ABC0C90072E656 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +987,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DA7AB7DD29ACD9990082D93C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA9449BB29ABBE690072E656 /* Craftbeer Watch App */;
+			targetProxy = DA7AB7DC29ACD9990082D93C /* PBXContainerItemProxy */;
+		};
 		DADED311254317A700EB8BB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DADED2FE254317A700EB8BB0 /* Craftbeer (iOS) */;
@@ -940,60 +1005,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DA1712E029377F1500C4DEF4 /* Debug */ = {
+		DA9449C729ABBE690072E656 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Craftbeer Watch App/Craftbeer Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Craftbeer Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Craftbeer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Craftbeer;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ar.com.wanaka.Craftbeer;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wanaka.Craftbeer.ar.com.wanaka.Craftbeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
 		};
-		DA1712E129377F1500C4DEF4 /* Release */ = {
+		DA9449C829ABBE690072E656 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Craftbeer Watch App/Craftbeer Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Craftbeer Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Craftbeer-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Craftbeer;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ar.com.wanaka.Craftbeer;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wanaka.Craftbeer.ar.com.wanaka.Craftbeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1001,7 +1068,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
 		};
@@ -1358,11 +1425,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA1712E229377F1500C4DEF4 /* Build configuration list for PBXNativeTarget "Craftbeer Watch App" */ = {
+		DA9449C929ABBE690072E656 /* Build configuration list for PBXNativeTarget "Craftbeer Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA1712E029377F1500C4DEF4 /* Debug */,
-				DA1712E129377F1500C4DEF4 /* Release */,
+				DA9449C729ABBE690072E656 /* Debug */,
+				DA9449C829ABBE690072E656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -2,20 +2,25 @@
 //  ContentView.swift
 //  Craftbeer Watch App
 //
-//  Created by Marcos Tirao on 30/11/2022.
+//  Created by Marcos Tirao on 26/02/2023.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            
+            StockView()
+                .tabItem{
+                    Text("Stock")
+                }
+            
+            ReportsView()
+                .tabItem{
+                    Text("Reports")
+                }
         }
-        .padding()
     }
 }
 

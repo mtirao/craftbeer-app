@@ -61,7 +61,7 @@ struct ReportsView: View {
                         }
                     }
                 } label: {
-                    Text("Total by Items")
+                    Text("Total by Category")
                 }
                 
                 NavigationLink {
@@ -74,7 +74,7 @@ struct ReportsView: View {
                                         HStack {
                                             Text("\(transaction.presentation)")
                                             Spacer()
-                                            Text("\(transaction.quantity) /  \(transaction.quantity * 2)lts.")
+                                            Text(convertToLiter(transaction: transaction))
                                         }
                                     }
                                 }
@@ -126,13 +126,13 @@ struct ReportsView: View {
             
             var transaction: [TransactionViewModel] = []
             for trx in monthly {
-                if trx.presentation == "Growler" {
+                if trx.presentation == "Growler" && (trx.name ?? "").contains("Recarga") {
                     growler = TransactionViewModel(presentation: "Growler", name: "Growler", quantity: growler.quantity + 1, date: growler.date)
                 }
                 if trx.presentation == "Pint" {
                     pint = TransactionViewModel(presentation: "Pint", name: "Pint", quantity: pint.quantity + 1, date: growler.date)
                 }
-                if trx.presentation == "Pet" {
+                if trx.presentation == "Pet" && (trx.name ?? "").contains("Recarga") {
                     pet = TransactionViewModel(presentation: "Pet", name: "Pint", quantity: pet.quantity + 1, date: growler.date)
                 }
             }
@@ -159,7 +159,7 @@ struct ReportsView: View {
     
     func items(_ result : FetchedResults<Transaction>) -> [[Transaction]] {
         let results = Dictionary(grouping: result){ (element : Transaction)  in
-            element.name
+            element.presentation
         }.values.sorted() { $0[0].timestamp! > $1[0].timestamp! }
         
         return results
