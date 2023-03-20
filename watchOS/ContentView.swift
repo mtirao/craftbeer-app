@@ -2,13 +2,17 @@
 //  ContentView.swift
 //  Craftbeer Watch App
 //
-//  Created by Marcos Tirao on 26/02/2023.
+//  Created by Marcos Tirao on 06/03/2023.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
+        
         TabView {
             
             StockView()
@@ -16,11 +20,16 @@ struct ContentView: View {
                     Text("Stock")
                 }
             
+            TransactionView()
+                .tabItem{
+                    Text("Transactions")
+                }
+            
             ReportsView()
                 .tabItem{
                     Text("Reports")
                 }
-        }
+        }.tabViewStyle(.automatic)
     }
 }
 

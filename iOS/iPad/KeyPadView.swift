@@ -20,18 +20,22 @@ struct KeyPadView: View {
     
     @EnvironmentObject var dataProvider: TransactionDataProvider
     
-    
     private let tenders = ["Card", "Cash", "Transfer", "QR"]
+    private let tables = ["Store", "Table 1", "Table 2", "Table 3", "Table 4"]
     
     var body: some View {
         
         VStack {
+             
             TextField("$0.00", value: $dataProvider.total, formatter: NumberFormatter.priceFormatter)
                 .textFieldStyle(DefaultTextFieldStyle())
-                .font(.title)
+                .font(.system(size: 40))
                 .padding()
                 .multilineTextAlignment(.trailing)
                 .disabled(true)
+            #if !os(macOS)
+                .foregroundColor(Colors.wanakaRed.color)
+            #endif
             Spacer()
             
             ScrollView {
@@ -55,14 +59,30 @@ struct KeyPadView: View {
                         }
                     }
                 }
-            }.padding()
+            }
             
-            HStack {
-                ForEach(tenders, id: \.self) { name in
-                    TenderButtonView(name:name)
+            VStack {
+                HStack {
+                    ForEach(tenders, id: \.self) { name in
+                        TenderButtonView(name:name)
+                    }
                 }
-            }.padding()
+                
+                HStack {
+                    ForEach(Array(tables.enumerated()), id: \.offset) { index, element in
+                        TableButtonView(number: index, name: element)
+                    }
+                }.padding(.bottom, 8)
+            }
+            
+        }.onAppear {
+            dataProvider.switchTable(table: 0)
         }
+#if os(macOS)
+        .frame(width: 1024)
+#else
+        .frame(width: UIScreen.main.bounds.width * 0.62)
+#endif
     }
     
     func update(_ result : FetchedResults<Item>)-> [[Item]]{

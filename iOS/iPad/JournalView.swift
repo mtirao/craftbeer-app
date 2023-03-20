@@ -22,7 +22,9 @@ struct JournalView: View {
                             Text(item.name ?? "")
                                 .font(Font.system(size: 20, weight: .bold))
                                 .lineLimit(2)
+                            #if !os(macOS)
                                 .foregroundColor(Color(Colors.itemBlue.uiColor))
+                            #endif
                             Spacer()
                             Text(NSNumber(value:item.price), formatter: NumberFormatter.priceFormatter)
                                 .font(Font.system(size: 20, weight: .bold))
@@ -39,7 +41,9 @@ struct JournalView: View {
             }
             .navigationTitle("Receipt" )
             .toolbar {
+                #if !os(macOS)
                 EditButton()
+                #endif
             }
         }
     }

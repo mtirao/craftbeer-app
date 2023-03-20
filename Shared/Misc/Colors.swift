@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftUI
 
 enum Colors {
     
@@ -20,5 +20,9 @@ enum Colors {
         case .wanakaRed:
                 return UIColor(named: "wannaka_red")
         }
+    }
+    
+    var color: Color! {
+        return Color(uiColor: self.uiColor)
     }
 }

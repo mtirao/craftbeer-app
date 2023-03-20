@@ -12,9 +12,15 @@ import SwiftUI
 class TransactionDataProvider: ObservableObject {
     
     var viewContext: NSManagedObjectContext!
+    var tablesUUID: [UUID] = [UUID(), UUID(), UUID(), UUID()]
+    var currentUUID = UUID()
     
     @Published var saleItems: [Transaction] = []
     @Published var total: Float = 0.0
+    
+    func switchTable(table: Int) {
+        self.currentUUID = tablesUUID[table]
+    }
     
     func getTransactionItems() {
         
@@ -24,7 +30,7 @@ class TransactionDataProvider: ObservableObject {
         // Add a predicate for entities with a name
         // attribute equal to "Apple"
         fetchRequest.predicate = NSPredicate(
-            format:  "number == %@", SalesView.trxUUID as CVarArg
+            format:  "number == %@", currentUUID as CVarArg
         )
 
         // Perform the fetch request to get the objects
@@ -44,7 +50,7 @@ class TransactionDataProvider: ObservableObject {
         
         tender.timestamp = Date()
         tender.amount = total
-        tender.number = SalesView.trxUUID
+        tender.number = currentUUID
         tender.name = name
         
         do {
@@ -54,6 +60,12 @@ class TransactionDataProvider: ObservableObject {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+       
+       if let index = tablesUUID.firstIndex(where: { $0 == currentUUID }) {
+           tablesUUID[index] = UUID()
+           currentUUID = tablesUUID[index]
+       }
+       
     }
     
    func saleItem(item: Item) {
@@ -65,7 +77,7 @@ class TransactionDataProvider: ObservableObject {
         newItem.purchasePrice = item.purchasePrice
         newItem.itemDescription = item.itemDescription
         
-        newItem.number = SalesView.trxUUID
+        newItem.number = currentUUID
         newItem.presentation = item.presentation
         newItem.quantity = 1
 

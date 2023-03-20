@@ -32,7 +32,7 @@ struct StockView: View {
             .navigationTitle("Stock")
             .toolbar {
                 
-                #if os(iOS) || os(macOS)
+                #if os(iOS)
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")

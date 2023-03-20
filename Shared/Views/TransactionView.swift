@@ -26,54 +26,32 @@ struct TransactionView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(isActive: $isActive) {
-                    List {
-                        ForEach(monthly(transaction), id: \.self) {(sections: [Transaction]) in
-                            Section(header:
-                                        Text(sectionMonthlyHeader(transaction: sections))
-                                .font(.headline)) {
-                                    Text(computeTotalSales(transaction: sections))
-                                }
-                        }
-                    }
-                } label: {
-                    EmptyView()
-                }
-                
-                List {
-                    ForEach(update(transaction), id: \.self) {(sections: [Transaction]) in
-                        Section(header:
-                                    Text(sectionHeader(transaction: sections))
-                            .font(.headline)) {
-                                NavigationLink {
-                                    TransactionDetailView(transaction: sections)
-                                } label: {
-                                    VStack {
-                                        HStack {
-                                            Text(computeTotalSales(transaction: sections))
-                                            Spacer()
-                                        }
-                                        HStack {
-                                            Text(computeTotalPurchase(transaction: sections))
-                                            Spacer()
-                                        }
+            List {
+                ForEach(update(transaction), id: \.self) {(sections: [Transaction]) in
+                    Section(header:
+                                Text(sectionHeader(transaction: sections))
+                        .font(.headline)) {
+                            NavigationLink {
+                                TransactionDetailView(transaction: sections)
+                            } label: {
+                                VStack {
+                                    HStack {
+                                        Text(computeTotalSales(transaction: sections))
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text(computeTotalPurchase(transaction: sections))
+                                        Spacer()
                                     }
                                 }
                             }
-                    }
-                }.background(Color.white)
-                    .navigationTitle("Transactions")
-                    .toolbar {
-                        #if os(iOS) || os(macOS)
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {isActive.toggle()}) {
-                                Text("Monthly")
-                            }
                         }
-                        #endif
-                    }
+                }
             }
+            .navigationTitle("Transactions")
+#if os(iOS) || os(macOS)
+            .background(Color.white)
+#endif
         }
         
     }
