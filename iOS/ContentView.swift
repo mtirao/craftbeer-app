@@ -42,6 +42,10 @@ struct ContentView: View {
                         Label("Sales", systemImage: "bag")
                     }
             }
+            ExpenseView()
+                .tabItem{
+                    Label("Expense", systemImage: "bag.badge.minus")
+                }
             ReportsView()
                 .tabItem{
                     Label("Reports", systemImage: "rectangle.and.pencil.and.ellipsis")

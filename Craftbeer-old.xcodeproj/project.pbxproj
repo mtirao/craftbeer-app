@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,10 @@
 		DA63ED032561E1B1009F5FDB /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63ECF12561E130009F5FDB /* StageView.swift */; };
 		DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
 		DA7CC6232550B2CD0095BE4A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CC6212550B2CD0095BE4A /* Formatter.swift */; };
+		DA89A10529D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */; };
+		DA89A10629D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */; };
+		DA89A10729D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */; };
+		DA89A10829D8F69600E84A5A /* ReportDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */; };
 		DA8B9F7729BBC91000FAC025 /* CraftappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B9F7629BBC91000FAC025 /* CraftappApp.swift */; };
 		DA8B9F7929BBC91000FAC025 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B9F7829BBC91000FAC025 /* ContentView.swift */; };
 		DA8B9F7B29BBC91100FAC025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8B9F7A29BBC91100FAC025 /* Assets.xcassets */; };
@@ -61,6 +65,12 @@
 		DAB27806254F59BB004F333C /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB27804254F59BB004F333C /* IngredientViewModel.swift */; };
 		DAB27818254F7BB0004F333C /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB27813254F7979004F333C /* IngredientView.swift */; };
 		DAB2781D254F7BB1004F333C /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB27813254F7979004F333C /* IngredientView.swift */; };
+		DAB443CA29D86E9100BD5A1E /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443C929D86E9100BD5A1E /* ExpenseView.swift */; };
+		DAB443CB29D86E9100BD5A1E /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443C929D86E9100BD5A1E /* ExpenseView.swift */; };
+		DAB443CC29D86E9100BD5A1E /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443C929D86E9100BD5A1E /* ExpenseView.swift */; };
+		DAB443CE29D8779500BD5A1E /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443CD29D875B200BD5A1E /* ExpenseDetailView.swift */; };
+		DAB443CF29D8779600BD5A1E /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443CD29D875B200BD5A1E /* ExpenseDetailView.swift */; };
+		DAB443D029D8779600BD5A1E /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB443CD29D875B200BD5A1E /* ExpenseDetailView.swift */; };
 		DAB8DC4D2546256E00AD4F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAB8DC4C2546256E00AD4F03 /* Alamofire */; };
 		DAB8DC542546263C00AD4F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAB8DC532546263C00AD4F03 /* Alamofire */; };
 		DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8DC5625462B7A00AD4F03 /* Recipe.swift */; };
@@ -172,6 +182,7 @@
 		DA63ECE6256162E7009F5FDB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
 		DA63ECF12561E130009F5FDB /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		DA7CC6212550B2CD0095BE4A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDataProvider.swift; sourceTree = "<group>"; };
 		DA8B9F7129BBC91000FAC025 /* Craftapp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Craftapp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8B9F7629BBC91000FAC025 /* CraftappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftappApp.swift; sourceTree = "<group>"; };
 		DA8B9F7829BBC91000FAC025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +197,8 @@
 		DAB277FD254F552C004F333C /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		DAB27804254F59BB004F333C /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
 		DAB27813254F7979004F333C /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		DAB443C929D86E9100BD5A1E /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		DAB443CD29D875B200BD5A1E /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 		DAB8DC5625462B7A00AD4F03 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		DAB8DC6425462F5D00AD4F03 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		DAB8DC7A2546310400AD4F03 /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
@@ -307,6 +320,7 @@
 		DAB8DC552546275200AD4F03 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DA89A10429D8E3EE00E84A5A /* ReportDataProvider.swift */,
 				DA2F667F29A4F01100EF7BEE /* TransactionDataProvider.swift */,
 				DAB277FD254F552C004F333C /* Ingredient.swift */,
 				DAB8DC5625462B7A00AD4F03 /* Recipe.swift */,
@@ -338,16 +352,18 @@
 				DAD437CA254A074D00CEA901 /* RecipeView.swift */,
 				DAB27813254F7979004F333C /* IngredientView.swift */,
 				DA63ECF12561E130009F5FDB /* StageView.swift */,
-				DAB277EF254F4D9F004F333C /* FieldView.swift */,
 				DAF591CA28B80C6F000164CB /* StockView.swift */,
+				DAB277EF254F4D9F004F333C /* FieldView.swift */,
 				DAF591CE28B80D75000164CB /* TransactionView.swift */,
-				DAF591D228B80F67000164CB /* RecipesView.swift */,
 				DA96F5CD28CFC8F800DFE9E3 /* StockDetailView.swift */,
+				DAF591D228B80F67000164CB /* RecipesView.swift */,
+				DAB443CD29D875B200BD5A1E /* ExpenseDetailView.swift */,
 				DA2879E82907203600D67107 /* TransactionDetailView.swift */,
 				DAE73EBC29918CDF009C03D6 /* ItemView.swift */,
 				DAFE312329969E1200DC7D34 /* ReportsView.swift */,
 				DAE8DC2829B38E3B00A60FDC /* TableButtonView.swift */,
 				DA2F668529A5083500EF7BEE /* TenderButtonView.swift */,
+				DAB443C929D86E9100BD5A1E /* ExpenseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,8 +553,9 @@
 		DADED2F0254317A600EB8BB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					DA8B9F7029BBC91000FAC025 = {
 						CreatedOnToolsVersion = 14.2;
@@ -632,6 +649,7 @@
 				DA8B9F9229BBCA4B00FAC025 /* ReportsView.swift in Sources */,
 				DA8B9F7929BBC91000FAC025 /* ContentView.swift in Sources */,
 				DA8B9F8F29BBCA3600FAC025 /* StockDetailView.swift in Sources */,
+				DA89A10829D8F69600E84A5A /* ReportDataProvider.swift in Sources */,
 				DA8B9F7729BBC91000FAC025 /* CraftappApp.swift in Sources */,
 				DA8B9F8B29BBCA0800FAC025 /* TransactionView.swift in Sources */,
 				DA8B9F8D29BBCA1200FAC025 /* TransactionViewModel.swift in Sources */,
@@ -650,6 +668,7 @@
 				DA2811B429A6519A00A14340 /* TransactionViewModel.swift in Sources */,
 				DA63ECEB256162E7009F5FDB /* StageViewModel.swift in Sources */,
 				DAF591D128B80D75000164CB /* TransactionView.swift in Sources */,
+				DA89A10729D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */,
 				DAC94B382664433900BE3AD2 /* IngredientDataProvider.swift in Sources */,
 				DAB91D1025520F570034089C /* Ingredient.swift in Sources */,
 				DAB91CFF25520F450034089C /* RecipeSheet.swift in Sources */,
@@ -672,7 +691,9 @@
 				DAB91D0A25520F4D0034089C /* IngredientViewModel.swift in Sources */,
 				DAB91D0325520F450034089C /* FieldView.swift in Sources */,
 				DAC35965257D3AF300197BA9 /* StageSheet.swift in Sources */,
+				DAB443D029D8779600BD5A1E /* ExpenseDetailView.swift in Sources */,
 				DA2F668429A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
+				DAB443CC29D86E9100BD5A1E /* ExpenseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +727,7 @@
 				DADED321254317A700EB8BB0 /* Craftbeer.xcdatamodeld in Sources */,
 				DAB91C72255206310034089C /* RecipeSheet.swift in Sources */,
 				DA2811B029A6519A00A14340 /* TransactionViewModel.swift in Sources */,
+				DA89A10529D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */,
 				DA2F668029A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
 				DAB8DC6525462F5D00AD4F03 /* RecipeViewModel.swift in Sources */,
 				DAE73EB9299189B4009C03D6 /* JournalView.swift in Sources */,
@@ -715,6 +737,8 @@
 				DAB8DC5725462B7A00AD4F03 /* Recipe.swift in Sources */,
 				DA7CC6222550B2CD0095BE4A /* Formatter.swift in Sources */,
 				DAE73EBD29918CDF009C03D6 /* ItemView.swift in Sources */,
+				DAB443CA29D86E9100BD5A1E /* ExpenseView.swift in Sources */,
+				DAB443CE29D8779500BD5A1E /* ExpenseDetailView.swift in Sources */,
 				DAA8526828CE7E8B0089DBAB /* ContentView.swift in Sources */,
 				DAE73EBB29918BE8009C03D6 /* KeyPadView.swift in Sources */,
 				DA32A85828BA58F50053567C /* RecipeViewDetail.swift in Sources */,
@@ -739,9 +763,11 @@
 				DADED328254317A700EB8BB0 /* Persistence.swift in Sources */,
 				DAB8DC932546F10200AD4F03 /* ApiConfiguration.swift in Sources */,
 				DAF98E5D29C8FEE30020D224 /* TableButtonView.swift in Sources */,
+				DA89A10629D8E3EE00E84A5A /* ReportDataProvider.swift in Sources */,
 				DA2F668729A5083500EF7BEE /* TenderButtonView.swift in Sources */,
 				DA3DF32829C753EB0089A3F4 /* TransactionDetailView.swift in Sources */,
 				DA2F668129A4F01100EF7BEE /* TransactionDataProvider.swift in Sources */,
+				DAB443CB29D86E9100BD5A1E /* ExpenseView.swift in Sources */,
 				DAD437CC254A074D00CEA901 /* RecipeView.swift in Sources */,
 				DAB277F1254F4D9F004F333C /* FieldView.swift in Sources */,
 				DAF591D428B80F67000164CB /* RecipesView.swift in Sources */,
@@ -758,6 +784,7 @@
 				DAB8DC7C2546310400AD4F03 /* RecipeAPI.swift in Sources */,
 				DAB91D65255214060034089C /* RecipeViewDetail.swift in Sources */,
 				DA2811B129A6519A00A14340 /* TransactionViewModel.swift in Sources */,
+				DAB443CF29D8779600BD5A1E /* ExpenseDetailView.swift in Sources */,
 				DAB91C73255206310034089C /* RecipeSheet.swift in Sources */,
 				DAC94B4826666AE500BE3AD2 /* BottomSheetView.swift in Sources */,
 				DA3DF32A29C758500089A3F4 /* StockView.swift in Sources */,
@@ -778,10 +805,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "Craftapp Watch App/Craftapp Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "watchOS/Craftapp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Craftapp Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/Preview Content\"";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -811,10 +838,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "Craftapp Watch App/Craftapp Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "watchOS/Craftapp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Craftapp Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/Preview Content\"";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

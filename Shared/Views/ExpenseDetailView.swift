@@ -1,5 +1,5 @@
 //
-//  StockDetailView.swift
+//  ExpenseDetailView.swift
 //  Craftbeer
 //
 //  Created by Marcos Tirao on 12/09/2022.
@@ -8,21 +8,20 @@
 import SwiftUI
  
 
-struct StockDetailView: View {
+struct ExpenseDetailView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State private var name: String = ""
-    @State private var itemDescription: String = ""
-    @State private var presentation: String = "Growler"
-    @State private var price: Float = 0
-    @State private var purchasePrice: Float = 0
+    @State private var type: String = "Growler"
+    @State private var amount: Float = 0
+    @State private var quantity: Float = 0
     
-    private let presentations = ["Clothes", "Package", "Growler", "Pet", "Pint", "Can", "Bottle", "Bag", "Jar", "Container"]
+    private let presentations = ["Rent", "Service", "Beer", "Can", "Bottle", "Jar", "Package", "Container"]
 
     
-    var item: Item
+    var item: Expense
     
     var body: some View {
         Form {
@@ -35,27 +34,20 @@ struct StockDetailView: View {
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
-                    Text("Description:")
+                    Text("Quantity:")
                         .font(.headline)
                     Spacer()
-                    TextField("Description", text: $itemDescription)
+                    TextField("Quantity", value: $quantity, formatter: NumberFormatter.quantityFormatter)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
-                    Text("Purchase Price:")
+                    Text("Amount:")
                         .font(.headline)
                     Spacer()
-                    TextField("$0.00", value: $purchasePrice, formatter: NumberFormatter.priceFormatter)
+                    TextField("$0.00", value: $amount, formatter: NumberFormatter.priceFormatter)
                         .multilineTextAlignment(.trailing)
                 }
-                HStack {
-                    Text("Sell Price:")
-                        .font(.headline)
-                    Spacer()
-                    TextField("$0.00", value: $price, formatter: NumberFormatter.priceFormatter)
-                        .multilineTextAlignment(.trailing)
-                }
-                Picker("Presentation", selection: $presentation) {
+                Picker("Type", selection: $type) {
                     ForEach(presentations, id: \.self) {
                         Text($0)
                             .id($0)
@@ -76,20 +68,19 @@ struct StockDetailView: View {
             }
         }.onAppear(perform: {
             self.name = item.name ?? ""
-            self.presentation = item.presentation ?? ""
-            self.price = item.price
-            self.purchasePrice = item.purchasePrice
+            self.type = item.type ?? ""
+            self.amount = item.amount
+            self.quantity = item.quantity
         })
     }
     
     
-    private func updateItem(item: Item) {
+    private func updateItem(item: Expense) {
         
         item.name = self.name
-        item.presentation = self.presentation
-        item.price = Float(self.price)
-        item.purchasePrice = Float(self.purchasePrice)
-        item.itemDescription = self.itemDescription
+        item.type = self.type
+        item.amount = Float(self.amount)
+        item.quantity = self.quantity
         
         do {
             self.presentationMode.wrappedValue.dismiss()

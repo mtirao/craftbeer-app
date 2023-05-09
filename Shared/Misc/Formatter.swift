@@ -15,6 +15,12 @@ extension NumberFormatter {
         formatter.numberStyle = .currency
         return formatter
     }()
+    
+    static let quantityFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
 }
 
 extension DateFormatter {
